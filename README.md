@@ -12,6 +12,9 @@
 
 ##### Based on the EDA values board: Integrity - Kindness - Effort
 ##### Plus:	
-##### - Our product is user-focused
-##### - Our team values communication, frequent and thoughtful
-##### - We are committed to the team dynamic (actioned through checkins/checkouts etc)
+##### Our product is user-focused
+##### Our team values communication, frequent and thoughtful
+##### We are committed to the team dynamic (actioned through checkins/checkouts etc)
+
+![Alt text](https://github.com/pohutukawa-2020/DREAM/blob/master/Dream%20Calendar.png?raw=true "Title")
+
