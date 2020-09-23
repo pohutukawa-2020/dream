@@ -8,7 +8,8 @@
 
 #### Personalised and self curated; a digital recipe planner of your favourite recipes.
 
-## Team Values ##### are based on the EDA values board: Integrity - Kindness - Effort
+## Team Values 
+##### are based on the EDA values board: Integrity - Kindness - Effort
 
 ##### As well as:	
 ##### Our product is user-focused
