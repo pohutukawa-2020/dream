@@ -21,3 +21,8 @@ code {
 .navLinks > * {
   margin: 1rem
 }
+
+.recipeEntry {
+  display: flex;
+  flex-direction: column
+}
