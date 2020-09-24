@@ -21,5 +21,5 @@ https://whimsical.com/7BzgfjZhaQyLPePAZziRqm
 
 ## Timetable
 
-![Alt text](https://github.com/pohutukawa-2020/DREAM/blob/master/Dream%20Calendar.png?raw=true "Title")
+![Alt text](https://github.com/pohutukawa-2020/dream/blob/master/docs/Dream%20Timetable.png?raw=true "Title")
 
