@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
-import Nav from './Nav'
+import { Nav } from './Nav'
 import Recipes from './Recipes'
 import Week from './Week'
 import Shopping from './Shopping'
