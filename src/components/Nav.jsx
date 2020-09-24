@@ -6,9 +6,9 @@ function Nav () {
     <div className="Nav">
       <h1>Nav</h1>
       <div className='navLinks'>
-        <Link to="/recipes">Recipe View</Link>  
-        <Link to="/week">Week View</Link>
-        <Link to="/shopping">Shopping View</Link>
+        <Link to="/recipes">My Recipes</Link>  
+        <Link to="/week">My Week</Link>
+        <Link to="/shopping">Shopping List</Link>
       </div>
     </div>
   )
