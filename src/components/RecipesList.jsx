@@ -39,7 +39,9 @@ function RecipesList() {
       </div>
       <ul>
         {recipes.map(recipe => 
-          <RecipeListItem recipe={recipe} />
+          <li key={recipe.id}>
+            <RecipeListItem recipe={recipe} />
+          </li>
         )}
       </ul>
     </div>
