@@ -16,6 +16,9 @@
 ##### Our team values communication, frequent and thoughtful
 ##### We are committed to the team dynamic (actioned through checkins/checkouts etc)
 
+## Whimsical Wireframes:
+https://whimsical.com/7BzgfjZhaQyLPePAZziRqm
+
 ## Timetable
 
 ![Alt text](https://github.com/pohutukawa-2020/DREAM/blob/master/Dream%20Calendar.png?raw=true "Title")
