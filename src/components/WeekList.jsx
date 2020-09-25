@@ -3,7 +3,7 @@ import React from 'react'
 import WeekListItem from './WeekListItem'
 
 import meals from '../data/week-plan'
-import recipes from '../data/example recipe'
+import recipes from '../data/example-recipe'
 
 const WeekList = (props) => {
   const mondayMeal = meals.meals[0]

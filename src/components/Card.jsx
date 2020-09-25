@@ -1,7 +1,5 @@
 import React from "react"
 
-import recipes from '../data/example recipe'
-
 function Card() {
     return (
       <>
