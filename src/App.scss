@@ -1,12 +1,37 @@
 $primary: #bada55;
 
 
+
 @import "../node_modules/bulma/bulma.sass";
 
 // Styles go below this line...
-.card{
-  width: auto;
-  height: 200px
+
+.card { 
+  width: 80%;
+  margin: auto;
 }
 
+div.columns { 
+  margin-top: 20px; 
+} 
 
+p { 
+  font-family: calibri; 
+  font-size: 10px; 
+} 
+
+.card-header-title { 
+  font-size: 20px; 
+} 
+
+.card-content {
+  padding: 0.2rem;
+}
+
+.card-seperation {
+  padding: 2rem
+}
+
+.seperation {
+  margin-top: 1rem;
+}
