@@ -39,7 +39,7 @@
     "bulma": "^0.9.0",
     "bulmaswatch": "^0.8.1",
     "eslint": "7.9.0",
-    "eslint-config-eda": "0.1.2",
+    // "eslint-config-eda": "0.1.2",
     "node-sass": "^4.14.1"
   }
 }
