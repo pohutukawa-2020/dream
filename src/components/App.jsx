@@ -23,13 +23,11 @@ function App() {
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/week" component={Week} />
         <Route exact path="/shopping" component={Shopping} />
+        <Route exact path="/recipe/addToShopping" component={Recipes} />
       </div>
     </div>
-  
-    
-  
   </>
-  );
+  )
 }
 
 export default App;
