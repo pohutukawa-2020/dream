@@ -7,7 +7,8 @@ function Card() {
   const images = recipes.recipes
     return (
       <>
-      <div className="card" >
+      <div className="card">
+      <Link to="/recipe">
           <div className="card-image">
             <figure className="image is-5by1">
               <img src={images[0].image} alt="Placeholder image"/>
@@ -42,6 +43,7 @@ function Card() {
                 <p>Prep time: 45 Mins</p>
               </div>
           </div>
+      </Link>
             </div>
             
             <div className="seperation">
