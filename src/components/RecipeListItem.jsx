@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import firebase from 'firebase/app'
 
 import { deleteRecipe } from '../utils'
 
+import EditRecipe from './EditRecipe'
+
 function RecipeListItem({ recipe }) {
+  const [showEdit, setShowEdit] = useState(false)
+
   return (
     <div className='recipeEntry'>
       <h4>RecipeListItem</h4>
@@ -31,6 +35,8 @@ function RecipeListItem({ recipe }) {
         }}>
           Remove
         </button>
+        {showEdit ? <button onClick={()=>setShowEdit(false)}>Cancel Edit</button> : <button onClick={()=>setShowEdit(true)}>Edit</button>}
+        {showEdit ? <EditRecipe recipe={recipe}/> : null}
       </div>
   )
 }
