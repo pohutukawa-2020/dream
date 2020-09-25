@@ -1,5 +1,11 @@
 $primary: #bada55;
 
+
+
+@import "../node_modules/bulma/bulma.sass";
+
+// Styles go below this line...
+
 .card { 
   width: 80%;
   margin: auto;
@@ -11,15 +17,21 @@ div.columns {
 
 p { 
   font-family: calibri; 
-  font-size: 20px; 
+  font-size: 10px; 
 } 
 
 .card-header-title { 
   font-size: 20px; 
 } 
 
-@import "../node_modules/bulma/bulma.sass";
+.card-content {
+  padding: 0.2rem;
+}
 
-// Styles go below this line...
+.card-seperation {
+  padding: 2rem
+}
 
-
+.seperation {
+  margin-top: 1rem;
+}
