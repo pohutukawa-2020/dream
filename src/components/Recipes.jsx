@@ -8,7 +8,7 @@ function Recipes () {
     <div className="Recipes">
       <h1>Recipes</h1>
       <RecipeList />
-      <AddRecipe />
+      {/* <AddRecipe /> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-$primary: #bada55;
+$primary: green;
 
 
 
@@ -7,7 +7,7 @@ $primary: #bada55;
 // Styles go below this line...
 
 .card { 
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
 
@@ -16,7 +16,7 @@ div.columns {
 } 
 
 p { 
-  font-family: calibri; 
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 10px; 
 } 
 
@@ -25,13 +25,30 @@ p {
 } 
 
 .card-content {
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
+.tabs {
+  position: fixed;
+  bottom: -25px;
+  width: 100%;
+  
+}
 .card-seperation {
   padding: 2rem
 }
 
 .seperation {
   margin-top: 1rem;
+}
+
+.image {
+  height: 200px; /* height of container */
+  overflow: hidden;
+  object-position: 100px 50px;
+}
+
+.field { 
+  margin-left: 55%;
+  margin-top: 1%;
 }
