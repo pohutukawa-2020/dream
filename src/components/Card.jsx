@@ -1,9 +1,11 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 
 function Card() {
     return (
       <>
       <div className="card">
+      <Link to="/recipe">
           <div className="card-image">
             <figure className="image is-3by1">
               <img src="https://picsum.photos/1500/1500" alt="Placeholder image"/>
@@ -21,6 +23,7 @@ function Card() {
                 <p>Prep time: 45 Mins</p>
               </div>
           </div>
+      </Link>
             </div>
             
             <div className="seperation">
