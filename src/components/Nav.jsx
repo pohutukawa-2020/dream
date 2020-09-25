@@ -15,19 +15,19 @@ export const Nav = (props) => {
           <ul>
           <li>
                 <Link to="/recipes">
-                  <span className="icon is-large"><i className="fas fa-book"></i></span>
+                  <div className="icon is-large"><i className="fas fa-book"></i></div>
 
                 </Link>
               </li>
             <li className="is-active">
-              <Link to='/' >
-                <span className="icon is-large"><i className="fas fa-calendar-alt"></i></span>
+              <Link to='/week' >
+                <div className="icon is-large"><i className="fas fa-calendar-alt"></i></div>
                 {/* <span>Planner</span> */}
               </Link>
             </li>
             <li>
               <Link to='/shopping' >
-                <span className="icon is-large"><i className="fas fa-shopping-cart"></i></span>
+                <div className="icon is-large"><i className="fas fa-shopping-cart"></i></div>
                 {/* <span>Shopping List</span> */}
 
               </Link>
@@ -45,19 +45,19 @@ export const Nav = (props) => {
               <li className="is-active">
 
                 <Link to='/recipes/add'>
-                  <span className="icon is-large"><i className="fas fa-book-medical"></i></span>
+                  <div className="icon is-large"><i className="fas fa-book-medical"></i></div>
                   {/* <span>Add Recipe</span> */}
                 </Link>
               </li>
               <li>
                 <Link to='/week'>
-                  <span className="icon is-large"><i className="fas fa-calendar-alt"></i></span>
+                  <div className="icon is-large"><i className="fas fa-calendar-alt"></i></div>
                   {/* <span>Planner</span> */}
                 </Link>
               </li>
               <li>
                 <Link to="/shopping">
-                  <span className="icon is-large"><i className="fas fa-shopping-cart"></i></span>
+                  <div className="icon is-large"><i className="fas fa-shopping-cart"></i></div>
                   {/* <span>Shopping List</span> */}
                 </Link>
               </li>
@@ -73,7 +73,7 @@ export const Nav = (props) => {
             <ul>
               <li>
                 <Link to="/recipes">
-                  <span className="icon is-large"><i className="fas fa-book"></i></span>
+                  <div className="icon is-large"><i className="fas fa-book"></i></div>
                 </Link>
               </li>
               <li>
@@ -83,7 +83,7 @@ export const Nav = (props) => {
               </li>
               <li className="is-active">
                 <Link to='/shopping/add'>
-                  <span className="icon is-large"><i className="fas fa-cart-plus"></i></span>
+                  <div className="icon is-large"><i className="fas fa-cart-plus"></i></div>
                 </Link>
               </li>
             </ul>
@@ -98,19 +98,19 @@ export const Nav = (props) => {
             <ul>
               <li>
                 <Link to="/recipes">
-                  <span className="icon is-large"><i className="fas fa-book"></i></span>
+                  <div className="icon is-large"><i className="fas fa-book"></i></div>
 
                 </Link>
               </li>
               <li>
                 <Link to='/week'>
-                  <span className="icon is-large"><i className="fas fa-calendar-alt"></i></span>
+                  <div className="icon is-large"><i className="fas fa-calendar-alt"></i></div>
 
                 </Link>
               </li>
               <li>
                 <Link to='/shopping'>
-                  <span className="icon is-large"><i className="fas fa-shopping-cart"></i></span>
+                  <div className="icon is-large"><i className="fas fa-shopping-cart"></i></div>
 
                 </Link>
               </li>

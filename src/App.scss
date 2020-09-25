@@ -1,5 +1,6 @@
 $primary: green;
-
+// $tabs-link-active-color: grey;  
+// $tabs-link-color: rgb(90, 49, 49);
 
 
 @import "../node_modules/bulma/bulma.sass";
@@ -32,6 +33,8 @@ p {
   position: fixed;
   bottom: -25px;
   width: 100%;
+  z-index:1;
+  
   
 }
 .card-seperation {
