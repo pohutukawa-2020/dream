@@ -1,30 +1,50 @@
 import React from "react"
 
+const image = "../../data/example-recipe[[5]]"
+
 function Card() {
     return (
       <>
-      <div class="card">
-          <div class="card-image">
-            <figure class="image is-2by1">
+      <div className="card">
+          <div className="card-image">
+            <figure className="image is-3by1">
               <img src="https://picsum.photos/1500/1500" alt="Placeholder image"/>
              </figure>
          </div>
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-5">Mexican Taco's</p>
+          <div className="card-content">
+            <div className="media mb-0">
+              <div className="media-content">
+                <p className="title is-5">Mexican Taco's</p>
               </div>
             </div>
 
-              <div class="content">
-                Serves 4 <br/>
-                Prep time: 45 Mins
+              <div className="content">
+                <p className="mb-0">Serves 4</p>
+                <p>Prep time: 45 Mins</p>
               </div>
           </div>
+            </div>
+            
+            <div className="seperation">
+            <div className="card">
+          <div className="card-image">
+            <figure className="image is-3by1">
+              <img src="https://picsum.photos/1500/1500" alt="Placeholder image"/>
+             </figure>
+         </div>
+          <div className="card-content">
+            <div className="media mb-0">
+              <div className="media-content">
+                <p className="title is-5">Mexican Taco's</p>
+              </div>
+            </div>
+
+              <div className="content">
+                <p className="mb-0">Serves 4</p>
+                <p>Prep time: 45 Mins</p>
+              </div>
+          </div>
+            </div>
             </div>
     </>
       );
