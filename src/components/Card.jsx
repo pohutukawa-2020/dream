@@ -1,6 +1,6 @@
 import React from "react"
 
-const image = "../../data/example-recipe[[5]]"
+import recipes from '../data/example recipe'
 
 function Card() {
     return (
