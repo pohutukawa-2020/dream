@@ -7,8 +7,9 @@ import {Nav} from "./Nav";
 import Recipes from "./Recipes";
 import Week from "./Week";
 import Shopping from "./Shopping";
-import ExpandedCard from "./ExpandedCard";
+import ExpandedRecipeCard from "./ExpandedRecipeCard";
 import AddRecipe from'./AddRecipe'
+import Seed from './Seed'
 
 function App () {
   return (
@@ -17,12 +18,13 @@ function App () {
         <h1><Link to="/">RECIPLAN APP!</Link></h1>
         <div className="routes">
           <Route path="/" component={Nav} />
+          <Route exact path='/' component={Seed} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/recipes/add" component={AddRecipe} />
           <Route exact path="/week" component={Week} />
           <Route exact path="/shopping" component={Shopping} />
           <Route exact path="/shopping/add" component={Shopping} />
-          <Route exact path="/recipe/:id" component={ExpandedCard} />
+          <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
         </div>
       </div>
     </>

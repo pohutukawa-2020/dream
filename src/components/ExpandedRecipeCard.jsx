@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import firebase from 'firebase/app'
 
-function ExpandedCard (props) {
+function ExpandedRecipeCard (props) {
   const [recipe, setRecipe] = useState('')
   const recipeId = props.match.params.id
 
@@ -28,7 +28,7 @@ function ExpandedCard (props) {
       <div class="card">
           <div class="card-image">
             <figure class="image is-2by1">
-              <img src="https://picsum.photos/1500/1500" alt="Placeholder image"/>
+              <img src={recipe.imagePath} alt={recipe.name}/>
               </figure>
           </div>
           <div class="card-content">
@@ -63,4 +63,4 @@ function ExpandedCard (props) {
   )
 }
 
-export default ExpandedCard
+export default ExpandedRecipeCard
