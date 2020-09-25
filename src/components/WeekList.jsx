@@ -1,29 +1,38 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import firebase from 'firebase'
 
 import WeekListItem from './WeekListItem'
 
-import meals from '../data/week-plan'
-import recipes from '../data/example-recipe'
+function useWeekDays() {
+  const [weekDays, setWeekDays] = useState([])
 
-const WeekList = (props) => {
-  const mondayMeal = meals.meals[0]
-  const images = recipes.recipes
+  useEffect(() => {
+    firebase
+    .firestore()
+    .collection('weekDays')
+    .onSnapshot(snapshot => {
+      const newWeekDays = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }))
+      setWeekDays(weekDays)
+    })
+  },[])
+
+  return weekDays
+}
+
+
+function WeekList() {
+  const weekDays = useWeekDays()
 
   return (
     <div className="WeekList">
       <div>
-  <h2>Monday {mondayMeal.day} </h2>
-      <WeekListItem />
+      <h2>List of days and meals</h2>
+      <WeekListItem days={weekDays} />
       </div>
-      
-      <h2>Tuesday {images[1].image}</h2>
-
-    
-      <h2>Wednesday</h2>
-      <h2>Thursday</h2>
-      <h2>Friday</h2>
-      <h2>Saturday</h2>
-      <h2>Sunday</h2> 
 
     </div>
   )

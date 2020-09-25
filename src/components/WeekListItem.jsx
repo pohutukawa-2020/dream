@@ -1,11 +1,13 @@
 import React from 'react'
 
-
-
-function WeekListItem () {
+function WeekListItem ({ days }) {
   return (
     <div className="WeekListItem">
-      <h4>WeekListItem</h4>
+      <h4>WeekListItems</h4>
+      <div>
+        <h2> Meal: {days[0]}</h2>
+      </div>
+
     </div>
   )
 }
