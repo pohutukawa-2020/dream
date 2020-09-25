@@ -1,5 +1,9 @@
 import React from 'react'
 
+import firebase from 'firebase/app'
+
+import { deleteRecipe } from '../utils'
+
 function RecipeListItem({ recipe }) {
   return (
     <div className='recipeEntry'>
@@ -21,6 +25,12 @@ function RecipeListItem({ recipe }) {
             </li>
           )}
         </ol>
+        <button onClick={e => {
+          e.preventDefault()
+          deleteRecipe(recipe)
+        }}>
+          Remove
+        </button>
       </div>
   )
 }

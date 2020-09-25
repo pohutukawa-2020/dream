@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import firebase from '../firebase'
+import firebase from 'firebase'
 
 import RecipeListItem from './RecipeListItem'
 
@@ -16,7 +16,6 @@ function useRecipes() {
           id: doc.id,
           ...doc.data()
         }))
-
         setRecipes(newRecipes)
       })
   },[])
