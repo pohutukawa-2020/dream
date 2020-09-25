@@ -9,23 +9,25 @@ export const Nav = (props) => {
     case '/week':
       navLinks = (
         
-        <div class="tabs is-toggle is-fullwidth is-large">
+        <div className="tabs is centered is-boxed is-fullwidth is-large">
   <ul>
-    <li class="is-active">
+    <li className="is-active">
       <Link to="/recipes">
-        <span class="icon"><i className="far fa-smile"></i></span>
-       
+        <span className="icon"><i class="fas fa-book"></i></span>
+        
+        <span>Recipes</span>   
         </Link>
     </li>
     <li>
-      <Link to='/shopping'>
-        <span class="icon"><i class="fas fa-lemon" ></i></span>
-        
+      <Link to='/week'>
+        <span className="icon"><i class="fas fa-calendar-alt"></i></span>
+        <span>Planner</span> 
       </Link>
     </li>
     <li>
-      <Link to='/week'>
-        <span class="icon"><i class="fas fa-fighter-jet" ></i></span>
+      <Link to='/shopping'>
+        <span className="icon"><i class="fas fa-shopping-cart"></i></span>
+        <span>Shopping List</span>
         
       </Link>
     </li>
@@ -37,53 +39,62 @@ export const Nav = (props) => {
     case '/recipes':
       navLinks = (
         <>
-              <div class="tabs is-toggle is-fullwidth is-large">
+              <div className="tabs is-fullwidth is-large is-boxed">
   <ul>
-    <li class="is-active">
-      <Link to="/recipes">
-        <span class="icon"><i className="far fa-smile"></i></span>
+    <li className="is-active">
       
-        </Link>
+        <Link to='/recipes/add'>
+        <span className="icon"><i class="fas fa-book-medical"></i></span>
+        <span>Add Recipe</span>
+      </Link>
     </li>
     <li>
       <Link to='/week'>
-        <span class="icon"><i class="fas fa-lemon" ></i></span>
-        
+        <span className="icon"><i class="fas fa-calendar-alt"></i></span>
+        <span>Planner</span>
       </Link>
     </li>
     <li>
-      <Link to='/shopping'>
-        <span class="icon"><i class="fas fa-fighter-jet" ></i></span>
-        
-      </Link>
+    <Link to="/shopping">
+        <span className="icon"><i class="fas fa-shopping-cart"></i></span>
+        <span>Shopping List</span>
+        </Link>
     </li>
     </ul>
     </div>
         </>
       )
       break
-    case '/list':
+    case '/shopping':
       navLinks = (
         <>
-              <div class="tabs is-toggle is-fullwidth is-large">
+              <div className="tabs is-fullwidth is-large is-boxed">
   <ul>
-    <li class="is-active">
+    <li className="is-active">
       <Link to="/recipes">
-        <span class="icon"><i className="far fa-smile"></i></span>
+        <span className="icon"><i class="fas fa-book"></i></span>
+        <br/>
+        <span>Recipes</span>
         
         </Link>
     </li>
     <li>
-      <Link to='/shopping'>
-        <span class="icon"><i class="fas fa-lemon" ></i></span>
-       
-      </Link>
-    </li>
-    <li>
-      <Link to='/week'>
-        <span class="icon"><i class="fas fa-fighter-jet" ></i></span>
+    <Link to='/week'>
+        <span className="icon"><i class="fas fa-calendar-alt"></i></span>
+        <br/>
+        <span>Planner</span>
         
       </Link>
+     
+    </li>
+    <li>
+    <Link to='/shopping/add'>
+        <span className="icon"><i class="fas fa-cart-plus"></i></span>
+        <br/>
+        <span>Add to List</span>
+
+      </Link>
+ 
     </li>
     </ul>
     </div>
@@ -93,24 +104,24 @@ export const Nav = (props) => {
     default:
       navLinks = (
         <>
-              <div class="tabs is-toggle is-fullwidth is-large">
+              <div className="tabs is-fullwidth is-large is-boxed">
   <ul>
-    <li class="is-active">
+    <li className="is-active">
       <Link to="/recipes">
-        <span class="icon"><i className="far fa-smile"></i></span>
-        <span>Pictures</span>
+        <span className="icon"><i class="fas fa-book"></i></span>
+        
         </Link>
     </li>
     <li>
-      <Link to='/shopping'>
-        <span class="icon"><i class="fas fa-lemon" ></i></span>
-        <span>Music</span>
+      <Link to='/week'>
+        <span className="icon"><i class="fas fa-shopping-cart"></i></span>
+        
       </Link>
     </li>
     <li>
-      <Link to='/week'>
-        <span class="icon"><i class="fas fa-fighter-jet" ></i></span>
-        <span>Videos</span>
+      <Link to='/shopping'>
+        <span className="icon"><i class="fas fa-shopping-cart"></i></span>
+       
       </Link>
     </li>
     </ul>
@@ -120,17 +131,16 @@ export const Nav = (props) => {
   }
   return (
     <>
-      <div className="nav">
+    
         
-      <div className="Nav">
-      <h1>Nav</h1>
-      <div className='navLinks'>
+      
+    
        {navLinks}
-      </div>
-    </div>
+      </>
+    
         
-      </div>
-    </>
+    
+    
   )
 }
 

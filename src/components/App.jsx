@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 
 import "../App.scss"; 
 
-import Nav from "./Nav";
+import {Nav} from "./Nav";
 import Recipes from "./Recipes";
 import Week from "./Week";
 import Shopping from "./Shopping";
