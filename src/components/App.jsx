@@ -19,7 +19,7 @@ function App() {
           Press Me!
         </a>
         <Route path="/" component={Nav} />
-        <Route path="/" component={Card} />
+        <Route exact path="/recipes" component={Card} />
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/week" component={Week} />
         <Route exact path="/shopping" component={Shopping} />
