@@ -25,6 +25,26 @@ export default function Seed () {
         }).catch((error) => {
             console.error("Error adding recipe: ", error)
         })
+
+      firebase
+        .firestore()
+        .collection('recipes')
+        .add(seedRecipes[2])
+        .then(() => {
+          console.log("Recipe successfully added!")
+          }).catch((error) => {
+              console.error("Error adding recipe: ", error)
+          })
+          firebase
+        .firestore()
+        .collection('recipes')
+        .add(seedRecipes[3])
+        .then(() => {
+          console.log("Recipe successfully added!")
+          }).catch((error) => {
+              console.error("Error adding recipe: ", error)
+          })
+    
   }
 
   function deleteClickHandler () {
@@ -46,4 +66,4 @@ export default function Seed () {
       <button onClick={seedClickHandler}>SEED RECIPES</button>
     </div>
   )
-}
+  }
