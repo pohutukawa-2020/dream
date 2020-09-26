@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import firebase from 'firebase'
 
-import RecipeListItem from './RecipeListItem'
+import RecipeCard from './RecipeCard'
+import Seed from './Seed'
 
 function useRecipes() {
   const [recipes, setRecipes] = useState([])
@@ -29,6 +30,7 @@ function RecipesList() {
   return (
     <div className="RecipesList">
       <h2>RecipesList</h2>
+      <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       <div className='recipeSort'>
         <label>Sort By:</label>{' '}
         <select>
@@ -39,7 +41,7 @@ function RecipesList() {
       <ul>
         {recipes.map(recipe => 
           <li key={recipe.id}>
-            <RecipeListItem recipe={recipe} />
+            <RecipeCard recipe={recipe} />
           </li>
         )}
       </ul>

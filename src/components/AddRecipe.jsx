@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 
 import firebase from 'firebase/app'
 
-import MultipleIngredientTest from './MultipleIngredientTest'
+import { addRecipe } from '../utils'
+
+// import MultipleIngredientTest from './MultipleIngredientTest'
 
 const AddRecipe = () => {
   const [name, setName] = useState('')
+  const [imgPath, setImgPath] = useState('')
   const [serves, setServes] = useState('')
   const [prepTime, setPrepTime] = useState('')
   const [ingredients, setIngredients] = useState([])
@@ -15,24 +18,23 @@ const AddRecipe = () => {
   function onSubmitHandler(e) {
     e.preventDefault()
 
-    firebase
-      .firestore()
-      .collection('recipes')
-      .add({
-        name,
-        serves,
-        prepTime,
-        ingredients: ingredients,
-        method: method
-      })
-      .then(() => {
-        setName('')
-        setServes('')
-        setPrepTime('')
-        setIngredients([])
-        setMethod([])
-      })
+    const newRecipe = {
+      name,
+      imgPath,
+      serves,
+      prepTime,
+      ingredients,
+      method
     }
+
+    addRecipe(newRecipe)
+    setName('')
+    setImgPath('')
+    setServes('')
+    setPrepTime('')
+    setIngredients([])
+    setMethod([])
+  }
 
   return (
     <>
@@ -41,6 +43,10 @@ const AddRecipe = () => {
       <div>
         <label>Title</label>
         <input type='text' value={name} onChange={e => setName(e.currentTarget.value)} />
+      </div>
+      <div>
+        <label>Image URL</label>
+        <input type='text' value={imgPath} onChange={e => setImgPath(e.currentTarget.value)} />
       </div>
       <div>
         <label>Serves</label>

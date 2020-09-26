@@ -1,5 +1,6 @@
 $primary: green;
-
+// $tabs-link-active-color: grey;  
+// $tabs-link-color: rgb(90, 49, 49);
 
 
 @import "../node_modules/bulma/bulma.sass";
@@ -30,8 +31,10 @@ p {
 
 .tabs {
   position: fixed;
-  bottom: -25px;
+  bottom: 0px;
   width: 100%;
+  z-index:1;
+  
   
 }
 .card-seperation {
@@ -51,4 +54,7 @@ p {
 .field { 
   margin-left: 55%;
   margin-top: 1%;
+}
+.body {
+  margin-bottom: 10%;
 }
