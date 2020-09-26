@@ -1,85 +1,85 @@
-import React, { useState, useContext } from 'react'
+// import React, { useState, useContext } from 'react'
 
-import { RecipeContext } from './RecipeContext'
+// import { RecipeContext } from './RecipeContext'
 
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
 
-function EditRecipe ({props}) {
-  const [recipes] = useContext(RecipeContext)
-  const recipeId = props.match.params.id
-  const recipe = recipes.find(x => x.id === recipeId)
+// function EditRecipe ({props}) {
+//   const [recipes] = useContext(RecipeContext)
+//   const recipeId = props.match.params.id
+//   const recipe = recipes.find(x => x.id === recipeId)
 
-  const [name, setName] = useState('recipe.name')
-  const [serves, setServes] = useState('recipe.serves')
-  const [prepTime, setPrepTime] = useState('recipe.prepTime')
-  const [ingredients, setIngredients] = useState(['recipe.ingredients'])
-  const [method, setMethod] = useState(['recipe.method'])
-  // const [newIngredient, setNewIngredient] = useState('')
+//   const [name, setName] = useState('recipe.name')
+//   const [serves, setServes] = useState('recipe.serves')
+//   const [prepTime, setPrepTime] = useState('recipe.prepTime')
+//   const [ingredients, setIngredients] = useState(['recipe.ingredients'])
+//   const [method, setMethod] = useState(['recipe.method'])
+//   // const [newIngredient, setNewIngredient] = useState('')
 
-  function onSubmitHandler(e) {
-    e.preventDefault()
+//   function onSubmitHandler(e) {
+//     e.preventDefault()
 
-    firebase
-      .firestore()
-      .collection('recipes')
-      .doc(recipe.id)
-      .update({
-        name,
-        serves,
-        prepTime,
-        ingredients: ingredients,
-        method: method
-      })
-      .then(() => {
-        setName('')
-        setServes('')
-        setPrepTime('')
-        setIngredients([])
-        setMethod([])
-      })
-    }
+//     firebase
+//       .firestore()
+//       .collection('recipes')
+//       .doc(recipe.id)
+//       .update({
+//         name,
+//         serves,
+//         prepTime,
+//         ingredients: ingredients,
+//         method: method
+//       })
+//       .then(() => {
+//         setName('')
+//         setServes('')
+//         setPrepTime('')
+//         setIngredients([])
+//         setMethod([])
+//       })
+//     }
 
-  return (
-    <>
-      <div className="card">
-          <div className="card-image">
-            <figure className="image is-2by1">
-              <img src={recipe.imagePath} alt={recipe.name}/>
-              </figure>
-          </div>
+//   return (
+//     <>
+//       <div className="card">
+//           <div className="card-image">
+//             <figure className="image is-2by1">
+//               <img src={recipe.imagePath} alt={recipe.name}/>
+//               </figure>
+//           </div>
           
-          <div className="card-content">
-            <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                </figure>
-              </div>
-              <div className="media-content">
-                <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
-              </div>
-          </div>
-              <div className="content">
-                Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
-                Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
-              </div>
-              <div className="ingredients">
-                Ingredients needed:<br/><br/>
-                {recipe.ingredients && recipe.ingredients.map(ingredient => (
-                  <p>{ingredient}</p>
-                ))}
-              </div>
-              <div className="Method">
-              <br/>Method:<br/><br/>
-                {recipe.method && recipe.method.map(step => (
-                  <p>{step}</p>
-                ))}
-              </div>
-          </div>
+//           <div className="card-content">
+//             <div className="media">
+//               <div className="media-left">
+//                 <figure className="image is-48x48">
+//                 </figure>
+//               </div>
+//               <div className="media-content">
+//                 <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
+//               </div>
+//           </div>
+//               <div className="content">
+//                 Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
+//                 Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
+//               </div>
+//               <div className="ingredients">
+//                 Ingredients needed:<br/><br/>
+//                 {recipe.ingredients && recipe.ingredients.map(ingredient => (
+//                   <p>{ingredient}</p>
+//                 ))}
+//               </div>
+//               <div className="Method">
+//               <br/>Method:<br/><br/>
+//                 {recipe.method && recipe.method.map(step => (
+//                   <p>{step}</p>
+//                 ))}
+//               </div>
+//           </div>
           
-      </div>
-    </>
-  )
-}
+//       </div>
+//     </>
+//   )
+// }
 // function EditRecipe ({props}) {
   
 //   const recipeId = props.match.params.id
@@ -151,4 +151,4 @@ function EditRecipe ({props}) {
 //   )
 // }
 
-export default EditRecipe
+// export default EditRecipe
