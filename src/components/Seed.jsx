@@ -35,6 +35,7 @@ export default function Seed () {
           }).catch((error) => {
               console.error("Error adding recipe: ", error)
           })
+          
           firebase
         .firestore()
         .collection('recipes')
