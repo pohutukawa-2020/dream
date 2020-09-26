@@ -8,7 +8,7 @@ export const RecipeProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    firebase
+    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('recipes')
       .onSnapshot(snapshot => {
@@ -18,6 +18,8 @@ export const RecipeProvider = ({ children }) => {
         }))
         setRecipes(newRecipes)
       })
+
+    return () => unsubscribe() // note unsubscribe added in case funny behaviour
   },[])
 
   return (
@@ -26,7 +28,3 @@ export const RecipeProvider = ({ children }) => {
     </RecipeContext.Provider>
   )
 }
-// export const updateUserContext = (setUser) => {
-//   const { username, isAdmin, gardenId } = getDecodedToken()
-//   return isAuthenticated() ? setUser({ username, isAdmin, gardenId }) : null
-// }
