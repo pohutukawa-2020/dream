@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { WeekContext } from './WeekContext'
 import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
-import { Router } from 'react-router-dom'
 
 function WeekList() {
   const [week] = useContext(WeekContext)
