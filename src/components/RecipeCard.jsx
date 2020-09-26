@@ -17,8 +17,8 @@ function RecipeCard ({ recipe }) {
                     <p className="title is-5 mb-0">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
                     <div className="field is-grouped">
                       <p className="control">
-                        <button class="button is-link is-small is-rounded">
-                          <i class="far fa-calendar-plus"></i>
+                        <button className="button is-link is-small is-rounded">
+                          <i className="far fa-calendar-plus"></i>
                         </button>
                       </p>
                       <p className="control">

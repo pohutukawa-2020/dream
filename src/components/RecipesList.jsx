@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 import firebase from 'firebase'
 
-import RecipeListItem from './RecipeListItem'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
@@ -43,7 +42,6 @@ function RecipesList() {
         {recipes.map(recipe => 
           <li key={recipe.id}>
             <RecipeCard recipe={recipe} />
-            {/* <RecipeListItem recipe={recipe} /> */}
           </li>
         )}
       </ul>

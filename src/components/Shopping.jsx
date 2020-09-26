@@ -7,6 +7,7 @@ function Shopping () {
     <div className="Shopping">
       <h1>Shopping</h1>
       <ShoppingList />
+    
     </div>
   )
 }

@@ -58,6 +58,7 @@ function ExpandedRecipeCard (props) {
                 ))}
               </div>
           </div>
+          
       </div>
     </>
   )
