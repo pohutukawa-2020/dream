@@ -15,20 +15,20 @@ function RecipeCard ({ recipe }) {
                 <div className="media mb-0">
                   <div className="media-content">
                     <p className="title is-5 mb-0">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
-                    <div class="field is-grouped">
-                      <p class="control">
+                    <div className="field is-grouped">
+                      <p className="control">
                         <button class="button is-link is-small is-rounded">
                           <i class="far fa-calendar-plus"></i>
                         </button>
                       </p>
-                      <p class="control">
-                        <button class="button is-small is-rounded is-primary">
+                      <p className="control">
+                        <button className="button is-small is-rounded is-primary">
                         <i class="far fa-edit"></i>
                         </button>
                       </p>
-                      <p class="control">
-                        <button class="button is-danger is-small is-rounded">
-                        <i class="fas fa-trash-alt"></i>
+                      <p className="control">
+                        <button className="button is-danger is-small is-rounded">
+                        <i className="fas fa-trash-alt"></i>
                         </button>
                       </p>
                     </div>
