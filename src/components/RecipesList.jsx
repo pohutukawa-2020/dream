@@ -1,35 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 
-import firebase from '../firebase'
+import { RecipeContext } from './RecipeContext'
+import RecipeCard from './RecipeCard'
+import Seed from './Seed'
 
-import RecipeListItem from './RecipeListItem'
-
-function useRecipes() {
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection('recipes')
-      .onSnapshot(snapshot => {
-        const newRecipes = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-
-        setRecipes(newRecipes)
-      })
-  },[])
-
-  return recipes
-}
 
 function RecipesList() {
-  const recipes = useRecipes()
-
+  const [recipes] = useContext(RecipeContext)
+  
   return (
+    <>
     <div className="RecipesList">
-      <h2>RecipesList</h2>
+      {/* <h2>RecipesList</h2> */}
+      <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       <div className='recipeSort'>
         <label>Sort By:</label>{' '}
         <select>
@@ -39,10 +22,13 @@ function RecipesList() {
       </div>
       <ul>
         {recipes.map(recipe => 
-          <RecipeListItem recipe={recipe} />
+          <li key={recipe.id}>
+            <RecipeCard recipe={recipe} />
+          </li>
         )}
       </ul>
     </div>
+    </>
   )
 }
 

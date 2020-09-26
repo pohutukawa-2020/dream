@@ -1,33 +1,48 @@
+import '../App.scss'
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
-import "../App.scss"; 
 
-import Nav from "./Nav";
+import {Nav} from "./Nav";
 import Recipes from "./Recipes";
 import Week from "./Week";
 import Shopping from "./Shopping";
+import ExpandedRecipeCard from "./ExpandedRecipeCard";
+import AddRecipe from'./AddRecipe'
 
-function App() {
+function App () {
   return (
-    <>
-    <div className="App">
-      <h1>RECIPLAN APP!</h1>
-      <div className="routes">
-        <a href="#" className="button is-primary">
-          Press Me!
-        </a>
-        <Route path="/" component={Nav} />
-        <Route exact path="/recipes" component={Recipes} />
-        <Route exact path="/week" component={Week} />
-        <Route exact path="/shopping" component={Shopping} />
-      </div>
+    <> 
+    <section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ReciPlan
+      </h1>
+      <h2 class="subtitle">
+        ReciPlan your week...
+      </h2>
     </div>
-  
-    
-  
-  </>
-  );
+  </div>
+</section>
+      <div className="App">
+        {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
+        <div className="routes">
+          {/* <Route path="/" component={Header} /> */}
+          <Route path="/" component={Nav} />
+          <div className='ccontent'>
+            <Route exact path='/'><Redirect to='/recipes'/></Route>
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/recipes/add" component={AddRecipe} />
+            <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
+            <Route exact path="/week" component={Week} />
+            <Route exact path="/shopping" component={Shopping} />
+            <Route exact path="/shopping/add" component={Shopping} />
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App

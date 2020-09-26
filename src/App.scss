@@ -1,12 +1,71 @@
-$primary: #bada55;
+// $primary: ;
+$tabs-link-padding: 0.3em 0.3em;
+$tabs-boxed-link-radius: 0px;
+$tabs-toggle-link-radius: 0px;
 
 
 @import "../node_modules/bulma/bulma.sass";
 
 // Styles go below this line...
-.card{
-  width: auto;
-  height: 200px
+
+.card { 
+  width: 95%;
+  margin: auto;
 }
 
+div.columns { 
+  margin-top: 20px; 
+} 
 
+p { 
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 10px; 
+} 
+
+.card-header-title { 
+  font-size: 20px; 
+} 
+
+.card-content {
+  padding: 0.5rem;
+}
+
+.tabs {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index:1;
+  
+  
+}
+.card-seperation {
+  padding: 2rem
+}
+
+.seperation {
+  margin-top: 1rem;
+}
+
+.image {
+  height: 200px; /* height of container */
+  overflow: hidden;
+  object-position: 100px 50px;
+}
+
+.field { 
+  margin-left: 55%;
+  margin-top: 1%;
+}
+.navp {
+  margin-top: -10px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.hero-body {
+  padding: 1rem;
+}
+
+.ccontent {
+  margin-bottom: 24%;
+}
