@@ -10,13 +10,27 @@ import Shopping from "./Shopping";
 import ExpandedRecipeCard from "./ExpandedRecipeCard";
 import AddRecipe from'./AddRecipe'
 import Seed from './Seed'
+import Header from './Header'
 
 function App () {
   return (
     <> 
+    <section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ReciPlan
+      </h1>
+      <h2 class="subtitle">
+        ReciPlan your week...
+      </h2>
+    </div>
+  </div>
+</section>
       <div className="App">
         {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
         <div className="routes">
+          {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
           <Route exact path='/' component={Seed} />
           <Route exact path="/recipes" component={Recipes} />
