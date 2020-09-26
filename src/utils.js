@@ -24,6 +24,19 @@ export function addRecipe (Recipe) {
           console.error("Error adding recipe: ", error)
       })
 }
+export function UpdateRecipe (recipe) {
+  firebase
+    .firestore()
+    .collection('recipes')
+    .update({ recipe
+    })
+    .then(() => {
+      console.log("Recipe successfully added!")
+      }).catch((error) => {
+          console.error("Error adding recipe: ", error)
+      })
+}
+
 
 export function updateRecipe (Recipe) {
   firebase
