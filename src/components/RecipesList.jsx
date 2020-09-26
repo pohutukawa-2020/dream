@@ -1,32 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import firebase from 'firebase'
 
+import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
-function useRecipes() {
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection('recipes')
-      .onSnapshot(snapshot => {
-        const newRecipes = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }))
-        setRecipes(newRecipes)
-      })
-  },[])
-
-  return recipes
-}
 
 function RecipesList() {
-  const recipes = useRecipes()
-
+  const [recipes] = useContext(RecipeContext)
+  
   return (
     <div className="RecipesList">
       <h2>RecipesList</h2>
