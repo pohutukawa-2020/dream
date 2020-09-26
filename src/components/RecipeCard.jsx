@@ -21,14 +21,14 @@ function RecipeCard ({ recipe }) {
                           <i className="far fa-calendar-plus"></i>
                         </button>
                       </p>
-                      <p class="control">
-                        <button class="button is-small is-rounded is-primary">
+                      <p className="control">
+                        <button className="button is-small is-rounded is-primary">
                         <i class="far fa-edit"></i>
                         </button>
                       </p>
-                      <p class="control">
-                        <button class="button is-danger is-small is-rounded">
-                        <i class="fas fa-trash-alt"></i>
+                      <p className="control">
+                        <button className="button is-danger is-small is-rounded">
+                        <i className="fas fa-trash-alt"></i>
                         </button>
                       </p>
                     </div>

@@ -15,7 +15,7 @@ function App () {
   return (
     <> 
       <div className="App">
-        <h1><Link to="/">RECIPLAN APP!</Link></h1>
+        {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
         <div className="routes">
           <Route path="/" component={Nav} />
           <Route exact path='/' component={Seed} />
