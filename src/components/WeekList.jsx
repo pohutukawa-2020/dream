@@ -9,15 +9,15 @@ function useWeekDays() {
 
   useEffect(() => {
     firebase
-    .firestore()
-    .collection('weekDays')
-    .onSnapshot(snapshot => {
-      const newWeekDays = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }))
-      setWeekDays(weekDays)
-    })
+      .firestore()
+      .collection('weekDays')
+      .onSnapshot(snapshot => {
+        const newWeekDays = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        setWeekDays(newWeekDays)
+      })
   },[])
 
   return weekDays
@@ -31,7 +31,12 @@ function WeekList() {
     <div className="WeekList">
       <div>
       <h2>List of days and meals</h2>
-      <WeekListItem days={weekDays} />
+      {weekDays.map(weekDay => 
+        <p key={weekDay.id}>
+          <WeekListItem weekDay={weekDay} />
+        </p>
+      )}
+
       </div>
 
     </div>

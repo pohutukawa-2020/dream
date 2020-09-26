@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WeekListItem ({ weekDay }) {
+function WeekListItemMatt ({ weekDay }) {
   return (
     <div className="WeekListItem">
       <h4>WeekListItems</h4>
@@ -12,4 +12,4 @@ function WeekListItem ({ weekDay }) {
   )
 }
 
-export default WeekListItem
+export default WeekListItemMatt
