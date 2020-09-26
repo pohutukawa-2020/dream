@@ -21,10 +21,10 @@ function App () {
           <Route exact path='/' component={Seed} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/recipes/add" component={AddRecipe} />
+          <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
           <Route exact path="/week" component={Week} />
           <Route exact path="/shopping" component={Shopping} />
           <Route exact path="/shopping/add" component={Shopping} />
-          <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
         </div>
       </div>
     </>
