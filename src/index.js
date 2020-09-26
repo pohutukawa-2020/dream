@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import App from './components/App'
 import { RecipeProvider } from './components/RecipeContext'
+import { WeekProvider } from 'components/WeekContext'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps",
@@ -23,7 +24,9 @@ firebase.analytics()
 ReactDOM.render(
   <Router>
     <RecipeProvider>
+    <WeekProvider>
       <App />
+      </WeekProvider>
     </RecipeProvider>
   </Router>,
   document.getElementById('root')
