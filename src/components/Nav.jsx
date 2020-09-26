@@ -154,7 +154,7 @@ export const Nav = (props) => {
                 <Link to="/recipes">
                 <div>
                   <div className="icon is-centered is-large"><i className="fas fa-book"></i></div>
-                  <div><p className='navp'>  Recipes</p></div>
+                  <div><p className='navp'>Recipes</p></div>
                   </div>
                 </Link>
               </li>
@@ -181,10 +181,9 @@ export const Nav = (props) => {
   }
   return (
     <>
-    
-<div>{navLinks}</div>
-      
+      <div>
+        {navLinks}
+      </div>
     </>
-
   )
 }

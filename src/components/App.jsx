@@ -30,13 +30,15 @@ function App () {
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
-          <Route exact path='/'><Redirect to='/recipes'/></Route>
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipes/add" component={AddRecipe} />
-          <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
-          <Route exact path="/week" component={Week} />
-          <Route exact path="/shopping" component={Shopping} />
-          <Route exact path="/shopping/add" component={Shopping} />
+          <div className='ccontent'>
+            <Route exact path='/'><Redirect to='/recipes'/></Route>
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/recipes/add" component={AddRecipe} />
+            <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
+            <Route exact path="/week" component={Week} />
+            <Route exact path="/shopping" component={Shopping} />
+            <Route exact path="/shopping/add" component={Shopping} />
+          </div>
         </div>
       </div>
     </>
