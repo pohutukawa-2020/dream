@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import firebase from 'firebase'
+
+import { RecipeContext } from './RecipeContext'
 
 import WeekListItem from './WeekListItem'
 
 function WeekList() {
+  const something = useContext(RecipeContext)
+
   const [week, setWeek] = useState({
     monday: '',
     tuesday: '',
