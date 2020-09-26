@@ -1,12 +1,12 @@
 import React, { useContext } from "react"
-
+import {Link} from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
-
+  
   return (
     <>
       <div className="card">
@@ -15,6 +15,7 @@ function ExpandedRecipeCard (props) {
               <img src={recipe.imagePath} alt={recipe.name}/>
               </figure>
           </div>
+          <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
@@ -24,6 +25,11 @@ function ExpandedRecipeCard (props) {
               <div className="media-content">
                 <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
               </div>
+          </div>
+          <div>
+            <Link to={`/recipe/edit/${recipeId}`}>
+              <button>Edit Recipe</button>
+            </Link>
           </div>
               <div className="content">
                 Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
