@@ -1,6 +1,6 @@
 import '../App.scss'
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 
 
 import {Nav} from "./Nav";
@@ -9,8 +9,6 @@ import Week from "./Week";
 import Shopping from "./Shopping";
 import ExpandedRecipeCard from "./ExpandedRecipeCard";
 import AddRecipe from'./AddRecipe'
-import Seed from './Seed'
-import Header from './Header'
 
 function App () {
   return (
@@ -32,7 +30,7 @@ function App () {
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
-          <Route exact path='/' component={Seed} />
+          <Route exact path='/'><Redirect to='/recipes'/></Route>
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/recipes/add" component={AddRecipe} />
           <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />

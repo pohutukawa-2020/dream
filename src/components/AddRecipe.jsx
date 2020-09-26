@@ -11,7 +11,7 @@ const AddRecipe = (props) => {
   const [prepTime, setPrepTime] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
-  const [newIngredient, setNewIngredient] = useState('')
+  // const [newIngredient, setNewIngredient] = useState('')
 
   function onSubmitHandler(e) {
     e.preventDefault()
@@ -44,7 +44,7 @@ const AddRecipe = (props) => {
     <div className="card">
         <div className="card-image">
           <figure className="image is-2by1">
-              <img src="https://icon-library.com/images/photo-placeholder-icon/photo-placeholder-icon-6.jpg" alt="add your image" />
+              <img src="https://icon-library.com/images/photo-placeholder-icon/photo-placeholder-icon-6.jpg" alt="add your meal" />
                 <button class="button is-link is-small is-rounded">
                   <i class="fas fa-plus"></i>
                 </button>
