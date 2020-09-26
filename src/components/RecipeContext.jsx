@@ -4,7 +4,7 @@ import firebase from 'firebase/app'
 
 export const RecipeContext = createContext()
 
-export const RecipeProvider = ({ reducer, initialState, children }) => {
+export const RecipeProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
