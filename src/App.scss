@@ -1,4 +1,4 @@
-$primary: green;
+// $primary: ;
 $tabs-link-padding: 0.3em 0.3em;
 $tabs-boxed-link-radius: 0px;
 $tabs-toggle-link-radius: 0px;
@@ -59,4 +59,13 @@ p {
 .navp {
   margin-top: -10px;
   text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.hero-body {
+  padding: 1rem;
+}
+
+.ccontent {
+  margin-bottom: 24%;
 }
