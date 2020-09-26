@@ -52,6 +52,23 @@ const seedRecipes = [
     imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066'
   },
   {
+    name: 'Roasted root veg',
+    serves: 'Serves 12',
+    prepTime: '1 Hour cooking, 15 minutes prep - Not too tricky',
+    ingredients: [
+      '3 kg Maris Piper potatoes',
+      '16 carrots',
+      '12 parsnips',
+      '1 bulb of garlic',
+      '½ a bunch of fresh rosemary , (15g)'
+    ],
+    method: [
+      'Preheat the oven to 190°C/375°F/gas 5. Peel the potatoes, then scrub, top and tail the carrots and parsnips, cutting any larger ones in half lengthways. Cook in a large pan (or two) of boiling salted water for 8 minutes, then drain in a colander and leave to steam dry. Pick out the carrots and parsnips and put to one side, then give the colander a few light shakes to chuff up the potato edges.',
+      'Add 4 tablespoons of olive oil (or turkey fat) to two large roasting trays and season each with sea salt and black pepper. Squash the garlic bulb, then divide the cloves between the trays, along with the rosemary sprigs. Tip in the veg, add a good swig of red wine vinegar and toss to coat. Roast for 40 minutes, then remove from the oven and lightly squash with a fish slice to burst the skins. Place back in the oven for a further 20 minutes, or until golden and crisp.'
+    ],
+    imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/83911434.jpg?tr=w-800,h-1066'
+  },
+  {
     name: 'Roast Chicken With Couscous',
     serves: 'Serves Aliens',
     prepTime: '90 Minutes',

@@ -26,6 +26,11 @@ function ExpandedRecipeCard (props) {
                 <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
               </div>
           </div>
+          <div>
+            <Link to={`/recipe/edit/${recipeId}`}>
+              <button>Edit Recipe</button>
+            </Link>
+          </div>
               <div className="content">
                 Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}

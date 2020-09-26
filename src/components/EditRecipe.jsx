@@ -1,12 +1,44 @@
 import React, { useState, useContext } from 'react'
 
-import firebase from 'firebase/app'
 import { RecipeContext } from './RecipeContext'
-function EditRecipe(props) {
+
+import firebase from 'firebase/app'
+
+function EditRecipe ({props}) {
   const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
-  
+
+  const [name, setName] = useState('recipe.name')
+  const [serves, setServes] = useState('recipe.serves')
+  const [prepTime, setPrepTime] = useState('recipe.prepTime')
+  const [ingredients, setIngredients] = useState(['recipe.ingredients'])
+  const [method, setMethod] = useState(['recipe.method'])
+  // const [newIngredient, setNewIngredient] = useState('')
+
+  function onSubmitHandler(e) {
+    e.preventDefault()
+
+    firebase
+      .firestore()
+      .collection('recipes')
+      .doc(recipe.id)
+      .update({
+        name,
+        serves,
+        prepTime,
+        ingredients: ingredients,
+        method: method
+      })
+      .then(() => {
+        setName('')
+        setServes('')
+        setPrepTime('')
+        setIngredients([])
+        setMethod([])
+      })
+    }
+
   return (
     <>
       <div className="card">
