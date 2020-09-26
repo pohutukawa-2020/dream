@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+
+import { RecipeContext } from './RecipeContext'
 
 import firebase from 'firebase/app'
 
-function EditRecipe ({recipe}) {
-  const [name, setName] = useState('')
-  const [serves, setServes] = useState('')
-  const [prepTime, setPrepTime] = useState('')
-  const [ingredients, setIngredients] = useState([])
-  const [method, setMethod] = useState([])
-  const [newIngredient, setNewIngredient] = useState('')
+function EditRecipe ({props}) {
+  const [recipes] = useContext(RecipeContext)
+  const recipeId = props.match.params.id
+  const recipe = recipes.find(x => x.id === recipeId)
+
+  const [name, setName] = useState('recipe.name')
+  const [serves, setServes] = useState('recipe.serves')
+  const [prepTime, setPrepTime] = useState('recipe.prepTime')
+  const [ingredients, setIngredients] = useState(['recipe.ingredients'])
+  const [method, setMethod] = useState(['recipe.method'])
+  // const [newIngredient, setNewIngredient] = useState('')
 
   function onSubmitHandler(e) {
     e.preventDefault()

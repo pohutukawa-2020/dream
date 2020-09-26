@@ -13,15 +13,27 @@ export function deleteRecipe (recipe) {
       })
 }
 
-export function addRecipe (newRecipe) {
+export function addRecipe (Recipe) {
   firebase
     .firestore()
     .collection('recipes')
-    .add(newRecipe)
+    .add(Recipe)
     .then(() => {
       console.log("Recipe successfully added!")
       }).catch((error) => {
           console.error("Error adding recipe: ", error)
+      })
+}
+
+export function updateRecipe (Recipe) {
+  firebase
+    .firestore()
+    .collection('recipes')
+    .update(Recipe)
+    .then(() => {
+      console.log("Recipe successfully updated!")
+      }).catch((error) => {
+          console.error("Error updating recipe: ", error)
       })
 }
 
