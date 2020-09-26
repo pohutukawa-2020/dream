@@ -11,7 +11,7 @@ export const Nav = (props) => {
     case '/week':
       navLinks = (
 
-        <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle">
+        <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
           <ul>
           <li>
                 <Link to="/recipes">
@@ -40,9 +40,9 @@ export const Nav = (props) => {
     case '/recipes':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle">
+          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
             <ul>
-              <li className="is-active">
+              <li className="is-active ">
 
                 <Link to='/recipes/add'>
                   <div className="icon is-large"><i className="fas fa-book-medical"></i></div>
@@ -69,7 +69,7 @@ export const Nav = (props) => {
     case '/shopping':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle">
+          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -94,7 +94,7 @@ export const Nav = (props) => {
       case'/':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle">
+          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -122,7 +122,7 @@ export const Nav = (props) => {
     default:
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle">
+          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -149,8 +149,9 @@ export const Nav = (props) => {
   }
   return (
     <>
-
-      {navLinks}
+    
+<div>{navLinks}</div>
+      
     </>
 
   )

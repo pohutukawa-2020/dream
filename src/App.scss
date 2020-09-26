@@ -31,7 +31,7 @@ p {
 
 .tabs {
   position: fixed;
-  bottom: -25px;
+  bottom: 0px;
   width: 100%;
   z-index:1;
   
@@ -54,4 +54,7 @@ p {
 .field { 
   margin-left: 55%;
   margin-top: 1%;
+}
+.body {
+  margin-bottom: 10%;
 }
