@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
-
-import firebase from 'firebase'
+import React, { useContext } from 'react'
 
 import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
@@ -11,8 +9,9 @@ function RecipesList() {
   const [recipes] = useContext(RecipeContext)
   
   return (
+    <>
     <div className="RecipesList">
-      <h2>RecipesList</h2>
+      {/* <h2>RecipesList</h2> */}
       <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       <div className='recipeSort'>
         <label>Sort By:</label>{' '}
@@ -29,6 +28,7 @@ function RecipesList() {
         )}
       </ul>
     </div>
+    </>
   )
 }
 
