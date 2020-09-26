@@ -6,30 +6,10 @@ import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
-// function useRecipes() {
-//   const [recipes, setRecipes] = useState([])
-
-//   useEffect(() => {
-//     firebase
-//       .firestore()
-//       .collection('recipes')
-//       .onSnapshot(snapshot => {
-//         const newRecipes = snapshot.docs.map(doc => ({
-//           id: doc.id,
-//           ...doc.data()
-//         }))
-//         setRecipes(newRecipes)
-//       })
-//   },[])
-
-//   return recipes
-// }
 
 function RecipesList() {
-  // const recipes = useRecipes()
   const [recipes] = useContext(RecipeContext)
-  console.log("in recipe list", recipes)
-
+  
   return (
     <div className="RecipesList">
       <h2>RecipesList</h2>

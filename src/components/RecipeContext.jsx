@@ -17,7 +17,6 @@ export const RecipeProvider = ({ reducer, initialState, children }) => {
           ...doc.data()
         }))
         setRecipes(newRecipes)
-        console.log("from context: ", newRecipes)
       })
   },[])
 

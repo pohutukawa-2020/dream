@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useContext } from "react"
 
-import firebase from 'firebase/app'
+import { RecipeContext } from './RecipeContext'
 
 function ExpandedRecipeCard (props) {
-  const [recipe, setRecipe] = useState('')
+  const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
-
-  useEffect(() => {
-    firebase
-      .firestore()
-      .collection('recipes')
-      .doc(recipeId)
-      .get()
-      .then(doc => {
-        setRecipe(doc.data())
-      })
-      .catch(error => {
-        console.error("Error getting recipe: ", error)
-      })
-  },[])
-
-  // console.log(props.location.recipe)
-  console.log(recipe.method)
+  const recipe = recipes.find(x => x.id === recipeId)
 
   return (
     <>

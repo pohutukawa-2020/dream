@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 
-import firebase from 'firebase/app'
-
 import { addRecipe } from '../utils'
 
 // import MultipleIngredientTest from './MultipleIngredientTest'
 
-const AddRecipe = () => {
+const AddRecipe = (props) => {
   const [name, setName] = useState('')
   const [imgPath, setImgPath] = useState('')
   const [serves, setServes] = useState('')
@@ -28,12 +26,14 @@ const AddRecipe = () => {
     }
 
     addRecipe(newRecipe)
-    setName('')
-    setImgPath('')
-    setServes('')
-    setPrepTime('')
-    setIngredients([])
-    setMethod([])
+      setName('')
+      setImgPath('')
+      setServes('')
+      setPrepTime('')
+      setIngredients([])
+      setMethod([])
+
+    props.history.push('/recipes')
   }
 
   return (
