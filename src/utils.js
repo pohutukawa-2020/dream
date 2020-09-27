@@ -1,29 +1,31 @@
 import firebase from 'firebase/app'
 
-export function deleteRecipe (recipe) {
+export function addRecipe (Recipe) { // USING THIS ONE
   firebase
     .firestore()
     .collection('recipes')
-    .doc(recipe.id)
+    .add(Recipe)
+    .then(firestoreRef => {
+      console.log("Recipe successfully added!", firestoreRef)
+      }).catch((error) => {
+          console.error("Error adding recipe: ", error)
+      })
+}
+
+export const deleteRecipe = (recipeId, props ) => { //USING THIS ONE
+  firebase
+    .firestore()
+    .collection('recipes')
+    .doc(recipeId)
     .delete()
     .then(() => {
       console.log("Recipe successfully deleted!")
       }).catch((error) => {
           console.error("Error deleting recipe: ", error)
       })
+  props.history.push('/recipes')
 }
 
-export function addRecipe (Recipe) {
-  firebase
-    .firestore()
-    .collection('recipes')
-    .add(Recipe)
-    .then(() => {
-      console.log("Recipe successfully added!")
-      }).catch((error) => {
-          console.error("Error adding recipe: ", error)
-      })
-}
 export function UpdateRecipe (recipe) {
   firebase
     .firestore()
@@ -49,15 +51,7 @@ export function updateRecipe (Recipe) {
       })
 }
 
-export const DeleteRecipe = (recipeId, props ) => {
-    firebase
-      .firestore()
-      .collection('recipes')
-      .doc(recipeId)
-      .delete()
-        props.history.push('/recipes')
-        
-}
+
 
 // export function addIngredients(recipeId, recipeIngredients) {
 //   firebase
@@ -75,6 +69,39 @@ export const DeleteRecipe = (recipeId, props ) => {
 //           console.error("Error adding ingredients: ", error)
 //       })
 // }
+export function assignRecipeToWeekDay (newWeekDayAssignment) { //USING THIS ONE
+  firebase
+    .firestore()
+    .collection('week')
+    .doc('XIZ75grLVIiFREmkcTlp')
+    .update(newWeekDayAssignment)
+    .then(firestoreRef => {
+      console.log("Recipe successfully assigned!", newWeekDayAssignment)
+      }).catch((error) => {
+          console.error("Error assigning recipe: ", error)
+      })
+}
+
+export function clearWeekDayAssignments () { //USING THIS ONE
+  firebase
+    .firestore()
+    .collection('week')
+    .doc('XIZ75grLVIiFREmkcTlp')
+    .update({
+      monday: '',
+      tuesday: '',
+      wednesday: '',
+      thursday: '',
+      friday: '',
+      saturday: '',
+      sunday: ''
+    })
+    .then(() => {
+      console.log("Week assignments cleared")
+      }).catch((error) => {
+          console.error("Error clearing week assignments : ", error)
+      })
+}
 
 export function addIngredientsToList (recipe, recipeId) { //USING THIS ONE
   const newIngredients = recipe.ingredients
@@ -109,7 +136,7 @@ export function removeIngredientsFromList (recipeId) { //USING THIS ONE
   })
 }
 
-export function clearShoppingList () {
+export function clearShoppingList () { //USING THIS ONE
   firebase
   .firestore()
   .collection('shoppingList')

@@ -1,9 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
-import { DeleteRecipe, addIngredientsToList, removeIngredientsFromList } from '../utils'
-
-import firebase from 'firebase/app'
+import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay } from '../utils'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
@@ -11,18 +9,13 @@ function ExpandedRecipeCard (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
-  function clickHandler (weekDay, evt) {
+  function clickHandler (evt) {
     evt.preventDefault() 
-    addIngredientsToList(recipe, recipeId)
-    const newWeekDay = { [weekDay]: recipeId }
+    const newWeekDayAssignment = { [weekDay]: recipeId }
 
     if (window.confirm('Would you like to add this recipe and ingredients to your week?')) {
-      firebase
-      .firestore()
-      .collection('week')
-      .doc('XIZ75grLVIiFREmkcTlp')
-      .update(newWeekDay)
-      
+      assignRecipeToWeekDay(newWeekDayAssignment)
+      addIngredientsToList(recipe, recipeId)
       props.history.push('/week')
     }
   }
@@ -43,7 +36,7 @@ function ExpandedRecipeCard (props) {
           <button>
           <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
           </button>
-          <button onClick={() => DeleteRecipe(recipeId, props)}>
+          <button onClick={() => deleteRecipe(recipeId, props)}>
           Delete Recipe
           </button>
           {/* <button onClick={() => addIngredientsToList(recipe, recipeId)}>Add Ingredients To Shopping List</button> */}
@@ -68,7 +61,7 @@ function ExpandedRecipeCard (props) {
             <option value='saturday'>Saturday</option>
             <option value='sunday'>Sunday</option>
           </select>
-              <button onClick={evt => clickHandler(weekDay, evt)}>Confirm</button>
+              <button onClick={evt => clickHandler(evt)}>Confirm</button>
               <div className="content">
                 Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
