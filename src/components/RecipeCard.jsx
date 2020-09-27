@@ -18,7 +18,7 @@ function RecipeCard ({ recipe }) {
                     <p className="title is-5 mb-0">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
                     <div className="field is-grouped">
                       <p className="control">
-                        <Link to='/week'><button className="button is-link is-small is-rounded">
+                        <Link to={`/recipe/${recipe.id}`}><button className="button is-link is-small is-rounded">
                           <i className="far fa-calendar-plus"></i>
                         </button>
                         </Link>
