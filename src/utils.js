@@ -1,17 +1,17 @@
 import firebase from 'firebase/app'
 
-// export function deleteRecipe (recipe) {
-//   firebase
-//     .firestore()
-//     .collection('recipes')
-//     .doc(recipe.id)
-//     .delete()
-//     .then(() => {
-//       console.log("Recipe successfully deleted!")
-//       }).catch((error) => {
-//           console.error("Error deleting recipe: ", error)
-//       })
-// }
+export function deleteRecipe (recipe) {
+  firebase
+    .firestore()
+    .collection('recipes')
+    .doc(recipe.id)
+    .delete()
+    .then(() => {
+      console.log("Recipe successfully deleted!")
+      }).catch((error) => {
+          console.error("Error deleting recipe: ", error)
+      })
+}
 
 export function addRecipe (Recipe) {
   firebase

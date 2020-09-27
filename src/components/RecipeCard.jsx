@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { deleteRecipe } from '../utils'
 
 function RecipeCard ({ recipe }) {
     return (
@@ -17,19 +18,23 @@ function RecipeCard ({ recipe }) {
                     <p className="title is-5 mb-0">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
                     <div className="field is-grouped">
                       <p className="control">
-                        <button className="button is-link is-small is-rounded">
+                        <Link><button className="button is-link is-small is-rounded">
                           <i className="far fa-calendar-plus"></i>
                         </button>
+                        </Link>
                       </p>
                       <p className="control">
-                        <button className="button is-small is-rounded is-primary">
+                        <Link><button className="button is-small is-rounded is-primary">
                         <i class="far fa-edit"></i>
                         </button>
+                        </Link>
                       </p>
                       <p className="control">
-                        <button className="button is-danger is-small is-rounded">
+                      <Link>
+                      <button className="button is-danger is-small is-rounded">
                         <i className="fas fa-trash-alt"></i>
                         </button>
+                      </Link>
                       </p>
                     </div>
                   </div>
