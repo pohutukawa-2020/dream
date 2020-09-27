@@ -4,35 +4,7 @@ import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
-function sortRecipes (recipes, sortBy) {
-  const sortedRecipes = recipes.sort((a, b) => {
-    const nameA = a.name.toUpperCase()
-    const nameB = b.name.toUpperCase()
-    switch (sortBy) {
-      case 'NAME_ASC':
-        if (nameA < nameB) {
-          return -1
-        }
-        if (nameA > nameB) {
-          return 1
-        } 
-        return 0
-      case 'NAME_DESC':
-        if (nameA > nameB) {
-          return -1
-        }
-        if (nameA < nameB) {
-          return 1
-        } 
-        return 0
-      default:
-        break
-    } 
-  })
-  
-  return sortedRecipes
-}
-
+import { sortRecipes } from '../utils.js'
 
 function RecipesList() {
   const [recipes] = useContext(RecipeContext)
