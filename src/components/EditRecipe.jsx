@@ -41,7 +41,7 @@ function EditRecipe (props) {
       })
       props.history.push(`/recipe/${recipeId}`)
     }
-
+    console.log(serves)
   return (
     <>
     <form onSubmit={onSubmitHandler}>
@@ -79,7 +79,7 @@ function EditRecipe (props) {
           <div className="content">
             <div className="card-content">
               Serves<br></br>
-                <input type='number' value={serves} onChange={e => setServes(e.currentTarget.value)} /> {/* --- SERVES --- */}
+                <input value={serves} onChange={e => setServes(e.currentTarget.value)} /> {/* --- SERVES --- */}
             </div> 
             <div className="card-content">
               Prep Time<br></br>
