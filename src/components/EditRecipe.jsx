@@ -14,8 +14,6 @@ function EditRecipe (props) {
   const [ingredients, setIngredients] = useState(recipe.ingredients)
   const [method, setMethod] = useState(recipe.method)
 
-
-
   function onSubmitHandler(e) {
     e.preventDefault()
 
