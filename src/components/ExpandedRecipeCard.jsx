@@ -16,13 +16,15 @@ function ExpandedRecipeCard (props) {
     addIngredientsToList(recipe, recipeId)
     const newWeekDay = { [weekDay]: recipeId }
 
-    firebase
+    if (window.confirm('Would you like to add this recipe and ingredients to your week?')) {
+      firebase
       .firestore()
       .collection('week')
       .doc('XIZ75grLVIiFREmkcTlp')
       .update(newWeekDay)
       
-    props.history.push('/week')
+      props.history.push('/week')
+    }
   }
 
   function changeHandler (evt) {
