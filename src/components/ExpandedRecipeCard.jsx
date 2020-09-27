@@ -12,7 +12,8 @@ function ExpandedRecipeCard (props) {
   const recipe = recipes.find(x => x.id === recipeId)
 
   function clickHandler (weekDay, evt) {
-    evt.preventDefault()
+    evt.preventDefault() 
+    addIngredientsToList(recipe, recipeId)
     const newWeekDay = { [weekDay]: recipeId }
 
     firebase
@@ -43,7 +44,7 @@ function ExpandedRecipeCard (props) {
           <button onClick={() => DeleteRecipe(recipeId, props)}>
           Delete Recipe
           </button>
-          <button onClick={() => addIngredientsToList(recipe, recipeId)}>Add Ingredients To Shopping List</button>
+          {/* <button onClick={() => addIngredientsToList(recipe, recipeId)}>Add Ingredients To Shopping List</button> */}
           <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
           <div className="card-content">
             <div className="media">
