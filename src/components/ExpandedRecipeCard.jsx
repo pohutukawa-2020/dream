@@ -18,13 +18,9 @@ function ExpandedRecipeCard (props) {
       .doc('XIZ75grLVIiFREmkcTlp')
       .update({
         monday: recipeId,
-        tuesday: '',
-        wednesday: '',
-        thursday: '',
-        friday: '',
-        saturday: '',
-        sunday: ''
       })
+      
+      props.history.push('/week')
   }
   
   return (
