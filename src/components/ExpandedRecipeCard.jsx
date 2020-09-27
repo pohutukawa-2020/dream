@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
+import { DeleteRecipe } from '../utils'
 
 import firebase from 'firebase/app'
 
@@ -36,7 +37,12 @@ function ExpandedRecipeCard (props) {
               <img src={recipe.imagePath} alt={recipe.name}/>
               </figure>
           </div>
+          <button>
           <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
+          </button>
+          <button onClick={() => DeleteRecipe(recipeId, props)}>
+          Delete Recipe
+          </button>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
