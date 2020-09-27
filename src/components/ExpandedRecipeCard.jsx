@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
+import { SelectedDayContext } from './SelectedDayContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay } from '../utils'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
-  const [weekDay, setWeekDay] = useState('monday')
+  const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
+  const [weekDay, setWeekDay] = useState(selectedDay)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
@@ -52,7 +54,7 @@ function ExpandedRecipeCard (props) {
               </div>
           </div>
           <label>Add Recipe To:</label>{' '}
-          <select value={weekDay} onChange={changeHandler}>
+          <select value={selectedDay} onChange={changeHandler}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>

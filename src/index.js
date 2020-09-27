@@ -10,6 +10,7 @@ import { RecipeProvider } from './components/RecipeContext'
 import { WeekProvider } from 'components/WeekContext'
 import { ShoppingListProvider } from 'components/ShoppingListContext'
 import { MiscShoppingProvider } from 'components/MiscShoppingContext'
+import { SelectedDayProvider } from 'components/SelectedDayContext'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps",
@@ -29,7 +30,9 @@ ReactDOM.render(
       <WeekProvider>
         <ShoppingListProvider>
           <MiscShoppingProvider>
-            <App />
+            <SelectedDayProvider>
+              <App />
+            </SelectedDayProvider>
           </MiscShoppingProvider>
         </ShoppingListProvider>
       </WeekProvider>
