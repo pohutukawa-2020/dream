@@ -51,11 +51,11 @@ function EditRecipe (props) {
         <div className="card-image">
           <figure className="image is-2by1">
               <img src={imagePath} alt="add your meal" />
-                <button class="button is-link is-small is-rounded">
-                  <i class="fas fa-plus"></i>
-                </button>
           </figure>
         </div>
+        <span><button class="button is-link is-small is-rounded">
+                  <i class="fas fa-arrow-circle-left"></i>
+                </button></span>
         <div className="card-content">
             <div className="media">
               <div className="media-left">
