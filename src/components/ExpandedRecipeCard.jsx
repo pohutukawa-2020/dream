@@ -2,10 +2,30 @@ import React, { useContext } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
 
+import firebase from 'firebase/app'
+
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
+
+  function clickHandler (evt) {
+    evt.preventDefault()
+
+    firebase
+      .firestore()
+      .collection('week')
+      .doc('XIZ75grLVIiFREmkcTlp')
+      .update({
+        monday: recipeId,
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: '',
+        sunday: ''
+      })
+  }
   
   return (
     <>
@@ -26,7 +46,7 @@ function ExpandedRecipeCard (props) {
                 <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
               </div>
           </div>
-    
+              <button onClick={clickHandler}>Add Recipe To Monday</button>
               <div className="content">
                 Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
