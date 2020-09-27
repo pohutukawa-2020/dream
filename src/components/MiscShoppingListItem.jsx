@@ -1,12 +1,33 @@
-import React from 'react'
-import AddShoppingItem from './AddShoppingItem'
+import React, { useState, useContext } from "react";
 
-function MiscShoppingListItem () {
+import { addMiscItem } from "../utils";
+import { MiscShoppingContext } from "./MiscShoppingContext"
+
+const MiscShoppingListItem = () => {
+    const [miscItem, setMiscItem] = useState('')
+    const [miscCollection] = useContext(MiscShoppingContext)
+
+    function onSubmitHandler(evt) {
+        evt.preventDefault()
+        
+        addMiscItem(miscItem)
+        setMiscItem('')
+    }
   return (
-    <div className="ShoppingListItem">
-      <h4>ShoppingListItem</h4>
-      <AddShoppingItem />
-    </div>
+    <>
+      <form onSubmit={onSubmitHandler}>
+        <label>Add item to Shopping List</label>
+        <input type="text" value={miscItem} onChange={e => setMiscItem(e.currentTarget.value)} />
+        <button>Add</button>
+        <ul>
+            {miscCollection.map(item => 
+            <li key={item.id}>
+                <p>{item.newItem}</p>
+            </li>
+            )}
+        </ul>
+      </form>
+    </>
   )
 }
 
