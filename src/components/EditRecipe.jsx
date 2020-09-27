@@ -41,7 +41,7 @@ function EditRecipe (props) {
       })
       props.history.push(`/recipe/${recipeId}`)
     }
-    console.log(serves)
+    
   return (
     <>
     <form onSubmit={onSubmitHandler}>
