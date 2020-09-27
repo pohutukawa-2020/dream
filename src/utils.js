@@ -80,7 +80,7 @@ export function addIngredients(recipeId, recipeIngredients) {
 export function addMiscItem(newItem) {
   firebase
     .firestore()
-    .collection('shoppingList')
+    .collection('miscShoppingList')
     .add({
       newItem: newItem
     })
