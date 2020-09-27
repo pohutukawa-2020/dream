@@ -7,7 +7,7 @@ import firebase from 'firebase/app'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
-  const [weekDay, setWeekDay] = useState('')
+  const [weekDay, setWeekDay] = useState('monday')
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
