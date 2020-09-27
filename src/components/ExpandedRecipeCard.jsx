@@ -7,7 +7,7 @@ import firebase from 'firebase/app'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
-  const [weekDay, setWeekDay] = useState('')
+  const [weekDay, setWeekDay] = useState('monday')
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
@@ -28,6 +28,41 @@ function ExpandedRecipeCard (props) {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
+
+  function addIngredientsToList () {
+    const newIngredients = recipe.ingredients
+
+    firebase
+      .firestore()
+      .collection('shoppingList')
+      .add({
+        recipeId: recipeId,
+        ingredients: newIngredients
+      })
+      .then(id => {
+        console.log("Ingredients successfully added!", id.id)
+        }).catch((error) => {
+            console.error("Error adding ingredients: ", error)
+        })
+  }
+
+  function removeIngredientsFromList () {
+    console.log("inside delete ingredients: ", recipeId)
+
+    firebase
+      .firestore()
+      .collection('shoppingList')
+      .where('recipeId', '==', recipeId)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          doc.ref.delete()
+        })
+      })
+      .catch(function(error) {
+        console.log("Error deleting ingredients: ", error)
+    })
+  }
   
   return (
     <>
@@ -43,6 +78,8 @@ function ExpandedRecipeCard (props) {
           <button onClick={() => DeleteRecipe(recipeId, props)}>
           Delete Recipe
           </button>
+          <button onClick={() => addIngredientsToList(recipe)}>Add Ingredients To Shopping List</button>
+          <button onClick={() => removeIngredientsFromList()}>Remove Ingredients From Shopping List</button>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
