@@ -10,6 +10,7 @@ import Shopping from "./Shopping";
 import ExpandedRecipeCard from "./ExpandedRecipeCard";
 import AddRecipe from'./AddRecipe'
 import EditRecipe from './EditRecipe';
+import MiscShoppingList from './MiscShoppingList';
 
 function App () {
   return (
@@ -39,6 +40,7 @@ function App () {
             <Route exact path="/recipe/edit/:id" component={EditRecipe} />
             <Route exact path="/week" component={Week} />
             <Route exact path="/shopping" component={Shopping} />
+            <Route exact path="/shopping" component={MiscShoppingList} />
             <Route exact path="/shopping/add" component={Shopping} />
           </div>
         </div>

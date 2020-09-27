@@ -79,8 +79,17 @@ export function assignRecipeToWeekDay (newWeekDayAssignment) { //USING THIS ONE
       console.log("Recipe successfully assigned!", newWeekDayAssignment)
       }).catch((error) => {
           console.error("Error assigning recipe: ", error)
-      })
+      })   
 }
+
+// export const deleteExpandedRecipe = (recipeId, props ) => {
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .doc(recipeId)
+//     .delete()
+//       props.history.push('/recipes')
+// }
 
 export function clearWeekDayAssignments () { //USING THIS ONE
   firebase
@@ -144,9 +153,34 @@ export function clearShoppingList () { //USING THIS ONE
   .then(response => {
     response.forEach(shoppingListEntry => {
       shoppingListEntry.ref.delete()
-      console.log("Recipe successfully deleted!")
+      console.log("Shopping list successfully cleared!")
     })
   })
+  firebase
+  .firestore()
+  .collection('miscShoppingList')
+  .get()
+  .then(response => {
+    response.forEach(shoppingListEntry => {
+      shoppingListEntry.ref.delete()
+      console.log("Misc shopping list successfully cleared!")
+    })
+  })
+}
+
+export function addMiscItem(newItem) {
+  firebase
+    .firestore()
+    .collection('miscShoppingList')
+    .add({
+      newItem: newItem
+    })
+    .then((firestoreRef) => {
+      console.log("Misc item successfully added to shopping list!", firestoreRef.id)
+      return firestoreRef.id
+      }).catch((error) => {
+          console.error("Error adding item: ", error)
+      })
 }
 
 export function sortRecipes (recipes, sortBy) { //USING THIS ONE

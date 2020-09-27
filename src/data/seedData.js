@@ -93,6 +93,56 @@ const seedRecipes = [
       '5. Drain and roughly chop the peppers, then add them to the tray with the smoked paprika, ground coriander and the couscous. Pull the lemon halves out of the chicken with a pair of tongs and squeeze the juices into the tray (making sure to catch any pips). Bring to the boil, then turn the heat off and leave to rest for 5 minutes, or until the couscous has absorbed all of the water. Meanwhile, pick and finely chop the mint leaves. When the time’s up, fluff up the couscous using a fork and stir through the chopped mint. Drizzle with a good lug of extra virgin olive oil and everything together.', '6. Cut the chicken up into joints, removing the skin if you want to keep it healthy, then serve with the tasty roast-vegetable couscous. Enjoy!', '7. Nims Tip: Basting a chicken as it cooks helps to stop it drying out, giving you lovely, juicy meat. Check on the chicken every 20 to 30 minutes, and spoon any juices from the bottom of the tray back over the bird.'
     ],
     imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/797_1_1436881994.jpg?tr=w-800,h-1066'
+  },
+  {
+    name: 'Takeout Dinner Woohoo!',
+    serves: 'the whole family!',
+    prepTime: 'hopefully not too long!',
+    ingredients: [
+      'YAY no ingredients needed!'
+    ],
+    method: [
+      'Choose takeout',
+      'Order food',
+      'Enjoy!'
+    ],
+    imagePath: 'https://frontporchnewstexas.com/wp-content/uploads/2020/03/TAKE-OUT-TOGETHER-1024x768.png'
+  },
+  {
+    name: 'No recipe selected',
+    serves: 'select a recipe',
+    prepTime: 'select a recipe',
+    ingredients: [
+      'select a recipe'
+    ],
+    method: [
+      'select a recipe'
+    ],
+    imagePath: 'https://static.thenounproject.com/png/953211-200.png'
+  },
+  {
+    name: 'Out for dinner',
+    serves: 'the whole family!',
+    prepTime: 'hopefully not too long!',
+    ingredients: [
+      'YAY no ingredients needed!'
+    ],
+    method: [
+      'Get to the food!'
+    ],
+    imagePath: 'https://www.hadassah.org/regions/desert-mountain/chapters/lea/groups/dinner-out.jpg'
+  },
+  {
+    name: 'Leftovers for dinner',
+    serves: 'the whole family!',
+    prepTime: 'hopefully not too long!',
+    ingredients: [
+      'YAY no ingredients needed!'
+    ],
+    method: [
+      'Get to the food!'
+    ],
+    imagePath: 'https://lovefoodhatewaste.co.nz/wp-content/uploads/2016/10/Leftovers-1000.jpg'
   }
 ]
 

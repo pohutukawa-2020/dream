@@ -27,9 +27,9 @@ function ExpandedRecipeCard (props) {
   
   return (
     <>
-      <div className="card">
+      <div className="card1">
           <div className="card-image">
-            <figure className="image is-2by1">
+            <figure className="image1 is-5by1">
               <img src={recipe.imagePath} alt={recipe.name}/>
               </figure>
           </div>

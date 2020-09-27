@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
-import ShoppingListItem from './ShoppingListItem'
+import ShoppingListItem from "./ShoppingListItem";
+import MiscShoppingListItem from "./MiscShoppingListItem";
 
 import { clearShoppingList } from '../utils'
 
@@ -11,14 +12,15 @@ function ShoppingList () {
 
   return (
     <div className="ShoppingList">
-      <h2>ShoppingList</h2>
+      <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>
       <button onClick={() => clearShoppingList()}>Clear Shopping List</button>
       {/* <ShoppingListItem /> */}
+      <MiscShoppingListItem />
       <ul>
         {shoppingList.map(shoppingListItem => 
           <li key={shoppingListItem.id}>
             {shoppingListItem.ingredients.map(ingredient => (
-              <p>{ingredient}</p>
+              <h5>{ingredient}</h5>
             ))}
           </li>
         )}
@@ -27,4 +29,4 @@ function ShoppingList () {
   )
 }
 
-export default ShoppingList
+export default ShoppingList;
