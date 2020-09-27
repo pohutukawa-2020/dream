@@ -2,10 +2,12 @@ import React, { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
 import { SelectedDayContext } from './SelectedDayContext'
+import { WeekContext } from './WeekContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay } from '../utils'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
+  const [week, setWeek] = useContext(WeekContext)
   const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
   const [weekDay, setWeekDay] = useState(selectedDay)
   const recipeId = props.match.params.id
@@ -16,8 +18,12 @@ function ExpandedRecipeCard (props) {
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
     if (window.confirm('Would you like to add this recipe and ingredients to your week?')) {
+      if (week[weekDay]) {
+        window.confirm('Recipe already assigned to this day')
+      }
       assignRecipeToWeekDay(newWeekDayAssignment)
       addIngredientsToList(recipe, recipeId)
+      setSelectedDay('monday')
       props.history.push('/week')
     }
   }
@@ -26,6 +32,11 @@ function ExpandedRecipeCard (props) {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
+
+  console.log(week)
+
+  // check if day is already assigned
+  // if assigned, remove ingredients from shopping list
   
   return (
     <>
@@ -54,7 +65,7 @@ function ExpandedRecipeCard (props) {
               </div>
           </div>
           <label>Add Recipe To:</label>{' '}
-          <select value={selectedDay} onChange={changeHandler}>
+          <select value={weekDay} onChange={changeHandler}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>
