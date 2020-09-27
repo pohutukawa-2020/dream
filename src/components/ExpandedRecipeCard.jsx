@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react"
 import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
-import { DeleteRecipe } from '../utils'
+import { DeleteRecipe, addIngredientsToList, removeIngredientsFromList } from '../utils'
 
 import firebase from 'firebase/app'
 
@@ -28,41 +28,6 @@ function ExpandedRecipeCard (props) {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
-
-  function addIngredientsToList () {
-    const newIngredients = recipe.ingredients
-
-    firebase
-      .firestore()
-      .collection('shoppingList')
-      .add({
-        recipeId: recipeId,
-        ingredients: newIngredients
-      })
-      .then(id => {
-        console.log("Ingredients successfully added!", id.id)
-        }).catch((error) => {
-            console.error("Error adding ingredients: ", error)
-        })
-  }
-
-  function removeIngredientsFromList () {
-    console.log("inside delete ingredients: ", recipeId)
-
-    firebase
-      .firestore()
-      .collection('shoppingList')
-      .where('recipeId', '==', recipeId)
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          doc.ref.delete()
-        })
-      })
-      .catch(function(error) {
-        console.log("Error deleting ingredients: ", error)
-    })
-  }
   
   return (
     <>
@@ -78,8 +43,8 @@ function ExpandedRecipeCard (props) {
           <button onClick={() => DeleteRecipe(recipeId, props)}>
           Delete Recipe
           </button>
-          <button onClick={() => addIngredientsToList(recipe)}>Add Ingredients To Shopping List</button>
-          <button onClick={() => removeIngredientsFromList()}>Remove Ingredients From Shopping List</button>
+          <button onClick={() => addIngredientsToList(recipe, recipeId)}>Add Ingredients To Shopping List</button>
+          <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
           <div className="card-content">
             <div className="media">
               <div className="media-left">

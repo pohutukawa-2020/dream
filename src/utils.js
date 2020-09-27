@@ -37,7 +37,6 @@ export function UpdateRecipe (recipe) {
       })
 }
 
-
 export function updateRecipe (Recipe) {
   firebase
     .firestore()
@@ -60,24 +59,70 @@ export const DeleteRecipe = (recipeId, props ) => {
         
 }
 
-export function addIngredients(recipeId, recipeIngredients) {
+// export function addIngredients(recipeId, recipeIngredients) {
+//   firebase
+//     .firestore()
+//     .collection('shoppingList')
+//     .add({
+//       recipeId: recipeId,
+//       day: null,
+//       ingredients: recipeIngredients
+//     })
+//     .then((firestoreRef) => {
+//       console.log("Ingredients successfully added to shopping list!", firestoreRef.id)
+//       return firestoreRef.id
+//       }).catch((error) => {
+//           console.error("Error adding ingredients: ", error)
+//       })
+// }
+
+export function addIngredientsToList (recipe, recipeId) { //USING THIS ONE
+  const newIngredients = recipe.ingredients
+
   firebase
     .firestore()
     .collection('shoppingList')
     .add({
       recipeId: recipeId,
-      day: null,
-      ingredients: recipeIngredients
+      ingredients: newIngredients
     })
-    .then((firestoreRef) => {
-      console.log("Ingredients successfully added to shopping list!", firestoreRef.id)
-      return firestoreRef.id
+    .then(id => {
+      console.log("Ingredients successfully added!", id.id)
       }).catch((error) => {
           console.error("Error adding ingredients: ", error)
       })
 }
 
-export function sortRecipes (recipes, sortBy) {
+export function removeIngredientsFromList (recipeId) { //USING THIS ONE
+  firebase
+    .firestore()
+    .collection('shoppingList')
+    .where('recipeId', '==', recipeId)
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        doc.ref.delete()
+      })
+    })
+    .catch(function(error) {
+      console.log("Error deleting ingredients: ", error)
+  })
+}
+
+export function clearShoppingList () {
+  firebase
+  .firestore()
+  .collection('shoppingList')
+  .get()
+  .then(response => {
+    response.forEach(shoppingListEntry => {
+      shoppingListEntry.ref.delete()
+      console.log("Recipe successfully deleted!")
+    })
+  })
+}
+
+export function sortRecipes (recipes, sortBy) { //USING THIS ONE
   const sortedRecipes = recipes.sort((a, b) => {
     const nameA = a.name.toUpperCase()
     const nameB = b.name.toUpperCase()
