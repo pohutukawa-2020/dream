@@ -45,6 +45,46 @@ export default function Seed () {
           }).catch((error) => {
               console.error("Error adding recipe: ", error)
           })
+
+          firebase
+          .firestore()
+          .collection('recipes')
+          .add(seedRecipes[4])
+          .then(() => {
+            console.log("Recipe successfully added!")
+            }).catch((error) => {
+                console.error("Error adding recipe: ", error)
+            })
+
+            firebase
+            .firestore()
+            .collection('recipes')
+            .add(seedRecipes[5])
+            .then(() => {
+              console.log("Recipe successfully added!")
+              }).catch((error) => {
+                  console.error("Error adding recipe: ", error)
+              })
+
+              firebase
+              .firestore()
+              .collection('recipes')
+              .add(seedRecipes[6])
+              .then(() => {
+                console.log("Recipe successfully added!")
+                }).catch((error) => {
+                    console.error("Error adding recipe: ", error)
+                })
+
+                firebase
+                .firestore()
+                .collection('recipes')
+                .add(seedRecipes[7])
+                .then(() => {
+                  console.log("Recipe successfully added!")
+                  }).catch((error) => {
+                      console.error("Error adding recipe: ", error)
+                  })
     
   }
 

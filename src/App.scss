@@ -13,6 +13,11 @@ $tabs-toggle-link-radius: 0px;
   margin: auto;
 }
 
+.card1 { 
+  width: 100%;
+  margin: auto;
+}
+
 div.columns { 
   margin-top: 20px; 
 } 
@@ -49,7 +54,15 @@ p {
 .image {
   height: 200px; /* height of container */
   overflow: hidden;
-  object-position: 100px 50px;
+  object-position: 30px 50px;
+}
+
+.image1 {
+  justify-content: center;
+  height: 800px;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
 }
 
 .field { 
