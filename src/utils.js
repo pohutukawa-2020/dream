@@ -50,7 +50,7 @@ export function updateRecipe (Recipe) {
       })
 }
 
-export const DeleteRecipe = (recipeId, props ) => {
+export const deleteExpandedRecipe = (recipeId, props ) => {
     firebase
       .firestore()
       .collection('recipes')
