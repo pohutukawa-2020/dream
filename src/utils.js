@@ -84,3 +84,32 @@ export function addIngredients(recipeId, recipeIngredients) {
           console.error("Error adding ingredients: ", error)
       })
 }
+
+export function sortRecipes (recipes, sortBy) {
+  const sortedRecipes = recipes.sort((a, b) => {
+    const nameA = a.name.toUpperCase()
+    const nameB = b.name.toUpperCase()
+    switch (sortBy) {
+      case 'NAME_ASC':
+        if (nameA < nameB) {
+          return -1
+        }
+        if (nameA > nameB) {
+          return 1
+        } 
+        return 0
+      case 'NAME_DESC':
+        if (nameA > nameB) {
+          return -1
+        }
+        if (nameA < nameB) {
+          return 1
+        } 
+        return 0
+      default:
+        break
+    } 
+  })
+
+  return sortedRecipes
+}

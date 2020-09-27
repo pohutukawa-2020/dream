@@ -97,4 +97,3 @@ const seedRecipes = [
 ]
 
 export default seedRecipes
-
