@@ -17,7 +17,7 @@ export const WeekProvider = ({ children }) => {
  
 
   useEffect(() => {
-    firebase
+    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('week')
       .onSnapshot(snapshot => {
@@ -27,6 +27,8 @@ export const WeekProvider = ({ children }) => {
         }))
         setWeek(newWeek[0])
       })
+
+    return () => unsubscribe() // note unsubscribe added in case funny behaviour
   },[])
 
   return (

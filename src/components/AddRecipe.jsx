@@ -6,7 +6,7 @@ import { addRecipe } from '../utils'
 
 const AddRecipe = (props) => {
   const [name, setName] = useState('')
-  const [imgPath, setImgPath] = useState('')
+  const [imagePath, setImagePath] = useState('')
   const [serves, setServes] = useState('')
   const [prepTime, setPrepTime] = useState('')
   const [ingredients, setIngredients] = useState([])
@@ -18,7 +18,7 @@ const AddRecipe = (props) => {
 
     const newRecipe = {
       name,
-      imgPath,
+      imagePath,
       serves,
       prepTime,
       ingredients,
@@ -27,7 +27,7 @@ const AddRecipe = (props) => {
 
     addRecipe(newRecipe)
       setName('')
-      setImgPath('')
+      setImagePath('')
       setServes('')
       setPrepTime('')
       setIngredients([])
@@ -68,7 +68,7 @@ const AddRecipe = (props) => {
           </div>
           <div>
             <label>Image URL</label>
-              <input type='text' value={imgPath} onChange={e => setImgPath(e.currentTarget.value)} />
+              <input type='text' value={imagePath} onChange={e => setImagePath(e.currentTarget.value)} />
             </div>
           <div className="content">
             <div className="card-content">

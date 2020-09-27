@@ -1,7 +1,7 @@
 const seedRecipes = [
   {
     name: 'Roasted black bean burgers',
-    serves: 'Serves 4',
+    serves: '4',
     prepTime: '40 Minutes - Not too tricky',
     ingredients: [
       '1½ red onions',
@@ -28,7 +28,7 @@ const seedRecipes = [
   },
   {
     name: 'Spinach lasagne',
-    serves: 'Serves 6',
+    serves: '6',
     prepTime: '50 Minutes - Not too tricky',
     ingredients: [
       '70 g unsalted butter',
@@ -53,7 +53,7 @@ const seedRecipes = [
   },
   {
     name: 'Roasted Root Vegetables',
-    serves: 'Serves 12',
+    serves: '12',
     prepTime: '1 Hour cooking, 15 minutes prep - Not too tricky',
     ingredients: [
       '3 kg Maris Piper potatoes',
@@ -70,7 +70,7 @@ const seedRecipes = [
   },
   {
     name: 'Roast Chicken With Couscous',
-    serves: 'Serves Aliens',
+    serves: 'Aliens',
     prepTime: '90 Minutes',
     ingredients: [
       '1.6 kilograms chicken ',
@@ -147,4 +147,3 @@ const seedRecipes = [
 ]
 
 export default seedRecipes
-
