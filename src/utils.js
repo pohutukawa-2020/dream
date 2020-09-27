@@ -77,6 +77,21 @@ export function addIngredients(recipeId, recipeIngredients) {
       })
 }
 
+export function addMiscItem(newItem) {
+  firebase
+    .firestore()
+    .collection('shoppingList')
+    .add({
+      newItem: newItem
+    })
+    .then((firestoreRef) => {
+      console.log("Misc item successfully added to shopping list!", firestoreRef.id)
+      return firestoreRef.id
+      }).catch((error) => {
+          console.error("Error adding item: ", error)
+      })
+}
+
 export function sortRecipes (recipes, sortBy) {
   const sortedRecipes = recipes.sort((a, b) => {
     const nameA = a.name.toUpperCase()
