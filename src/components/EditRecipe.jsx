@@ -39,7 +39,7 @@ function EditRecipe (props) {
       })
       props.history.push(`/recipe/${recipeId}`)
     }
-
+    
   return (
     <>
     <form onSubmit={onSubmitHandler}>
@@ -49,11 +49,11 @@ function EditRecipe (props) {
         <div className="card-image">
           <figure className="image is-2by1">
               <img src={imagePath} alt="add your meal" />
-                <button class="button is-link is-small is-rounded">
-                  <i class="fas fa-plus"></i>
-                </button>
           </figure>
         </div>
+        <span><button class="button is-link is-small is-rounded">
+                  <i class="fas fa-arrow-circle-left"></i>
+                </button></span>
         <div className="card-content">
             <div className="media">
               <div className="media-left">
@@ -77,7 +77,7 @@ function EditRecipe (props) {
           <div className="content">
             <div className="card-content">
               Serves<br></br>
-                <input type='number' value={serves} onChange={e => setServes(e.currentTarget.value)} /> {/* --- SERVES --- */}
+                <input value={serves} onChange={e => setServes(e.currentTarget.value)} /> {/* --- SERVES --- */}
             </div> 
             <div className="card-content">
               Prep Time<br></br>

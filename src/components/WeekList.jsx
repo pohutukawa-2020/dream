@@ -8,26 +8,31 @@ function WeekList() {
   const [week] = useContext(WeekContext)
   const [recipes] = useContext(RecipeContext)
   const mondayRecipe = recipes.find(x => x.id === week.monday)
-  console.log("WeekList ", mondayRecipe)
+  const tuesdayRecipe = recipes.find(x => x.id === week.tuesday)
+  const wednesdayRecipe = recipes.find(x => x.id === week.wednesday)
+  const thursdayRecipe = recipes.find(x => x.id === week.thursday)
+  const fridayRecipe = recipes.find(x => x.id === week.friday)
+  const saturdayRecipe = recipes.find(x => x.id === week.saturday)
+  const sundayRecipe = recipes.find(x => x.id === week.sunday)
 
   return (
     <div className="WeekList">
       <div>
         <h2>List of days and meals</h2>
         <h3>Monday</h3>
-        {mondayRecipe ? <RecipeCard recipe={mondayRecipe} /> : null}
+        {mondayRecipe ? <RecipeCard recipe={mondayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Monday</button></Link>}
         <h3>Tuesday</h3>
-        <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>
+        {tuesdayRecipe ? <RecipeCard recipe={tuesdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
         <h3>Wednesday</h3>
-        {week.wednesday}
+        {wednesdayRecipe ? <RecipeCard recipe={wednesdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
         <h3>Thursday</h3>
-        {week.thursday}
+        {thursdayRecipe ? <RecipeCard recipe={thursdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
         <h3>Friday</h3>
-        {week.friday}
+        {fridayRecipe ? <RecipeCard recipe={fridayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
         <h3>Saturday</h3>
-        {week.saturday}
+        {saturdayRecipe ? <RecipeCard recipe={saturdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
         <h3>Sunday</h3>
-        {week.sunday}
+        {sundayRecipe ? <RecipeCard recipe={sundayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
       </div>
     </div>
   )
