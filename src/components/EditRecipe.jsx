@@ -1,9 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import firebase from 'firebase/app'
 import { RecipeContext } from './RecipeContext'
 
 function EditRecipe (props) {
-  console.log(props)
   const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
@@ -40,6 +39,7 @@ function EditRecipe (props) {
         setIngredients([])
         setMethod([])
       })
+      props.history.push(`/recipe/${recipeId}`)
     }
 
   return (
