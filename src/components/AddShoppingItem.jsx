@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { addMiscItem } from "../utils";
+import { addMiscItem } from '../utils'
 
 const AddShoppingItem = () => {
-    const [miscItem, setMiscItem] = useState('')
+  const [miscItem, setMiscItem] = useState('')
 
-    function onSubmitHandler(evt) {
-        evt.preventDefault()
-        
-        addMiscItem(miscItem)
-    }
+  function onSubmitHandler (evt) {
+    evt.preventDefault()
+
+    addMiscItem(miscItem)
+  }
   return (
     <>
       <form onSubmit={onSubmitHandler}>

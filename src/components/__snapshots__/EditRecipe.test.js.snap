@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h4>
+    Edit Recipe
+  </h4>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image"
+    >
+      <figure
+        className="image is-2by1"
+      >
+        <img
+          alt="add your meal"
+          src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+        />
+      </figure>
+    </div>
+    <span>
+      <button
+        className="button is-link is-small is-rounded"
+      >
+        <i
+          className="fas fa-arrow-circle-left"
+        />
+      </button>
+    </span>
+    <div
+      className="card-content"
+    >
+      <div
+        className="media"
+      >
+        <div
+          className="media-left"
+        >
+          <figure
+            className="image is-48x48"
+          />
+        </div>
+        <div
+          className="media-content"
+        >
+          <p
+            className="title is-5"
+          >
+            <div>
+              <label>
+                Title
+              </label>
+              <input
+                className="label is-primary"
+                onChange={[Function]}
+                type="text"
+                value="Roasted black bean burgers"
+              />
+               
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>
+        Image URL
+      </label>
+      <input
+        onChange={[Function]}
+        type="text"
+        value="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="card-content"
+      >
+        Serves
+        <br />
+        <input
+          onChange={[Function]}
+          value="4"
+        />
+         
+      </div>
+      <div
+        className="card-content"
+      >
+        Prep Time
+        <br />
+        <input
+          onChange={[Function]}
+          type="text"
+          value="40 Minutes - Not too tricky"
+        />
+         
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      Ingredients needed: (seperate by comma)
+      <div>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={
+            Array [
+              "1½ red onions",
+              "100 g rye bread",
+              "ground corian…",
+            ]
+          }
+        />
+         
+        <ul>
+          <li>
+            1½ red onions
+          </li>
+          <li>
+            100 g rye bread
+          </li>
+          <li>
+            ground corian…
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      <div>
+        <label>
+          Method (seperate by comma)
+        </label>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={
+            Array [
+              "Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 oni…",
+            ]
+          }
+        />
+        <ol>
+          <li>
+            Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 oni…
+          </li>
+        </ol>
+      </div>
+      <br />
+      <button
+        className="button card-content is-medium is-rounded is-primary"
+      >
+        Edit Recipe
+      </button>
+    </div>
+  </div>
+  <br />
+</form>
+`;

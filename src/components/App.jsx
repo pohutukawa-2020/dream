@@ -1,35 +1,33 @@
 import '../App.scss'
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import React from 'react'
+import { Route, Redirect } from 'react-router-dom'
 
-
-import {Nav} from "./Nav";
-import Recipes from "./Recipes";
-import Week from "./Week";
-import Shopping from "./Shopping";
-import ExpandedRecipeCard from "./ExpandedRecipeCard";
-import AddRecipe from'./AddRecipe'
-import EditRecipe from './EditRecipe';
-import MiscShoppingList from './MiscShoppingList';
+import { Nav } from './Nav'
+import Recipes from './Recipes'
+import Week from './Week'
+import Shopping from './Shopping'
+import ExpandedRecipeCard from './ExpandedRecipeCard'
+import AddRecipe from './AddRecipe'
+import EditRecipe from './EditRecipe'
 
 import Home from './Home'
 import SignUp from './SignUp'
 
 function App () {
   return (
-    <> 
-    <section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
+    <>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
         ReciPlan
-      </h1>
-      <h2 class="subtitle">
+            </h1>
+            <h2 className="subtitle">
         ReciPlan your week...
-      </h2>
-    </div>
-  </div>
-</section>
+            </h2>
+          </div>
+        </div>
+      </section>
       <div className="App">
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
@@ -46,7 +44,6 @@ function App () {
             <Route exact path="/recipe/edit/:id" component={EditRecipe} />
             <Route exact path="/week" component={Week} />
             <Route exact path="/shopping" component={Shopping} />
-            <Route exact path="/shopping" component={MiscShoppingList} />
             <Route exact path="/shopping/add" component={Shopping} />
           </div>
         </div>

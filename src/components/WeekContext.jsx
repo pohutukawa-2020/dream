@@ -14,7 +14,6 @@ export const WeekProvider = ({ children }) => {
     saturday: '',
     sunday: ''
   })
- 
 
   useEffect(() => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
@@ -29,7 +28,7 @@ export const WeekProvider = ({ children }) => {
       })
 
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+  }, [])
 
   return (
     <WeekContext.Provider value={[week, setWeek]}>

@@ -20,7 +20,7 @@ export const MiscShoppingProvider = ({ children }) => {
       })
 
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+  }, [])
 
   return (
     <MiscShoppingContext.Provider value={[miscCollection, setMiscCollection]}>
