@@ -10,7 +10,6 @@ export const RecipeContext = createContext()
 export const RecipeProvider = ({ children }) => {
   const {user} = useContext(UserContext)
   const [recipes, setRecipes] = useState([])
-  // const user = firebase.auth().currentUser
 
   useEffect(() => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
