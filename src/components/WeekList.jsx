@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { WeekContext } from './WeekContext'
 import { RecipeContext } from './RecipeContext'
 import { SelectedDayContext } from './SelectedDayContext'
 import RecipeCard from './RecipeCard'
 import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
-function WeekList() {
+function WeekList () {
   const [week] = useContext(WeekContext)
   const [recipes] = useContext(RecipeContext)
-  const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
+  const [, setSelectedDay] = useContext(SelectedDayContext)
   const mondayRecipe = recipes.find(x => x.id === week.monday)
   const tuesdayRecipe = recipes.find(x => x.id === week.tuesday)
   const wednesdayRecipe = recipes.find(x => x.id === week.wednesday)

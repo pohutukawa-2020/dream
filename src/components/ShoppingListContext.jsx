@@ -6,7 +6,7 @@ export const ShoppingListContext = createContext()
 
 export const ShoppingListProvider = ({ children }) => {
   const [shoppingList, setShoppingList] = useState([])
-  
+
   useEffect(() => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
@@ -20,7 +20,7 @@ export const ShoppingListProvider = ({ children }) => {
       })
 
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+  }, [])
 
   return (
     <ShoppingListContext.Provider value={[shoppingList, setShoppingList]}>
