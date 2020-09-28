@@ -4,7 +4,7 @@ import { WeekContext } from './WeekContext'
 import { RecipeContext } from './RecipeContext'
 import { SelectedDayContext } from './SelectedDayContext'
 import RecipeCard from './RecipeCard'
-import { clearWeekDayAssignments } from '../utils'
+import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
 function WeekList() {
   const [week] = useContext(WeekContext)
@@ -20,6 +20,7 @@ function WeekList() {
 
   function clickHandler () {
     clearWeekDayAssignments()
+    clearShoppingList()
   }
 
   return (

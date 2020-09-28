@@ -19,12 +19,19 @@ function ExpandedRecipeCard (props) {
 
     if (window.confirm('Would you like to add this recipe and ingredients to your week?')) {
       if (week[weekDay]) {
-        window.confirm('Recipe already assigned to this day')
+        if (window.confirm('Recipe already assigned to this day, would you like to replace recipe and shopping list ingredients?')){
+          removeIngredientsFromList(week[weekDay])
+          assignRecipeToWeekDay(newWeekDayAssignment)
+          addIngredientsToList(recipe, recipeId)
+          setSelectedDay('monday')
+          props.history.push('/week')
+        }
+      } else {
+        assignRecipeToWeekDay(newWeekDayAssignment)
+        addIngredientsToList(recipe, recipeId)
+        setSelectedDay('monday')
+        props.history.push('/week')
       }
-      assignRecipeToWeekDay(newWeekDayAssignment)
-      addIngredientsToList(recipe, recipeId)
-      setSelectedDay('monday')
-      props.history.push('/week')
     }
   }
 
@@ -35,7 +42,6 @@ function ExpandedRecipeCard (props) {
 
   console.log(week)
 
-  // check if day is already assigned
   // if assigned, remove ingredients from shopping list
   
   return (
