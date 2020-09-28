@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import renderer from 'react-test-renderer'
-import { HashRouter, HashRouter as Router } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import RecipesList from './RecipesList'
 import { RecipeContext } from './RecipeContext'
