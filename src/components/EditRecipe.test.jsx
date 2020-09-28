@@ -2,13 +2,15 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 
 import EditRecipe from './EditRecipe'
-import { RecipeContext } from './RecipeContext'
+import { RecipeProvider } from './RecipeContext'
 
 
 it ('renders component correctly', () => {
-    const fakeRecipe
+    const fakeParams = {params:'dlGn8GmbocFvxe8kJJ01'}
     const blah = renderer
-        .create(<EditRecipe/>)
+        .create(<RecipeProvider>
+            <EditRecipe match={fakeParams}/>
+            </RecipeProvider>)
         .toJSON()
     expect(blah).toMatchSnapshot()
 })
