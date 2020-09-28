@@ -20,7 +20,7 @@ export const RecipeProvider = ({ children }) => {
       })
 
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+  }, [])
 
   return (
     <RecipeContext.Provider value={[recipes, setRecipes]}>
