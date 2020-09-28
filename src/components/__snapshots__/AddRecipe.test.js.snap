@@ -21,10 +21,10 @@ exports[`renders component correctly 1`] = `
           src="https://icon-library.com/images/photo-placeholder-icon/photo-placeholder-icon-6.jpg"
         />
         <button
-          class="button is-link is-small is-rounded"
+          className="button is-link is-small is-rounded"
         >
           <i
-            class="fas fa-plus"
+            className="fas fa-plus"
           />
         </button>
       </figure>

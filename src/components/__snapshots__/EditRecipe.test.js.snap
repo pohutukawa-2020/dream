@@ -24,10 +24,10 @@ exports[`renders component correctly 1`] = `
     </div>
     <span>
       <button
-        class="button is-link is-small is-rounded"
+        className="button is-link is-small is-rounded"
       >
         <i
-          class="fas fa-arrow-circle-left"
+          className="fas fa-arrow-circle-left"
         />
       </button>
     </span>
