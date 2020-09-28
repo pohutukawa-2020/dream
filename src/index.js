@@ -11,6 +11,7 @@ import { WeekProvider } from 'components/WeekContext'
 import { ShoppingListProvider } from 'components/ShoppingListContext'
 import { MiscShoppingProvider } from 'components/MiscShoppingContext'
 import { SelectedDayProvider } from 'components/SelectedDayContext'
+import { UserProvider } from 'components/UserContext'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps",
@@ -23,20 +24,23 @@ firebase.initializeApp({
   measurementId: "G-LWEQSS5R3R"
 })
 firebase.analytics()
+// firebase.auth().onAuthStateChanged(console.log('auth state changed'))
 
 ReactDOM.render(
   <Router>
-    <RecipeProvider>
-      <WeekProvider>
-        <ShoppingListProvider>
-          <MiscShoppingProvider>
-            <SelectedDayProvider>
-              <App />
-            </SelectedDayProvider>
-          </MiscShoppingProvider>
-        </ShoppingListProvider>
-      </WeekProvider>
-    </RecipeProvider>
+    <UserProvider>
+      <RecipeProvider>
+        <WeekProvider>
+          <ShoppingListProvider>
+            <MiscShoppingProvider>
+              <SelectedDayProvider>
+                <App />
+              </SelectedDayProvider>
+            </MiscShoppingProvider>
+          </ShoppingListProvider>
+        </WeekProvider>
+      </RecipeProvider>
+    </UserProvider>
   </Router>,
   document.getElementById('root')
 )

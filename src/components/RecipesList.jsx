@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react'
 
 import { RecipeContext } from './RecipeContext'
+import { UserContext } from './UserContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
 import { sortRecipes } from '../utils.js'
 
 function RecipesList() {
+  const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
   const sortedRecipes = sortRecipes([...recipes], sortBy)

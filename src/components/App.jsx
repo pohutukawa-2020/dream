@@ -12,6 +12,9 @@ import AddRecipe from'./AddRecipe'
 import EditRecipe from './EditRecipe';
 import MiscShoppingList from './MiscShoppingList';
 
+import Home from './Home'
+import SignUp from './SignUp'
+
 function App () {
   return (
     <> 
@@ -28,12 +31,15 @@ function App () {
   </div>
 </section>
       <div className="App">
-        {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
-          <div className='ccontent'>
-            <Route exact path='/'><Redirect to='/week'/></Route>
+          <Route exact path='/'><Redirect to='/home'/></Route>
+          <div className='authenticationRoutes'>
+            <Route path='/home' component={Home} />
+            <Route path='/sign-up' component={SignUp} />
+          </div>
+          <div className='contentRoutes'>
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
             <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />

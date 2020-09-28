@@ -216,3 +216,60 @@ export function capitalise (s) {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
+
+// AUTHENTICATION UTILS
+
+export const signUp = (displayName, email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log('successful sign up')
+    })
+    .catch(error => {
+    console.log('unsuccessful sign up: ', error.message + ' ' + error.code)
+  })
+}
+
+export const signIn = (email, password) => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log('successfully signed in!')
+    })
+    .catch(error => {
+      console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
+    })
+}
+
+export const signInGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider()
+  firebase.auth().signInWithPopup(provider)
+    .then(() => {
+      console.log('successfully signed in with Google!')
+    })
+    .catch(error => {
+      console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
+    })
+}
+
+export const signInFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider()
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      console.log('successfully signed in with Facebook!')
+      // const token = result.credential.accessToken
+      // const user = result.user
+    })
+    .catch(error => {
+      console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
+    })
+}
+
+export const signOut = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      console.log('successfully signed out!')
+    }).catch(error => {
+      console.error('error signing out: ', error)
+    })
+}
