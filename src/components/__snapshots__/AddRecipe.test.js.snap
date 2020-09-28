@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h4>
+    Add Recipe
+  </h4>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image"
+    >
+      <figure
+        className="image is-2by1"
+      >
+        <img
+          alt="add your meal"
+          src="https://icon-library.com/images/photo-placeholder-icon/photo-placeholder-icon-6.jpg"
+        />
+        <button
+          class="button is-link is-small is-rounded"
+        >
+          <i
+            class="fas fa-plus"
+          />
+        </button>
+      </figure>
+    </div>
+    <div
+      className="card-content"
+    >
+      <div
+        className="media"
+      >
+        <div
+          className="media-left"
+        >
+          <figure
+            className="image is-48x48"
+          />
+        </div>
+        <div
+          className="media-content"
+        >
+          <p
+            className="title is-5"
+          >
+            <div>
+              <label>
+                Title
+              </label>
+              <input
+                className="label is-primary"
+                onChange={[Function]}
+                type="text"
+                value=""
+              />
+               
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>
+        Image URL
+      </label>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="card-content"
+      >
+        Serves
+        <br />
+        <input
+          onChange={[Function]}
+          type="number"
+          value=""
+        />
+         
+      </div>
+      <div
+        className="card-content"
+      >
+        Prep Time
+        <br />
+        <input
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+         
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      Ingredients needed: (seperate by comma)
+      <div>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={Array []}
+        />
+         
+        <ul />
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      <div>
+        <label>
+          Method (seperate by comma)
+        </label>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={Array []}
+        />
+        <ol />
+      </div>
+      <br />
+      <button
+        className="button card-content is-medium is-rounded is-primary"
+      >
+        Add Recipe
+      </button>
+    </div>
+  </div>
+  <br />
+</form>
+`;
