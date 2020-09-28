@@ -33,7 +33,7 @@ function App () {
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
           <div className='ccontent'>
-            <Route exact path='/'><Redirect to='/recipes'/></Route>
+            <Route exact path='/'><Redirect to='/week'/></Route>
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
             <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
