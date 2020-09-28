@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import renderer from 'react-test-renderer'
+import { HashRouter, HashRouter as Router } from 'react-router-dom'
 
-import EditRecipe from './EditRecipe'
+import RecipesList from './RecipesList'
 import { RecipeContext } from './RecipeContext'
+import RecipeCard from './RecipeCard'
 
 export const FakeRecipeProvider = ({ children }) => {
     const [recipes, setRecipes] = useState([{
@@ -20,16 +22,20 @@ export const FakeRecipeProvider = ({ children }) => {
           {children}
         </RecipeContext.Provider>
       )
-    }
-    
+
+}
+
+
 it ('renders component correctly', () => {
-    const fakeParams = { params: {id: 'MOqgTKsRp9OwepdSupbr'} }
-   
-    const blah = renderer
-        .create(
+    const dream = renderer
+    .create(
+        <HashRouter>
             <FakeRecipeProvider>
-                <EditRecipe match={fakeParams}/>
-            </FakeRecipeProvider>)
-        .toJSON()
-    expect(blah).toMatchSnapshot()
+                <RecipesList>
+                    <RecipeCard/>
+                </RecipesList>
+            </FakeRecipeProvider>
+        </HashRouter>)
+    .toJSON()
+expect(dream).toMatchSnapshot()
 })
