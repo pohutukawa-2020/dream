@@ -97,14 +97,14 @@ function EditRecipe (props) {
               <input type='text' value={prepTime} onChange={e => setPrepTime(e.currentTarget.value)} /> {/* --- PREP TIME --- */}
             </div>
           </div>
-          <div className="card-content">
+          {/* <div className="card-content">
                 Ingredients needed:
                 (seperate by comma)
             <div>
-              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> {/* <MultipleIngredientTest /> */}
+              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
               <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>) : null}</ul>
             </div>
-          </div>
+          </div> */}
           <div className="card-content">
             <div>
               <label>{'Method (seperate by comma)'}</label>
