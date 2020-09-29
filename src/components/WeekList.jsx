@@ -1,14 +1,17 @@
 import React, { useContext } from 'react'
-import { Link } from "react-router-dom"
-import { WeekContext } from './WeekContext'
-import { RecipeContext } from './RecipeContext'
+import { Link } from 'react-router-dom'
+import { WeekContext } from './context/WeekContext'
+import { RecipeContext } from './context/RecipeContext'
+import { SelectedDayContext } from './context/SelectedDayContext'
 import RecipeCard from './RecipeCard'
 import WeekCard from './WeekCard'
 import Week from './Week'
+import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
-function WeekList() {
+function WeekList () {
   const [week] = useContext(WeekContext)
   const [recipes] = useContext(RecipeContext)
+  const [, setSelectedDay] = useContext(SelectedDayContext)
   const mondayRecipe = recipes.find(x => x.id === week.monday)
   const tuesdayRecipe = recipes.find(x => x.id === week.tuesday)
   const wednesdayRecipe = recipes.find(x => x.id === week.wednesday)
@@ -16,6 +19,11 @@ function WeekList() {
   const fridayRecipe = recipes.find(x => x.id === week.friday)
   const saturdayRecipe = recipes.find(x => x.id === week.saturday)
   const sundayRecipe = recipes.find(x => x.id === week.sunday)
+
+  function clickHandler () {
+    clearWeekDayAssignments()
+    clearShoppingList()
+  }
 
   return (
     <>

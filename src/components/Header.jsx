@@ -1,20 +1,20 @@
-import React from "react"
+import React from 'react'
 
 function Header () {
-    return (
+  return (
     <>
-        <section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container">
+            <h1 className="title">
         ReciPlan
-      </h1>
-      <h2 class="subtitle">
+            </h1>
+            <h2 className="subtitle">
         Weekly Planner
-      </h2>
-    </div>
-  </div>
-</section>
+            </h2>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

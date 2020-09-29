@@ -2,29 +2,29 @@ import React, { useState, createContext, useEffect } from 'react'
 
 import firebase from 'firebase/app'
 
-export const RecipeContext = createContext()
+export const ShoppingListContext = createContext()
 
-export const RecipeProvider = ({ children }) => {
-  const [recipes, setRecipes] = useState([])
+export const ShoppingListProvider = ({ children }) => {
+  const [shoppingList, setShoppingList] = useState([])
 
   useEffect(() => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
-      .collection('recipes')
+      .collection('shoppingList')
       .onSnapshot(snapshot => {
-        const newRecipes = snapshot.docs.map(doc => ({
+        const newShoppingList = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
         }))
-        setRecipes(newRecipes)
+        setShoppingList(newShoppingList)
       })
 
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
-  },[])
+  }, [])
 
   return (
-    <RecipeContext.Provider value={[recipes, setRecipes]}>
+    <ShoppingListContext.Provider value={[shoppingList, setShoppingList]}>
       {children}
-    </RecipeContext.Provider>
+    </ShoppingListContext.Provider>
   )
 }

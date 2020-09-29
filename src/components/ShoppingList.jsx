@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useContext } from 'react'
+import MiscShoppingListItem from './MiscShoppingListItem'
+import { clearShoppingList } from '../utils'
 
-import ShoppingListItem from "./ShoppingListItem";
-import MiscShoppingListItem from "./MiscShoppingListItem";
+import { ShoppingListContext } from './context/ShoppingListContext'
 
-function ShoppingList() {
+function ShoppingList () {
+  const [shoppingList] = useContext(ShoppingListContext)
+
   return (
     <div className="ShoppingList">
-      <h2>ShoppingList</h2>
-      <ShoppingListItem />
+      <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>
+      <button onClick={() => clearShoppingList()}>Clear Shopping List</button>
       <MiscShoppingListItem />
+      <ul>
+        {shoppingList.map(shoppingListItem =>
+          <li key={shoppingListItem.id}>
+            {shoppingListItem.ingredients.map(ingredient => (
+              <h5>{ingredient}</h5>
+            ))}
+          </li>
+        )}
+      </ul>
     </div>
-  );
+  )
 }
 
-export default ShoppingList;
+export default ShoppingList

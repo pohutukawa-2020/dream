@@ -6,29 +6,35 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import App from './components/App'
-import { RecipeProvider } from './components/RecipeContext'
-import { WeekProvider } from 'components/WeekContext'
-import { MiscShoppingProvider } from 'components/MiscShoppingContext'
+import { RecipeProvider } from './components/context/RecipeContext'
+import { WeekProvider } from './components/context/WeekContext'
+import { ShoppingListProvider } from './components/context/ShoppingListContext'
+import { MiscShoppingProvider } from './components/context/MiscShoppingContext'
+import { SelectedDayProvider } from './components/context/SelectedDayContext'
 
 firebase.initializeApp({
-  apiKey: "AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps",
-  authDomain: "reciplan-50a10.firebaseapp.com",
-  databaseURL: "https://reciplan-50a10.firebaseio.com",
-  projectId: "reciplan-50a10",
-  storageBucket: "reciplan-50a10.appspot.com",
-  messagingSenderId: "835692964752",
-  appId: "1:835692964752:web:57a935be2507442b3a6115",
-  measurementId: "G-LWEQSS5R3R"
+  apiKey: 'AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps',
+  authDomain: 'reciplan-50a10.firebaseapp.com',
+  databaseURL: 'https://reciplan-50a10.firebaseio.com',
+  projectId: 'reciplan-50a10',
+  storageBucket: 'reciplan-50a10.appspot.com',
+  messagingSenderId: '835692964752',
+  appId: '1:835692964752:web:57a935be2507442b3a6115',
+  measurementId: 'G-LWEQSS5R3R'
 })
 firebase.analytics()
 
 ReactDOM.render(
   <Router>
     <RecipeProvider>
-    <WeekProvider>
-    <MiscShoppingProvider>
-      <App />
-      </MiscShoppingProvider>
+      <WeekProvider>
+        <ShoppingListProvider>
+          <MiscShoppingProvider>
+            <SelectedDayProvider>
+              <App />
+            </SelectedDayProvider>
+          </MiscShoppingProvider>
+        </ShoppingListProvider>
       </WeekProvider>
     </RecipeProvider>
   </Router>,

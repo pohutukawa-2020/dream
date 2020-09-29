@@ -1,57 +1,72 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { RecipeContext } from './RecipeContext'
-import { deleteExpandedRecipe } from '../utils'
-
-import firebase from 'firebase/app'
+import { RecipeContext } from './context/RecipeContext'
+import { SelectedDayContext } from './context/SelectedDayContext'
+import { WeekContext } from './context/WeekContext'
+import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
 
 function ExpandedRecipeCard (props) {
   const [recipes] = useContext(RecipeContext)
-  const [weekDay, setWeekDay] = useState('monday')
+  const [week] = useContext(WeekContext)
+  const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
+  const [weekDay, setWeekDay] = useState(selectedDay)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
+  const assignedRecipe = recipes.find(x => x.id === week[weekDay])
+  const [methodVis, setMethodVis] = useState(false)
+  const [ingredientVis, setIngredientVis] = useState(false)
 
-  function clickHandler (weekDay, evt) {
+  function clickHandler (evt) {
     evt.preventDefault()
-    const newWeekDay = { [weekDay]: recipeId }
+    const newWeekDayAssignment = { [weekDay]: recipeId }
 
-    firebase
-      .firestore()
-      .collection('week')
-      .doc('A')
-      .update(newWeekDay)
-      
-    props.history.push('/week')
+    if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
+      if (week[weekDay]) {
+        if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
+          removeIngredientsFromList(week[weekDay])
+          assignRecipeToWeekDay(newWeekDayAssignment)
+          addIngredientsToList(recipe, recipeId)
+          setSelectedDay('monday')
+          props.history.push('/week')
+        }
+      } else {
+        assignRecipeToWeekDay(newWeekDayAssignment)
+        addIngredientsToList(recipe, recipeId)
+        setSelectedDay('monday')
+        props.history.push('/week')
+      }
+    }
   }
 
   function changeHandler (evt) {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
-  
+
   return (
     <>
       <div className="card1">
-          <div className="card-image">
-            <figure className="image1 is-5by1">
-              <img src={recipe.imagePath} alt={recipe.name}/>
-              </figure>
-          </div>
-          <button>
+        <div className="card-image">
+          <figure className="image1 is-5by1">
+            <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
+          </figure>
+        </div>
+        <button>
           <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
-          </button>
-          <button onClick={() => deleteExpandedRecipe(recipeId, props)}>
+        </button>
+        <button onClick={() => deleteRecipe(recipeId, props)}>
           Delete Recipe
-          </button>
-          <div className="card-content">
-            <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                </figure>
-              </div>
-              <div className="media-content">
-                <p className="title is-5">{recipe.name}</p> {/* --- NAME OF RECIPE --- */}
-              </div>
+        </button>
+        <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-left">
+              <figure className="image is-48x48">
+              </figure>
+            </div>
+            <div className="media-content">
+              <p className="title is-5">{recipe ? recipe.name : null}</p> {/* --- NAME OF RECIPE --- */}
+            </div>
           </div>
           <label>Add Recipe To:</label>{' '}
           <select value={weekDay} onChange={changeHandler}>
@@ -63,25 +78,31 @@ function ExpandedRecipeCard (props) {
             <option value='saturday'>Saturday</option>
             <option value='sunday'>Sunday</option>
           </select>
-              <button onClick={evt => clickHandler(weekDay, evt)}>Confirm</button>
-              <div className="content">
-                Serves: {recipe.serves} <br/> {/* --- SERVES --- */}
-                Prep time: {recipe.prepTime} {/* --- PREP TIME --- */}
-              </div>
-              <div className="ingredients">
-                Ingredients needed:<br/><br/>
-                {recipe.ingredients && recipe.ingredients.map(ingredient => (
-                  <p>{ingredient}</p>
-                ))}
-              </div>
-              <div className="Method">
-              <br/>Method:<br/><br/>
-                {recipe.method && recipe.method.map(step => (
-                  <p>{step}</p>
-                ))}
-              </div>
+          <button onClick={evt => clickHandler(evt)}>Confirm</button>
+          <div className="content">
+                Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
+                Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
-          
+          <div>
+          <button className="ingredients" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span></button>
+            {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
+              <p>{ingredient}</p>
+            )) : null}</div> : null}
+          </div>
+          <div>
+          <button classNAme='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span></button>
+          {methodVis ? <div>{recipe ? recipe.method.map(step => (
+              <p>{step}</p>
+            )) : null}
+          </div> : null }
+          </div>
+            
+        </div>
+
       </div>
     </>
   )
