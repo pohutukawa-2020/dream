@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-
-function ShoppingListItem ({shoppingListItem}) {
+import { deleteSingleIngredient } from '../utils'
+function ShoppingListItem ({shoppingListItem, id}) {
 const [strike, setStrike] =useState({state: false, style: null })
 
 const cross = () => {
@@ -8,7 +8,7 @@ const cross = () => {
 }
   return (
     <>
-      <h5 onClick={() => cross()} style={strike.style}>{shoppingListItem.quantity}{' '}{shoppingListItem.name}</h5>
+      <h5 onClick={() => cross()} style={strike.style}>{shoppingListItem.quantity}{' '}{shoppingListItem.name}<span className='destroyerOfIngredients' onClick={() => deleteSingleIngredient(id)}><i class="fas fa-times"></i></span></h5>
     </>
   )
 }
