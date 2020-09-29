@@ -8,7 +8,6 @@ import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRe
 
 function ExpandedRecipeCard (props) {
   const {user} = useContext(UserContext)
-  // const userId =  user ? user.uid : null
   const [recipes] = useContext(RecipeContext)
   const [week] = useContext(WeekContext)
   const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
@@ -16,9 +15,6 @@ function ExpandedRecipeCard (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
   const assignedRecipe = recipes.find(x => x.id === week[weekDay])
-  console.log('recipeId in expanded card: ', recipeId)
-
-  // console.log(user ? user : null)
 
   function clickHandler (evt) {
     evt.preventDefault()

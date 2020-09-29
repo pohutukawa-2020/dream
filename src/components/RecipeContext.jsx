@@ -17,7 +17,6 @@ export const RecipeProvider = ({ children }) => {
       .collection('recipes')
       .where('user', '==', user ? user.uid : null)
       .onSnapshot(snapshot => {
-        console.log(snapshot)
         const newRecipes = snapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
