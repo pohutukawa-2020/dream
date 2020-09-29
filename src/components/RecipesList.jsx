@@ -27,7 +27,7 @@ function RecipesList() {
         <div className='recipeSort'>
           <div className="list">
           <input type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
-          <label>Sort By:</label>{' '}
+          <label>Sort:</label>{' '}
           <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>
