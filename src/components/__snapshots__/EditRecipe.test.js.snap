@@ -18,7 +18,7 @@ exports[`renders component correctly 1`] = `
       >
         <img
           alt="add your meal"
-          src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+          src={null}
         />
       </figure>
     </div>
@@ -58,7 +58,7 @@ exports[`renders component correctly 1`] = `
                 className="label is-primary"
                 onChange={[Function]}
                 type="text"
-                value="Roasted black bean burgers"
+                value={null}
               />
                
             </div>
@@ -73,7 +73,7 @@ exports[`renders component correctly 1`] = `
       <input
         onChange={[Function]}
         type="text"
-        value="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+        value={null}
       />
     </div>
     <div
@@ -86,7 +86,7 @@ exports[`renders component correctly 1`] = `
         <br />
         <input
           onChange={[Function]}
-          value="4"
+          value={null}
         />
          
       </div>
@@ -98,7 +98,7 @@ exports[`renders component correctly 1`] = `
         <input
           onChange={[Function]}
           type="text"
-          value="40 Minutes - Not too tricky"
+          value={null}
         />
          
       </div>
@@ -112,26 +112,10 @@ exports[`renders component correctly 1`] = `
           className="textarea is-primary"
           onChange={[Function]}
           type="text"
-          value={
-            Array [
-              "1½ red onions",
-              "100 g rye bread",
-              "ground corian…",
-            ]
-          }
+          value={null}
         />
          
-        <ul>
-          <li>
-            1½ red onions
-          </li>
-          <li>
-            100 g rye bread
-          </li>
-          <li>
-            ground corian…
-          </li>
-        </ul>
+        <ul />
       </div>
     </div>
     <div
@@ -145,17 +129,9 @@ exports[`renders component correctly 1`] = `
           className="textarea is-primary"
           onChange={[Function]}
           type="text"
-          value={
-            Array [
-              "Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 oni…",
-            ]
-          }
+          value={null}
         />
-        <ol>
-          <li>
-            Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 oni…
-          </li>
-        </ol>
+        <ol />
       </div>
       <br />
       <button
