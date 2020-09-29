@@ -28,7 +28,7 @@ const MiscShoppingListItem = () => {
         <ul>
           {miscCollection.map(item =>
             <li key={item.id}>
-             <MiscItem newItem={item.newItem}/>
+             <MiscItem newItem={item.newItem} id={item.id}/>
             </li>
           )}
         </ul>

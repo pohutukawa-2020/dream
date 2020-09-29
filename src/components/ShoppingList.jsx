@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import MiscShoppingListItem from './MiscShoppingListItem'
 import { clearShoppingList, clearMiscShoppingList } from '../utils'
-
+import ShoppingListItem from './ShoppingListItem'
 import { UserContext } from './context/UserContext'
 
 import { ShoppingListContext } from './context/ShoppingListContext'
@@ -23,9 +23,8 @@ function ShoppingList () {
       <ul>
         {shoppingList.map(shoppingListItem =>
           <li key={shoppingListItem.id}>
-            {shoppingListItem.ingredients.map(ingredient => (
-              // <h5>{ingredient}</h5>
-              <ShoppingListItem ingredient={ingredient}/>
+            {shoppingListItem.ingredients.map((ingredient, index) => (
+            <ShoppingListItem key={index} ingredient={ingredient}/>
             ))}
           </li>
         )}

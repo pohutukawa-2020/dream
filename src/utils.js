@@ -150,8 +150,8 @@ export function removeIngredientsFromList (recipeId) { // USING THIS ONE
 export const deleteSingleIngredient = (Ingredient) => { // USING THIS ONE
   firebase
     .firestore()
-    .collection('shoppingList')
-    .doc(Ingredient.id)
+    .collection('miscShoppingList')
+    .doc(Ingredient)
     .delete()
     .then(() => {
       console.log('ingredient successfully deleted!')
