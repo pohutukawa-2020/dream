@@ -7,6 +7,7 @@ import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
 import { WeekContext } from './context/WeekContext'
 import { deleteRecipe, addRecipeIngredients, removeRecipeIngredients, assignRecipeToWeekDay, capitalise } from '../utils'
+import HeaderCopy from './HeaderCopy'
 
 function ExpandedRecipeCard (props) {
   const {user} = useContext(UserContext)
@@ -38,11 +39,7 @@ function ExpandedRecipeCard (props) {
           addRecipeIngredients(user.uid, recipe, recipeId)
           setSelectedDay('monday')
           props.history.push('/week')
-        }
-        // assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        // addIngredientsToList(user.uid, recipe, recipeId)
-        // setSelectedDay('monday')
-        // props.history.push('/week')
+        } // else do nothing
       } else {
         assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
         addRecipeIngredients(user.uid, recipe, recipeId)
@@ -53,13 +50,17 @@ function ExpandedRecipeCard (props) {
   }
 
   function changeHandler (evt) {
-    console.log(evt.target.value)
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
 
   return (
     <>
+      <div className='noBulmaNav'>
+        <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+        <div className='noBulmaNavTitle'>My Recipes</div>
+        <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
+      </div>
       <div className="card1">
         <div className="card-image">
           <figure className="image1 is-5by1">
