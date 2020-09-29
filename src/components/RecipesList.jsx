@@ -11,13 +11,21 @@ function RecipesList() {
   const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
+  const [searchTerm, setSearchTerm] = useState('')
   const sortedRecipes = sortRecipes([...recipes], sortBy)
+  const filteredRecipes = sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
+  const changeHandler = (e) => {
+    setSearchTerm(e.target.value)
+    console.log(sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase())))
+  }
+ 
   return (
     <>
       <div className="RecipesList">
         <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
         <div className='recipeSort'>
+          <input type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
           <label>Sort By:</label>{' '}
           <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
@@ -25,7 +33,7 @@ function RecipesList() {
           </select>
         </div>
         <ul>
-          {sortedRecipes.map(recipe =>
+          {filteredRecipes.map(recipe =>
             <li key={recipe.id}>
               <RecipeCard recipe={recipe} />
             </li>
