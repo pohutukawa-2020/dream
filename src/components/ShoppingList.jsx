@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import MiscShoppingListItem from './MiscShoppingListItem'
 import { clearShoppingList } from '../utils'
-
+import ShoppingListItem from './ShoppingListItem'
 import { ShoppingListContext } from './context/ShoppingListContext'
 
 function ShoppingList () {
@@ -16,7 +16,8 @@ function ShoppingList () {
         {shoppingList.map(shoppingListItem =>
           <li key={shoppingListItem.id}>
             {shoppingListItem.ingredients.map(ingredient => (
-              <h5>{ingredient}</h5>
+              // <h5>{ingredient}</h5>
+              <ShoppingListItem ingredient={ingredient}/>
             ))}
           </li>
         )}

@@ -22,7 +22,7 @@ function ExpandedRecipeCard (props) {
 
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
       if (week[weekDay]) {
-        if (window.confirm(`${assignedRecipe.name} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
+        if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
           assignRecipeToWeekDay(newWeekDayAssignment)
           addIngredientsToList(recipe, recipeId)
@@ -84,7 +84,7 @@ function ExpandedRecipeCard (props) {
                 Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
           <div>
-          <button className="ingredients" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
+          <button className="ingredient" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
@@ -92,7 +92,7 @@ function ExpandedRecipeCard (props) {
             )) : null}</div> : null}
           </div>
           <div>
-          <button classNAme='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
+          <button className='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
           {methodVis ? <div>{recipe ? recipe.method.map(step => (

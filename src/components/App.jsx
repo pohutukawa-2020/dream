@@ -19,9 +19,6 @@ function App () {
             <h1 className="title">
         ReciPlan
             </h1>
-            <h2 className="subtitle">
-        ReciPlan your week...
-            </h2>
           </div>
         </div>
       </section>

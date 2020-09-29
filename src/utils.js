@@ -70,7 +70,7 @@ export function assignRecipeToWeekDay (newWeekDayAssignment) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc('XIZ75grLVIiFREmkcTlp')
+    .doc('A')
     .update(newWeekDayAssignment)
     .then(firestoreRef => {
       console.log('Recipe successfully assigned!', newWeekDayAssignment)
@@ -96,7 +96,7 @@ export function clearWeekDayAssignments () { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc('XIZ75grLVIiFREmkcTlp')
+    .doc('A')
     .update({
       monday: '',
       tuesday: '',
