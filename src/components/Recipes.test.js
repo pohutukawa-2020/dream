@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import { HashRouter } from 'react-router-dom'
 
 import Recipes from './Recipes'
-import { RecipeContext } from './RecipeContext'
+import { RecipeContext } from './context/RecipeContext'
 
 export const FakeRecipeProvider = ({ children }) => {
     const [recipes, setRecipes] = useState([{
