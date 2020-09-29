@@ -24,7 +24,7 @@ const seedRecipes = [
   {
     name: 'Spinach lasagne',
     serves: 6,
-    prepTime: 50,
+    preTime: 50,
     ingredients: [
       {quantity: '70g', name: 'butter'},
       {quantity: '50g', name: 'plain flour'},
@@ -43,6 +43,31 @@ const seedRecipes = [
       'Bake for 30 minutes, or till golden.'
     ],
     imagePath: 'https://hips.hearstapps.com/del.h-cdn.co/assets/17/38/1506010503-spinach-lasagna-delish.jpg'
+  }
+
+  {
+    name: 'Falafel with Quinoa Salad',
+    serves: 3,
+    prepTime: 30,
+    ingredients: [
+      {quantity: '400g', name: 'canned chickpeas'},
+      {quantity: '¼', name: 'red onion'},
+      {quantity: '1', name: 'carrot'},
+      {quantity: '1 clove', name: 'garlic'},
+      {quantity: '1', name: 'egg'},
+      {quantity: '1', name: 'lemon'},
+      {quantity: '2 tsp', name: 'ground cumin'},
+      {quantity: '1 tsp', name: 'ground corriander'},
+      {quantity: '1 pinch', name: 'ground cayenne pepper'},
+      {quantity: '1 tsp', name: 'baking powder'},
+      {quantity: '¼ cup', name: 'wholemeal breadcrumbs'}
+    ],
+    method: [
+      
+    ]
+    
+
+
   }
   // {
   //   name: 'Roasted Root Vegetables',
