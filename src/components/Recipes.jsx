@@ -8,7 +8,7 @@ function Recipes () {
         <section class="hero">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title is-4">
+      <h1 class="subtitle is-4">
         Your Recipes
       </h1>
     </div>

@@ -28,7 +28,7 @@ function WeekList () {
     <section className="hero">
   <div className="hero-body">
     <div className="container">
-      <h1 className="title is-4">
+      <h1 className="subtitle is-4">
         Weekly Planner
       </h1>
     </div>
@@ -39,40 +39,41 @@ function WeekList () {
         <hr />
         <div className="weeklist">
           <div>
-        {mondayRecipe ? <h1 className="subtitle is-5">Monday<hr /></h1> : null}
+        {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<hr /></h1></div> : null}
         {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Monday+<hr /></h3>
+        <div className="list"><h3 className="subtitle is-5">Monday+<hr /></h3></div>
         </Link>}
         </div>
 
-        {tuesdayRecipe ? <h1 className="subtitle is-5">Tuesday<hr /></h1> : null}
+        {tuesdayRecipe ? <div className="list"><h1 className="subtitle is-5">Tuesday<hr /></h1></div> : null}
         {tuesdayRecipe ? <WeekCard recipe={tuesdayRecipe} /> : <Link to='/recipes'>
-        <div className=""><h3 className="subtitle is-5">Tuesday+<hr /></h3></div>
+        <div className="list"><h3 className="subtitle is-5">Tuesday+<hr /></h3></div>
         </Link>}
     
-        {wednesdayRecipe ? <h1 className="subtitle is-5">Wednesday<hr /></h1> : null}
+        {wednesdayRecipe ? <div className="list"><h1 className="subtitle is-5">Wednesday<hr /></h1></div> : null}
         {wednesdayRecipe ? <WeekCard recipe={wednesdayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Wednesday+<hr /></h3>
+        <div className="list"><h3 className="subtitle is-5">Wednesday+<hr /></h3></div>
         </Link>}
         
-        {thursdayRecipe ? <h1 className="subtitle is-5">Thursday<hr /></h1> : null}
-        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : 
-        <Link to='/recipes'><h3 className="subtitle is-5" onClick={() => setSelectedDay('thursday')}>Thursday+<hr /></h3></Link>}
+        {thursdayRecipe ?  <div className="list"><h1 className="subtitle is-5">Thursday<hr /></h1></div> : null}
+        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : <Link to='/recipes'>
+        <div className="list"><h3 className="subtitle is-5" onClick={() => setSelectedDay('thursday')}>Thursday+<hr /></h3></div>
+        </Link>}
         
         
-        {fridayRecipe ? <h1 className="subtitle is-5">Friday<hr /></h1> : null}
+        {fridayRecipe ? <div className="list"><h1 className="subtitle is-5">Friday<hr /></h1></div> : null}
         {fridayRecipe ? <WeekCard recipe={fridayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Friday+<hr /></h3>
+        <div className="list"><h3 className="subtitle is-5">Friday+<hr /></h3></div>
         </Link>}
         
-        {saturdayRecipe ? <h1 className="subtitle is-5">Saturday<hr /></h1>: null}
+        {saturdayRecipe ? <div className="list"><h1 className="subtitle is-5">Saturday<hr /></h1></div> : null}
         {saturdayRecipe ? <WeekCard recipe={saturdayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Saturday+<hr /></h3>
+        <div className="list"><h3 className="subtitle is-5">Saturday+<hr /></h3></div>
         </Link>}
         
-        {sundayRecipe ? <h1 className="subtitle is-5">Sunday<hr /></h1> : null}
+        {sundayRecipe ? <div className="list"><h1 className="subtitle is-5">Sunday<hr /></h1></div> : null}
         {sundayRecipe ? <WeekCard recipe={sundayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Sunday+</h3>
+        <div className="list"><h3 className="subtitle is-5">Sunday+</h3></div>
         </Link>}
         </div>
       </div>

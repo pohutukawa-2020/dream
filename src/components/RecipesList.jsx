@@ -16,11 +16,14 @@ function RecipesList () {
       <div className="RecipesList">
         <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
         <div className='recipeSort'>
+          <div className="list">
           <label>Sort By:</label>{' '}
+          
           <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>
           </select>
+          </div>
         </div>
         <ul>
           {sortedRecipes.map(recipe =>
