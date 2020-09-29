@@ -15,11 +15,11 @@ export const WeekProvider = ({ children }) => {
     thursday: '',
     friday: '',
     saturday: '',
-    sunday: ''
+    sunday: '',
+    user: ''
   })
 
   useEffect(() => {
-    console.log(user ? user.uid : null)
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('week')

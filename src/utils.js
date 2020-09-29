@@ -66,11 +66,11 @@ export function updateRecipe (Recipe) {
 //           console.error("Error adding ingredients: ", error)
 //       })
 // }
-export function assignRecipeToWeekDay (newWeekDayAssignment) { // USING THIS ONE
+export function assignRecipeToWeekDay (userId, newWeekDayAssignment) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc('XIZ75grLVIiFREmkcTlp')
+    .doc(userId)
     .update(newWeekDayAssignment)
     .then(firestoreRef => {
       console.log('Recipe successfully assigned!', newWeekDayAssignment)
@@ -92,11 +92,11 @@ export const deleteCardRecipe = (recipe) => { // USING THIS ONE
     })
 }
 
-export function clearWeekDayAssignments () { // USING THIS ONE
+export function clearWeekDayAssignments (user) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc('XIZ75grLVIiFREmkcTlp')
+    .doc(user)
     .update({
       monday: '',
       tuesday: '',
@@ -113,13 +113,15 @@ export function clearWeekDayAssignments () { // USING THIS ONE
     })
 }
 
-export function addIngredientsToList (recipe, recipeId) { // USING THIS ONE
+export function addIngredientsToList (userId, recipe, recipeId) { // USING THIS ONE
   const newIngredients = recipe.ingredients
+  console.log('recipeId: ', recipeId)
 
   firebase
     .firestore()
     .collection('shoppingList')
     .add({
+      userId: userId,
       recipeId: recipeId,
       ingredients: newIngredients
     })
@@ -146,10 +148,11 @@ export function removeIngredientsFromList (recipeId) { // USING THIS ONE
     })
 }
 
-export function clearShoppingList () { // USING THIS ONE
+export function clearShoppingList (userId) { // USING THIS ONE
   firebase
     .firestore()
     .collection('shoppingList')
+    .where('userId', '==', userId)
     .get()
     .then(response => {
       response.forEach(shoppingListEntry => {
@@ -157,19 +160,23 @@ export function clearShoppingList () { // USING THIS ONE
         console.log('Shopping list successfully cleared!')
       })
     })
-  firebase
-    .firestore()
-    .collection('miscShoppingList')
-    .get()
-    .then(response => {
-      response.forEach(shoppingListEntry => {
-        shoppingListEntry.ref.delete()
-        console.log('Misc shopping list successfully cleared!')
-      })
-    })
 }
 
-export function addMiscItem (newItem) {
+export function clearMiscShoppingList () {
+  firebase
+  .firestore()
+  .collection('miscShoppingList')
+  .get()
+  // .where('user', '==', userId)
+  .then(response => {
+    response.forEach(shoppingListEntry => {
+      shoppingListEntry.ref.delete()
+      console.log('Misc shopping list successfully cleared!')
+    })
+  })
+}
+
+export function addMiscItem (newItem) { // USING THIS ONE
   firebase
     .firestore()
     .collection('miscShoppingList')
@@ -214,17 +221,28 @@ export function sortRecipes (recipes, sortBy) { // USING THIS ONE
   return sortedRecipes
 }
 
-export function capitalise (s) {
+export function capitalise (s) { // USING THIS ONE
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
 
-// AUTHENTICATION UTILS
+// AUTHENTICATION UTILS USING ALL
 
-export const signUp = (displayName, email, password) => {
+export const signUp = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      console.log('successful sign up')
+    .then(response => {
+      console.log('successful sign up: ', response.user.uid)
+      firebase.firestore().collection('week').doc(response.user.uid)
+      .set({
+        monday: '',
+        tuesday: '',
+        wednesday: '',
+        thursday: '',
+        friday: '',
+        saturday: '',
+        sunday: '',
+        user: response.user.uid
+      })
     })
     .catch(error => {
     console.log('unsuccessful sign up: ', error.message + ' ' + error.code)

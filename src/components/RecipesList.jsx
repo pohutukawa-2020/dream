@@ -12,6 +12,7 @@ function RecipesList() {
   const [recipes] = useContext(RecipeContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
   const sortedRecipes = sortRecipes([...recipes], sortBy)
+  console.log(user ? user.uid : null)
 
   return (
     <>

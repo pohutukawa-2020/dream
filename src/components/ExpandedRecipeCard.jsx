@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import { RecipeContext } from './RecipeContext'
 import { SelectedDayContext } from './SelectedDayContext'
 import { WeekContext } from './WeekContext'
+import { UserContext } from './UserContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
 
 function ExpandedRecipeCard (props) {
+  const {user} = useContext(UserContext)
+  // const userId =  user ? user.uid : null
   const [recipes] = useContext(RecipeContext)
   const [week] = useContext(WeekContext)
   const [selectedDay, setSelectedDay] = useContext(SelectedDayContext)
@@ -13,6 +16,9 @@ function ExpandedRecipeCard (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
   const assignedRecipe = recipes.find(x => x.id === week[weekDay])
+  console.log('recipeId in expanded card: ', recipeId)
+
+  // console.log(user ? user : null)
 
   function clickHandler (evt) {
     evt.preventDefault()
@@ -22,14 +28,14 @@ function ExpandedRecipeCard (props) {
       if (week[weekDay]) {
         if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
-          assignRecipeToWeekDay(newWeekDayAssignment)
-          addIngredientsToList(recipe, recipeId)
+          assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+          addIngredientsToList(user.uid, recipe, recipeId)
           setSelectedDay('monday')
           props.history.push('/week')
         }
       } else {
-        assignRecipeToWeekDay(newWeekDayAssignment)
-        addIngredientsToList(recipe, recipeId)
+        assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+        addIngredientsToList(user.uid, recipe, recipeId)
         setSelectedDay('monday')
         props.history.push('/week')
       }
@@ -37,12 +43,14 @@ function ExpandedRecipeCard (props) {
   }
 
   function changeHandler (evt) {
+    console.log(evt.target.value)
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
 
   return (
     <>
+      {user ? user.uid : null}
       <div className="card1">
         <div className="card-image">
           <figure className="image1 is-5by1">
@@ -67,7 +75,7 @@ function ExpandedRecipeCard (props) {
             </div>
           </div>
           <label>Add Recipe To:</label>{' '}
-          <select value={weekDay} onChange={changeHandler}>
+          <select value={weekDay} onChange={evt => changeHandler(evt)}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>
