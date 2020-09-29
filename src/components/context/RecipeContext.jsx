@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect, useContext } from 'react'
-
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -12,7 +11,7 @@ export const RecipeProvider = ({ children }) => {
   const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase 
       .firestore()
       .collection('recipes')
       .where('userId', '==', user ? user.uid : null)
@@ -24,7 +23,7 @@ export const RecipeProvider = ({ children }) => {
         setRecipes(newRecipes)
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
+    return () => unsubscribe()
   }, [user])
 
   return (

@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect, useContext } from 'react'
-
 import firebase from 'firebase/app'
 
 import { UserContext } from './UserContext'
@@ -20,7 +19,7 @@ export const WeekProvider = ({ children }) => {
   })
 
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase 
       .firestore()
       .collection('week')
       .where('userId', '==', user ? user.uid : null)
@@ -32,7 +31,7 @@ export const WeekProvider = ({ children }) => {
         setWeek(newWeek[0])
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
+    return () => unsubscribe()
   }, [user])
 
   return (

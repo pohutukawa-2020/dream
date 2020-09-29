@@ -1,24 +1,28 @@
 import React, { useContext, useState } from 'react'
 
+import firebase from 'firebase/app'
+
 import { UserContext } from './context/UserContext'
 import { RecipeContext } from './context/RecipeContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 
-import { sortRecipes } from '../utils.js'
+import { sortList } from '../utils.js'
 
 function RecipesList() {
   const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
   const [searchTerm, setSearchTerm] = useState('')
-  const sortedRecipes = sortRecipes([...recipes], sortBy)
+  const sortedRecipes = sortList([...recipes], sortBy)
   const filteredRecipes = sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
   const changeHandler = (e) => {
     setSearchTerm(e.target.value)
     console.log(sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase())))
   }
+
+
  
   return (
     <>
@@ -27,8 +31,7 @@ function RecipesList() {
         <div className='recipeSort'>
           <div className="list">
           <input type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
-          <label>Sort By:</label>{' '}
-          
+          <label>Sort:</label>{' '}
           <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>

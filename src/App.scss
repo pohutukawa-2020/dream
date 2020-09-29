@@ -10,6 +10,11 @@ $tabs-active-color: #f8f8f8;
 
 // Styles go below this line...
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 // Recipe Card // 
 .card { 
   width: 95%;
@@ -277,4 +282,34 @@ html, :focus {
 .nav-title {
   margin-top: 1.5rem;
   margin-bottom: -2rem;
+}
+
+.noBulmaNav {
+  z-index: 1;
+  // top: 0;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  // padding-bottom: 10px;
+  height: 80px;
+  width: 100vw
+}
+
+.noBulmaNavTitle {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.noBulmaNavSignOut {
+  font-size: 0.8rem;
+}
+
+.noBulmaNavLogo {
+  width: auto;
+  height: 50px
 }

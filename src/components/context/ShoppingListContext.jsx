@@ -1,5 +1,4 @@
 import React, { useState, createContext, useEffect, useContext } from 'react'
-
 import firebase from 'firebase/app'
 
 import { UserContext } from './UserContext'
@@ -11,7 +10,7 @@ export const ShoppingListProvider = ({ children }) => {
   const [shoppingList, setShoppingList] = useState([])
 
   useEffect(() => {
-    const unsubscribe = firebase // note unsubscribe added in case funny behaviour
+    const unsubscribe = firebase 
       .firestore()
       .collection('shoppingList')
       .where('userId', '==', user ? user.uid : null)
@@ -23,7 +22,7 @@ export const ShoppingListProvider = ({ children }) => {
         setShoppingList(newShoppingList)
       })
 
-    return () => unsubscribe() // note unsubscribe added in case funny behaviour
+    return () => unsubscribe() 
   }, [user])
 
   return (
