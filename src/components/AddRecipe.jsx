@@ -26,7 +26,7 @@ const AddRecipe = (props) => {
       prepTime,
       ingredients,
       method,
-      user: user.uid
+      userId: user.uid
     }
 
     addRecipe(newRecipe)

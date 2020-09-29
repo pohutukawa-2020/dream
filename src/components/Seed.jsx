@@ -15,7 +15,7 @@ export default function Seed () {
       .firestore()
       .collection('recipes')
       .add({
-        user: user.uid,
+        userId: user.uid,
         ...recipe
       })
       .then(() => {
@@ -30,7 +30,7 @@ export default function Seed () {
     firebase
       .firestore()
       .collection('recipes')
-      .where('user', '==', user.uid)
+      .where('userId', '==', user.uid)
       .get()
       .then(response => {
         response.forEach(recipe => {

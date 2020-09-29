@@ -92,11 +92,11 @@ export const deleteCardRecipe = (recipe) => { // USING THIS ONE
     })
 }
 
-export function clearWeekDayAssignments (user) { // USING THIS ONE
+export function clearWeekDayAssignments (userId) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc(user)
+    .doc(userId)
     .update({
       monday: '',
       tuesday: '',
@@ -242,7 +242,7 @@ export const signUp = (email, password) => {
         friday: '',
         saturday: '',
         sunday: '',
-        user: response.user.uid
+        userId: response.user.uid
       })
     })
     .catch(error => {

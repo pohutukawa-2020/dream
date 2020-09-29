@@ -16,14 +16,14 @@ export const WeekProvider = ({ children }) => {
     friday: '',
     saturday: '',
     sunday: '',
-    user: ''
+    userId: ''
   })
 
   useEffect(() => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('week')
-      .where('user', '==', user ? user.uid : null)
+      .where('userId', '==', user ? user.uid : null)
       .onSnapshot(snapshot => {
         const newWeek = snapshot.docs.map(doc => ({
           id: doc.id,

@@ -30,6 +30,8 @@ function RecipesList() {
           <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>
+            <option value='SERVES_ASC'>Serves (Ascending)</option>
+            <option value='SERVES_DESC'>Serves (Descending)</option>
           </select>
         </div>
         <ul>
