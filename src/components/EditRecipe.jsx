@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
 import { RecipeContext } from './RecipeContext'
 
@@ -7,12 +7,21 @@ function EditRecipe (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
-  const [imagePath, setImagePath] = useState(recipe ? recipe.imagePath : null)
-  const [name, setName] = useState(recipe ? recipe.name : null)
-  const [serves, setServes] = useState(recipe ? recipe.serves : null)
-  const [prepTime, setPrepTime] = useState(recipe ? recipe.prepTime : null)
-  const [ingredients, setIngredients] = useState(recipe ? recipe.ingredients : null)
-  const [method, setMethod] = useState(recipe ? recipe.method : null)
+  const [imagePath, setImagePath] = useState(null)
+  const [name, setName] = useState(null)
+  const [serves, setServes] = useState(null)
+  const [prepTime, setPrepTime] = useState(null)
+  const [ingredients, setIngredients] = useState(null)
+  const [method, setMethod] = useState(null)
+
+  useEffect(() => {
+    setImagePath(recipe ? recipe.imagePath : null)
+    setName(recipe ? recipe.name : null)
+    setServes(recipe ? recipe.serves : null)
+    setPrepTime(recipe ? recipe.prepTime : null)
+    setIngredients(recipe ? recipe.ingredients : null)
+    setMethod(recipe ? recipe.method : null)
+  }, [recipe])
 
   function onSubmitHandler (e) {
     e.preventDefault()
@@ -40,8 +49,9 @@ function EditRecipe (props) {
     props.history.push(`/recipe/${recipeId}`)
   }
 
+
   return (
-    <>
+    recipe && <>
       <form onSubmit={onSubmitHandler}>
         <h4>Edit Recipe</h4>
 
@@ -104,7 +114,7 @@ function EditRecipe (props) {
         </div>
         <br></br>
       </form>
-    </>
+    </> || <div>is loading</div>
   )
 }
 
