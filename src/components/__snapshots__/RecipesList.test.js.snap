@@ -72,32 +72,31 @@ exports[`renders component correctly 1`] = `
               <div
                 className="media-content"
               >
-                <p
+                <div
                   className="title is-5 mb-0"
                 >
                   Roasted black bean burgers
-                </p>
+                </div>
                  
                 <div
                   className="field is-grouped"
                 >
-                  <p
+                  <div
                     className="control"
                   >
-                    <a
-                      href="#/recipe/MOqgTKsRp9OwepdSupbr"
-                      onClick={[Function]}
+                    <button
+                      className="button is-link is-small is-rounded"
                     >
-                      <button
-                        className="button is-link is-small is-rounded"
-                      >
-                        <i
-                          className="far fa-calendar-plus"
-                        />
-                      </button>
-                    </a>
-                  </p>
-                  <p
+                      <i
+                        className="far fa-calendar-plus"
+                      />
+                      <a
+                        href="#/recipe/MOqgTKsRp9OwepdSupbr"
+                        onClick={[Function]}
+                      />
+                    </button>
+                  </div>
+                  <div
                     className="control"
                   >
                     <a
@@ -112,41 +111,24 @@ exports[`renders component correctly 1`] = `
                         />
                       </button>
                     </a>
-                  </p>
-                  <p
-                    className="control"
-                  >
-                    <a
-                      href="#/recipes"
-                      onClick={[Function]}
-                    >
-                      <button
-                        className="button is-danger is-small is-rounded"
-                        onClick={[Function]}
-                      >
-                        <i
-                          className="fas fa-trash-alt"
-                        />
-                      </button>
-                    </a>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
             <div
               className="content"
             >
-              <p
+              <div
                 className="mb-0"
               >
                 Serves: 
                 4
-              </p>
+              </div>
                
-              <p>
+              <div>
                 Prep time: 
                 40 Minutes - Not too tricky
-              </p>
+              </div>
                
             </div>
           </div>

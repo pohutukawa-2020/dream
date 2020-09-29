@@ -10,6 +10,10 @@ import ExpandedRecipeCard from './ExpandedRecipeCard'
 import AddRecipe from './AddRecipe'
 import EditRecipe from './EditRecipe'
 
+import Home from './Home'
+import SignUp from './SignUp'
+import SignOut from './SignOut'
+
 function App () {
   return (
     <> 
@@ -18,8 +22,13 @@ function App () {
       </div>
         <div className="routes">
           <Route path="/" component={Nav} />
-          <div className='ccontent'>
-            <Route exact path='/'><Redirect to='/week'/></Route>
+          <Route path='/' component={SignOut} /> 
+          <Route exact path='/'><Redirect to='/home'/></Route>
+          <div className='authenticationRoutes'>
+            <Route path='/home' component={Home} />
+            <Route path='/sign-up' component={SignUp} />
+          </div>
+          <div className='contentRoutes'>
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
             <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />

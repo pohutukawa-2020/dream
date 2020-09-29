@@ -1,5 +1,9 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+
+import { UserContext } from './context/UserContext'
+import RecipeCard from './RecipeCard'
+
 import { WeekContext } from './context/WeekContext'
 import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
@@ -7,6 +11,7 @@ import WeekCard from './WeekCard'
 import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
 function WeekList () {
+  const {user} = useContext(UserContext)
   const [week] = useContext(WeekContext)
   const [recipes] = useContext(RecipeContext)
   const [, setSelectedDay] = useContext(SelectedDayContext)
@@ -17,10 +22,10 @@ function WeekList () {
   const fridayRecipe = recipes.find(x => x.id === week.friday)
   const saturdayRecipe = recipes.find(x => x.id === week.saturday)
   const sundayRecipe = recipes.find(x => x.id === week.sunday)
-
+  
   function clickHandler () {
-    clearWeekDayAssignments()
-    clearShoppingList()
+    clearWeekDayAssignments(user.uid)
+    clearShoppingList(user.uid)
   }
 
   return (
@@ -38,6 +43,7 @@ function WeekList () {
       <div>
         <hr />
         <div className="weeklist">
+        <button onClick={() => clickHandler()}>Clear Week Assignments</button> {/* --- NIMZ STYLE PLUZ --- */}
           <div>
         {mondayRecipe ? <h1 className="subtitle is-5">Monday<hr /></h1> : null}
         {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>

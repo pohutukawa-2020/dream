@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+<div
+  className="ShoppingList"
+>
+  <button
+    onClick={[Function]}
+  >
+    Clear Shopping List
+  </button>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Add item to Shopping List
+    </label>
+    <br />
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button>
+      Add
+    </button>
+    <ul />
+  </form>
+  <ul>
+    <li>
+      <h5>
+         
+        1½ red onions
+      </h5>
+      <h5>
+         
+        100 g rye bread
+      </h5>
+      <h5>
+         
+        ground corian…
+      </h5>
+    </li>
+  </ul>
+</div>
+`;

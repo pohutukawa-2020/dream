@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+
+import { UserContext } from './context/UserContext'
 
 import { addRecipe } from '../utils'
 
 // import MultipleIngredientTest from './MultipleIngredientTest'
 
 const AddRecipe = (props) => {
+  const {user} = useContext(UserContext)
   const [name, setName] = useState('')
   const [imagePath, setImagePath] = useState('')
   const [serves, setServes] = useState('')
@@ -22,7 +25,8 @@ const AddRecipe = (props) => {
       serves,
       prepTime,
       ingredients,
-      method
+      method,
+      user: user.uid
     }
 
     addRecipe(newRecipe)
