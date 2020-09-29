@@ -6,10 +6,10 @@ import ShoppingList from './ShoppingList'
 function Shopping () {
   return (
     <>
-        <section class="hero">
-          <div class="hero-body">
-            <div class="container">
-               <h1 class="title is-4">
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container">
+               <h1 className="title is-4">
                 Your Shopping List
               </h1>
             </div>

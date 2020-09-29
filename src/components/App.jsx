@@ -13,6 +13,9 @@ import EditRecipe from './EditRecipe'
 function App () {
   return (
     <> 
+      <div className="logo">
+        <img src="../rp.png" alt="Logo"/>
+      </div>
         <div className="routes">
           <Route path="/" component={Nav} />
           <div className='ccontent'>

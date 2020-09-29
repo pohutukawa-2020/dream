@@ -5,24 +5,24 @@ import { Link } from 'react-router-dom'
 function WeekCard ({ recipe }) {
     return (
       <>
-      <div class="box">
+      <div className="box">
       <Link to={{ pathname: `/recipe/${recipe.id}`, recipe: recipe }}>
-        <article class="media" >
-          <div class="media-left">
-            <figure class="image is-96x96">
+        <article className="media" >
+          <div className="media-left">
+            <figure className="image is-96x96">
               <img src={recipe.imagePath} alt={recipe.name} />
             </figure>
           </div>
-          <div class="media-content">
-            <div class="content">
+          <div className="media-content">
+            <div className="content">
               <p>
                 <strong className="subtitle">{recipe.name}</strong>
                 <br />
                 
               </p>
             </div>
-            <nav class="level is-mobile">
-            <div class="level-left">
+            <nav className="level is-mobile">
+            <div className="level-left">
             </div>
             </nav>
           </div>
