@@ -27,23 +27,11 @@ function App () {
     } else {setAuth({authenticated: false, loading: false})}
   }, [user])
 
-  return (
-    auth.loading && <div>is loading</div> ||
-    !auth.authenticated && 
-    <> 
-      <div className="contentRoutes">
-        <Route path='/home' component={Home} />
-        <Route path='/sign-up' component={SignUp} />
-        <Route exact path='/'><Redirect to='/home'/></Route>
-        <Route exact path='/recipes'><Redirect to='/home'/></Route>
-        <Route exact path="/recipes/add"><Redirect to='/home'/></Route>
-        <Route exact path="/recipe/:id"><Redirect to='/home'/></Route>
-        <Route exact path='/week'><Redirect to='/home'/></Route>
-        <Route exact path='/shopping'><Redirect to='/home'/></Route>
-        <Route exact path="/shopping/add"><Redirect to='/home'/></Route>
-      </div>
-    </> ||
-    <> 
+  if (auth.loading) {
+    return (<div>is loading</div>)
+  } else {
+    if (auth.authenticated) {
+      return (
         <div className="contentRoutes">
           <Route path="/" component={Nav} />
           <Route path='/' component={SignOut} /> 
@@ -54,12 +42,29 @@ function App () {
           <Route exact path="/recipes/add" component={AddRecipe} />
           <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
           <Route exact path="/recipe/edit/:id" component={EditRecipe} />
+          <Route path='/week' component={HeaderCopy} />
           <Route exact path="/week" component={Week} />
+          <Route path='/shopping' component={HeaderCopy} />
           <Route exact path="/shopping" component={Shopping} />
           <Route exact path="/shopping/add" component={Shopping} />
         </div>
-    </> 
-  )
+      )
+    } else {
+      return (
+        <div className="contentRoutes">
+          <Route path='/home' component={Home} />
+          <Route path='/sign-up' component={SignUp} />
+          <Route exact path='/'><Redirect to='/home'/></Route>
+          <Route exact path='/recipes'><Redirect to='/home'/></Route>
+          <Route exact path="/recipes/add"><Redirect to='/home'/></Route>
+          <Route exact path="/recipe/:id"><Redirect to='/home'/></Route>
+          <Route exact path='/week'><Redirect to='/home'/></Route>
+          <Route exact path='/shopping'><Redirect to='/home'/></Route>
+          <Route exact path="/shopping/add"><Redirect to='/home'/></Route>
+      </div>
+      )
+    }
+  }
 }
 
 export default App
