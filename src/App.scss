@@ -1,20 +1,18 @@
-// $primary: ;
+$primary: black;
+$title-color: black;
+$subtitle-color: black;
 $tabs-link-padding: 0.3em 0.3em;
 $tabs-boxed-link-radius: 0px;
 $tabs-toggle-link-radius: 0px;
-
+$tabs-active-color: #f8f8f8;
 
 @import "../node_modules/bulma/bulma.sass";
 
 // Styles go below this line...
 
+// Recipe Card // 
 .card { 
   width: 95%;
-  margin: auto;
-}
-
-.card1 { 
-  width: 100%;
   margin: auto;
 }
 
@@ -27,24 +25,8 @@ p {
   font-size: 10px; 
 } 
 
-.card-header-title { 
-  font-size: 20px; 
-} 
-
 .card-content {
   padding: 0.5rem;
-}
-
-.tabs {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  z-index:1;
-  
-  
-}
-.card-seperation {
-  padding: 2rem
 }
 
 .seperation {
@@ -57,35 +39,114 @@ p {
   object-position: 30px 50px;
 }
 
-.image1 {
-  justify-content: center;
-  height: 800px;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-}
-
 .field { 
   margin-left: 55%;
   margin-top: 1%;
 }
+
+// Nav Bar //
+.tabs {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index:1; 
+}
+
 .navp {
   margin-top: -10px;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
-.hero-body {
-  padding: 1rem;
+.tabs .icon:first-child {
+  margin-right: 0.2em;
 }
 
 .ccontent {
   margin-bottom: 24%;
 }
-.tabs .icon:first-child {
-  margin-right: 0.2em;
+
+
+// Branding //
+
+.logo { 
+  margin-top: 1.6em;
+  display: block;
+  margin-right: auto;
+  width: 15%;
+  padding-left: 20px;
+  position: fixed;
+  z-index: 2;
 }
 
-.strikeIngredient {
-  text-decoration:line-through
+.title {
+  font-family: 'Varela Round', sans-serif;
 }
+
+.hero-body {
+  padding: 2rem;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  
+} 
+
+
+// Week Plan Styling //
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0.2em 0;
+  padding: 0;
+  width: 94.5%;
+}
+
+.box {
+  border-radius: 2em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleweek {
+  font-size: 2em;
+}
+
+.spacing {
+  margin: 2rem
+}
+html, body {
+  background-color: #f8f8f8;
+}
+
+.header {
+  position: fixed;
+  margin-top: 0em;
+}
+
+.weeklist {
+  padding-top: 6rem;
+}
+
+.hrspacing {
+  margin-top: 1.4em;
+}
+
+.subtitle {
+  padding-left: 20px;
+}
+
+.mondaypadding {
+  padding: 10px;
+}
+.box {
+  margin-bottom: 1.5rem;
+}
+// .Recipes {
+//   padding-top: 6em;
+// }
