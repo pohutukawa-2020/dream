@@ -62,9 +62,6 @@ p {
   margin-right: 0.2em;
 }
 
-.contentRoutes {
-  margin-bottom: 24%;
-}
 
 
 // Branding //
@@ -122,6 +119,7 @@ hr {
 }
 html, body {
   background-color: #f8f8f8;
+  margin-bottom: 12%;
 }
 
 .header {
@@ -153,11 +151,12 @@ html, body {
 .destroyerOfIngredients {
   position: relative;
   left: 2rem;
+  color: gray;
 }
 
-.shoppingText {
-  justify-content: left;
-  align-items: left;
-  margin-left: 3rem;
+// .shoppingText {
+//   justify-content: left;
+//   align-items: left;
+//   margin-left: 2rem;
 
-}
+// }

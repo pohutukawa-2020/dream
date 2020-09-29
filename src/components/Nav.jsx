@@ -49,7 +49,7 @@ export const Nav = (props) => {
 
                 <Link to='/recipes/add'>
                   <div>
-                    <div className="icon is-centered is-large"><i className="fas fa-book-medical"></i></div>
+                    <div className="icon is-centered is-large"><i className="fas fa-book"></i></div>
                     <div><p className='navp'>Add Recipe</p></div>
                   </div>
                 </Link>

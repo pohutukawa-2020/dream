@@ -18,7 +18,7 @@ const MiscShoppingListItem = () => {
     addMiscItem(user.uid, miscItem)
     setMiscItem('')
   }
-  console.log('miscitem= ',miscItem)
+  console.log('miscitem: ', miscItem)
   return (
     <>
       <form onSubmit={onSubmitHandler}>

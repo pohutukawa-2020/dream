@@ -14,7 +14,7 @@ export const MiscShoppingProvider = ({ children }) => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('miscShoppingList')
-      .where('user', '==', user ? user.uid : null)
+      .where('userId', '==', user ? user.uid : null)
       .onSnapshot(snapshot => {
         const miscCollection = snapshot.docs.map(doc => ({
           id: doc.id,
@@ -22,7 +22,7 @@ export const MiscShoppingProvider = ({ children }) => {
         }))
         setMiscCollection(miscCollection)
       })
-
+      console.log('misc ', miscCollection)
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
   }, [user])
 
