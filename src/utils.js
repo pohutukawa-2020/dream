@@ -1,10 +1,10 @@
 import firebase from 'firebase/app'
 
-export function addRecipe (Recipe) { // USING THIS ONE
+export function addRecipe (recipe) { // USING THIS ONE
   firebase
     .firestore()
     .collection('recipes')
-    .add(Recipe)
+    .add(recipe)
     .then(firestoreRef => {
       console.log('Recipe successfully added!', firestoreRef)
     }).catch((error) => {
@@ -26,29 +26,32 @@ export const deleteRecipe = (recipeId, props) => { // USING THIS ONE
   props.history.push('/recipes')
 }
 
-export function UpdateRecipe (recipe) {
-  firebase
-    .firestore()
-    .collection('recipes')
-    .update({ recipe })
-    .then(() => {
-      console.log('Recipe successfully added!')
-    }).catch((error) => {
-      console.error('Error adding recipe: ', error)
-    })
-}
+// export function UpdateRecipe (recipe) {
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .update({ recipe })
+//     .then(() => {
+//       console.log('Recipe successfully added!')
+//     }).catch((error) => {
+//       console.error('Error adding recipe: ', error)
+//     })
+// }
 
-export function updateRecipe (Recipe) {
-  firebase
-    .firestore()
-    .collection('recipes')
-    .update(Recipe)
-    .then(() => {
-      console.log('Recipe successfully updated!')
-    }).catch((error) => {
-      console.error('Error updating recipe: ', error)
-    })
-}
+
+
+// export function updateRecipe (updatedRecipe, recipeId) {
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .doc(recipeId)
+//     .update(updatedRecipe)
+//     .then(() => {
+//       console.log('Recipe successfully updated!')
+//     }).catch((error) => {
+//       console.error('Error updating recipe: ', error)
+//     })
+// }
 
 // export function addIngredients(recipeId, recipeIngredients) {
 //   firebase
@@ -79,18 +82,18 @@ export function assignRecipeToWeekDay (userId, newWeekDayAssignment) { // USING 
     })
 }
 
-export const deleteCardRecipe = (recipe) => { // USING THIS ONE
-  firebase
-    .firestore()
-    .collection('recipes')
-    .doc(recipe.id)
-    .delete()
-    .then(() => {
-      console.log('Recipe successfully deleted!')
-    }).catch((error) => {
-      console.error('Error deleting recipe: ', error)
-    })
-}
+// export const deleteCardRecipe = (recipe) => { 
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .doc(recipe.id)
+//     .delete()
+//     .then(() => {
+//       console.log('Recipe successfully deleted!')
+//     }).catch((error) => {
+//       console.error('Error deleting recipe: ', error)
+//     })
+// }
 
 export function clearWeekDayAssignments (userId) { // USING THIS ONE
   firebase
@@ -113,26 +116,28 @@ export function clearWeekDayAssignments (userId) { // USING THIS ONE
     })
 }
 
-export function addIngredientsToList (userId, recipe, recipeId) { // USING THIS ONE
+export function addRecipeIngredients(userId, recipe, recipeId) { // USING THIS ONE
   const newIngredients = recipe.ingredients
-  console.log('recipeId: ', recipeId)
-
-  firebase
-    .firestore()
-    .collection('shoppingList')
-    .add({
-      userId: userId,
-      recipeId: recipeId,
-      ingredients: newIngredients
-    })
-    .then(id => {
-      console.log('Ingredients successfully added!', id.id)
-    }).catch((error) => {
-      console.error('Error adding ingredients: ', error)
-    })
+  newIngredients.map(newIngredient => {
+    firebase
+      .firestore()
+      .collection('shoppingList')
+      .add({
+        userId: userId,
+        recipeId: recipeId,
+        item: newIngredient.item,
+        quantity: newIngredient.quantity
+      })
+      .then(id => {
+        console.log('Ingredients successfully added!', id.id)
+      }).catch((error) => {
+        console.error('Error adding ingredients: ', error)
+      })
+  })
+ 
 }
 
-export function removeIngredientsFromList (recipeId) { // USING THIS ONE
+export function removeRecipeIngredients (recipeId) { // USING THIS ONE
   firebase
     .firestore()
     .collection('shoppingList')
@@ -188,13 +193,14 @@ export function clearMiscShoppingList (userId) {
     })
 }
 
-export function addMiscItem (userId, newItem) { // USING THIS ONE
+export function addMiscItem (userId, newItemQ, newItem) { // USING THIS ONE
   firebase
     .firestore()
-    .collection('miscShoppingList')
+    .collection('shoppingList')
     .add({
       userId: userId,
-      newItem: newItem
+      item: newItem,
+      quantity: newItemQ
     })
     .then((firestoreRef) => {
       console.log('Misc item successfully added to shopping list!', firestoreRef.id)

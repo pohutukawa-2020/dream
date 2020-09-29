@@ -23,15 +23,16 @@ const MiscShoppingListItem = () => {
     <>
       <form onSubmit={onSubmitHandler}>
         <label>Add item to Shopping List</label><br></br>
+        <input type="number" value={miscItem} onChange={e => setMiscItem(e.currentTarget.value)} />
         <input type="text" value={miscItem} onChange={e => setMiscItem(e.currentTarget.value)} />
         <button>Add</button>
-        <ul>
+        {/* <ul>
           {miscCollection.map(item =>
             <li key={item.id}>
-             <MiscItem newItem={item.newItem} id={item.id}/>
+             <MiscItem newItem={item.item} id={item.id}/>
             </li>
           )}
-        </ul>
+        </ul> */}
       </form>
     </>
   )

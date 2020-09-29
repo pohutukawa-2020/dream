@@ -11,7 +11,7 @@ function RecipeCard ({ recipe }) {
             <figure className="image is-1by10">
               <img src={recipe.imagePath} alt={recipe.name}/>
               <div className="top-right">
-                 <div className="control">
+                <div className="control">
                     <i className="fas fa-plus"></i><Link to={`/recipe/${recipe.id}`}>
                       </Link>
                   </div>

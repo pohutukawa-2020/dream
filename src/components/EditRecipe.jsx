@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
+
 import { RecipeContext } from './context/RecipeContext'
+import { updateRecipe } from '../utils'
 
 function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
@@ -25,19 +27,20 @@ function EditRecipe (props) {
 
   function onSubmitHandler (e) {
     e.preventDefault()
+    const updatedRecipe = {
+      imagePath,
+      name,
+      serves,
+      prepTime,
+      ingredients: ingredients,
+      method: method
+    }
 
     firebase
       .firestore()
       .collection('recipes')
       .doc(recipe.id)
-      .update({
-        imagePath,
-        name,
-        serves,
-        prepTime,
-        ingredients: ingredients,
-        method: method
-      })
+      .update(updatedRecipe)
       .then(() => {
         setImagePath('')
         setName('')
