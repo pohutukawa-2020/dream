@@ -1,9 +1,12 @@
 import React from "react"
 
+import { Link } from 'react-router-dom'
+
 function WeekCard ({ recipe }) {
     return (
       <>
       <div class="box">
+      <Link to={{ pathname: `/recipe/${recipe.id}`, recipe: recipe }}>
         <article class="media" >
           <div class="media-left">
             <figure class="image is-96x96">
@@ -20,25 +23,11 @@ function WeekCard ({ recipe }) {
             </div>
             <nav class="level is-mobile">
             <div class="level-left">
-              <a class="level-item" aria-label="reply">
-                {/* <span class="icon is-small">
-                  <i class="fas fa-reply" aria-hidden="true"></i>
-                </span>
-              </a>
-              <a class="level-item" aria-label="retweet">
-                <span class="icon is-small">
-                  <i class="fas fa-retweet" aria-hidden="true"></i>
-                </span>
-              </a>
-              <a class="level-item" aria-label="like">
-                <span class="icon is-small">
-                  <i class="fas fa-heart" aria-hidden="true"></i>
-                </span> */}
-              </a>
             </div>
             </nav>
           </div>
         </article>
+        </Link>
       </div>
 
     </>

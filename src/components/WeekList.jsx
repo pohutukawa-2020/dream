@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 import { WeekContext } from './context/WeekContext'
 import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
-import RecipeCard from './RecipeCard'
 import WeekCard from './WeekCard'
-import Week from './Week'
 import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
 function WeekList () {
@@ -58,9 +56,9 @@ function WeekList () {
         </Link>}
         
         {thursdayRecipe ? <h1 className="subtitle is-5">Thursday<hr /></h1> : null}
-        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : <Link to='/recipes'>
-        <h3 className="subtitle is-5">Thursday+<hr /></h3>
-        </Link>}
+        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : 
+        <Link to='/recipes'><h3 className="subtitle is-5" onClick={() => setSelectedDay('thursday')}>Thursday+<hr /></h3></Link>}
+        
         
         {fridayRecipe ? <h1 className="subtitle is-5">Friday<hr /></h1> : null}
         {fridayRecipe ? <WeekCard recipe={fridayRecipe} /> : <Link to='/recipes'>

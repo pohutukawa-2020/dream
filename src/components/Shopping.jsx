@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ShoppingList from './ShoppingList'
-import Week from './Week'
+
 
 function Shopping () {
   return (
@@ -16,7 +16,6 @@ function Shopping () {
           </div>
         </section>
     <div className="Shopping weeklist">
-      <h1>Shopping</h1>
       <ShoppingList />
     </div>
     </>
