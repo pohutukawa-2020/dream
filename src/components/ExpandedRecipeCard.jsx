@@ -22,7 +22,7 @@ function ExpandedRecipeCard (props) {
 
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
       if (week[weekDay]) {
-        if (window.confirm(`${assignedRecipe.name} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
+        if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
           assignRecipeToWeekDay(newWeekDayAssignment)
           addIngredientsToList(recipe, recipeId)
