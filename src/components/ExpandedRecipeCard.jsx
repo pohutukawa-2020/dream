@@ -6,7 +6,8 @@ import { UserContext } from './context/UserContext'
 import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
 import { WeekContext } from './context/WeekContext'
-import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
+import { deleteRecipe, addRecipeIngredients, removeRecipeIngredients, assignRecipeToWeekDay, capitalise } from '../utils'
+import HeaderCopy from './HeaderCopy'
 
 function ExpandedRecipeCard (props) {
   const {user} = useContext(UserContext)
@@ -33,19 +34,15 @@ function ExpandedRecipeCard (props) {
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
       if (week[weekDay]) {
         if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
-          removeIngredientsFromList(week[weekDay])
+          removeRecipeIngredients(week[weekDay])
           assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-          addIngredientsToList(user.uid, recipe, recipeId)
+          addRecipeIngredients(user.uid, recipe, recipeId)
           setSelectedDay('monday')
           props.history.push('/week')
-        }
-        // assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        // addIngredientsToList(user.uid, recipe, recipeId)
-        // setSelectedDay('monday')
-        // props.history.push('/week')
+        } // else do nothing
       } else {
         assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        addIngredientsToList(user.uid, recipe, recipeId)
+        addRecipeIngredients(user.uid, recipe, recipeId)
         setSelectedDay('monday')
         props.history.push('/week')
       }
@@ -53,14 +50,17 @@ function ExpandedRecipeCard (props) {
   }
 
   function changeHandler (evt) {
-    console.log(evt.target.value)
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
 
   return (
     <>
-      {user ? user.uid : null}
+      <div className='noBulmaNav'>
+        <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+        <div className='noBulmaNavTitle'>My Recipes</div>
+        <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
+      </div>
       <div className="card1">
         <div className="card-image">
           <figure className="image1 is-5by1">
@@ -73,7 +73,7 @@ function ExpandedRecipeCard (props) {
         <button onClick={() => deleteRecipe(recipeId, props)}>
           Delete Recipe
         </button>
-        <button onClick={() => removeIngredientsFromList(recipeId)}>Remove Ingredients From Shopping List</button>
+        <button onClick={() => removeRecipeIngredients(recipeId)}>Remove Ingredients From Shopping List</button>
         <div className="card-content">
           <div className="media">
             <div className="media-left">
@@ -104,7 +104,7 @@ function ExpandedRecipeCard (props) {
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
-              <p>{ingredient}</p>
+              <p>{ingredient.quantity}{' '}{ingredient.item}</p>
             )) : null}</div> : null}
           </div>
           <div>

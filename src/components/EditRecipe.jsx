@@ -1,6 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
+
 import { RecipeContext } from './context/RecipeContext'
+import HeaderCopy from './HeaderCopy'
+import { updateRecipe, signOut } from '../utils'
+import Header from './Header'
 
 function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
@@ -25,19 +29,20 @@ function EditRecipe (props) {
 
   function onSubmitHandler (e) {
     e.preventDefault()
+    const updatedRecipe = {
+      imagePath,
+      name,
+      serves,
+      prepTime,
+      ingredients: ingredients,
+      method: method
+    }
 
     firebase
       .firestore()
       .collection('recipes')
       .doc(recipe.id)
-      .update({
-        imagePath,
-        name,
-        serves,
-        prepTime,
-        ingredients: ingredients,
-        method: method
-      })
+      .update(updatedRecipe)
       .then(() => {
         setImagePath('')
         setName('')
@@ -49,9 +54,18 @@ function EditRecipe (props) {
     props.history.push(`/recipe/${recipeId}`)
   }
 
+  const clickHandler = () => {
+    signOut()
+    props.history.push('/')
+  }
 
   return (
     recipe && <>
+      <div className='noBulmaNav'>
+        <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+        <div className='noBulmaNavTitle'>Edit Recipe</div>
+        <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
+      </div>
       <form onSubmit={onSubmitHandler}>
         <h4>Edit Recipe</h4>
 
@@ -94,14 +108,14 @@ function EditRecipe (props) {
               <input type='text' value={prepTime} onChange={e => setPrepTime(e.currentTarget.value)} /> {/* --- PREP TIME --- */}
             </div>
           </div>
-          <div className="card-content">
+          {/* <div className="card-content">
                 Ingredients needed:
                 (seperate by comma)
             <div>
-              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> {/* <MultipleIngredientTest /> */}
+              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
               <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>) : null}</ul>
             </div>
-          </div>
+          </div> */}
           <div className="card-content">
             <div>
               <label>{'Method (seperate by comma)'}</label>

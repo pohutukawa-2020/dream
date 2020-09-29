@@ -12,7 +12,6 @@ import { UserProvider } from './components/context/UserContext'
 import { RecipeProvider } from './components/context/RecipeContext'
 import { WeekProvider } from './components/context/WeekContext'
 import { ShoppingListProvider } from './components/context/ShoppingListContext'
-import { MiscShoppingProvider } from './components/context/MiscShoppingContext'
 import { SelectedDayProvider } from './components/context/SelectedDayContext'
 
 firebase.initializeApp({
@@ -33,11 +32,9 @@ ReactDOM.render(
       <RecipeProvider>
         <WeekProvider>
           <ShoppingListProvider>
-            <MiscShoppingProvider>
-              <SelectedDayProvider>
-                <App />
-              </SelectedDayProvider>
-            </MiscShoppingProvider>
+            <SelectedDayProvider>
+              <App />
+            </SelectedDayProvider>
           </ShoppingListProvider>
         </WeekProvider>
       </RecipeProvider>

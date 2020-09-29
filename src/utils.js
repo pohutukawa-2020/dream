@@ -1,10 +1,10 @@
 import firebase from 'firebase/app'
 
-export function addRecipe (Recipe) { // USING THIS ONE
+export function addRecipe (recipe) { // USING THIS ONE
   firebase
     .firestore()
     .collection('recipes')
-    .add(Recipe)
+    .add(recipe)
     .then(firestoreRef => {
       console.log('Recipe successfully added!', firestoreRef)
     }).catch((error) => {
@@ -26,29 +26,32 @@ export const deleteRecipe = (recipeId, props) => { // USING THIS ONE
   props.history.push('/recipes')
 }
 
-export function UpdateRecipe (recipe) {
-  firebase
-    .firestore()
-    .collection('recipes')
-    .update({ recipe })
-    .then(() => {
-      console.log('Recipe successfully added!')
-    }).catch((error) => {
-      console.error('Error adding recipe: ', error)
-    })
-}
+// export function UpdateRecipe (recipe) {
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .update({ recipe })
+//     .then(() => {
+//       console.log('Recipe successfully added!')
+//     }).catch((error) => {
+//       console.error('Error adding recipe: ', error)
+//     })
+// }
 
-export function updateRecipe (Recipe) {
-  firebase
-    .firestore()
-    .collection('recipes')
-    .update(Recipe)
-    .then(() => {
-      console.log('Recipe successfully updated!')
-    }).catch((error) => {
-      console.error('Error updating recipe: ', error)
-    })
-}
+
+
+// export function updateRecipe (updatedRecipe, recipeId) {
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .doc(recipeId)
+//     .update(updatedRecipe)
+//     .then(() => {
+//       console.log('Recipe successfully updated!')
+//     }).catch((error) => {
+//       console.error('Error updating recipe: ', error)
+//     })
+// }
 
 // export function addIngredients(recipeId, recipeIngredients) {
 //   firebase
@@ -79,18 +82,18 @@ export function assignRecipeToWeekDay (userId, newWeekDayAssignment) { // USING 
     })
 }
 
-export const deleteCardRecipe = (recipe) => { // USING THIS ONE
-  firebase
-    .firestore()
-    .collection('recipes')
-    .doc(recipe.id)
-    .delete()
-    .then(() => {
-      console.log('Recipe successfully deleted!')
-    }).catch((error) => {
-      console.error('Error deleting recipe: ', error)
-    })
-}
+// export const deleteCardRecipe = (recipe) => { 
+//   firebase
+//     .firestore()
+//     .collection('recipes')
+//     .doc(recipe.id)
+//     .delete()
+//     .then(() => {
+//       console.log('Recipe successfully deleted!')
+//     }).catch((error) => {
+//       console.error('Error deleting recipe: ', error)
+//     })
+// }
 
 export function clearWeekDayAssignments (userId) { // USING THIS ONE
   firebase
@@ -113,26 +116,29 @@ export function clearWeekDayAssignments (userId) { // USING THIS ONE
     })
 }
 
-export function addIngredientsToList (userId, recipe, recipeId) { // USING THIS ONE
+export function addRecipeIngredients(userId, recipe, recipeId) { // USING THIS ONE
   const newIngredients = recipe.ingredients
-  console.log('recipeId: ', recipeId)
-
-  firebase
-    .firestore()
-    .collection('shoppingList')
-    .add({
-      userId: userId,
-      recipeId: recipeId,
-      ingredients: newIngredients
-    })
-    .then(id => {
-      console.log('Ingredients successfully added!', id.id)
-    }).catch((error) => {
-      console.error('Error adding ingredients: ', error)
-    })
+  newIngredients.map(newIngredient => {
+    console.log(newIngredient)
+    firebase
+      .firestore()
+      .collection('shoppingList')
+      .add({
+        userId: userId,
+        recipeId: recipeId,
+        name: newIngredient.name,
+        quantity: newIngredient.quantity
+      })
+      .then(id => {
+        console.log('Ingredients successfully added!', id.id)
+      }).catch((error) => {
+        console.error('Error adding ingredients: ', error)
+      })
+  })
+ 
 }
 
-export function removeIngredientsFromList (recipeId) { // USING THIS ONE
+export function removeRecipeIngredients (recipeId) { // USING THIS ONE
   firebase
     .firestore()
     .collection('shoppingList')
@@ -147,11 +153,11 @@ export function removeIngredientsFromList (recipeId) { // USING THIS ONE
       console.log('Error deleting ingredients: ', error)
     })
 }
-export const deleteSingleIngredient = (Ingredient) => { // USING THIS ONE
+export const deleteSingleIngredient = (id) => { // USING THIS ONE
   firebase
     .firestore()
-    .collection('miscShoppingList')
-    .doc(Ingredient)
+    .collection('shoppingList')
+    .doc(id)
     .delete()
     .then(() => {
       console.log('ingredient successfully deleted!')
@@ -188,13 +194,14 @@ export function clearMiscShoppingList (userId) {
     })
 }
 
-export function addMiscItem (userId, newItem) { // USING THIS ONE
+export function addMiscItem (userId, newItemQ, newItem) { // USING THIS ONE
   firebase
     .firestore()
-    .collection('miscShoppingList')
+    .collection('shoppingList')
     .add({
       userId: userId,
-      newItem: newItem
+      name: newItem,
+      quantity: newItemQ
     })
     .then((firestoreRef) => {
       console.log('Misc item successfully added to shopping list!', firestoreRef.id)
@@ -204,9 +211,9 @@ export function addMiscItem (userId, newItem) { // USING THIS ONE
     })
 }
 
-export function sortRecipes (recipes, sortBy) { // USING THIS ONE
+export function sortList (list, sortBy) { // USING THIS ONE
   // eslint-disable-next-line
-  const sortedRecipes = recipes.sort((a, b) => {
+  const sortedList = list.sort((a, b) => {
     const nameA = a.name.toUpperCase()
     const nameB = b.name.toUpperCase()
     switch (sortBy) {
@@ -231,7 +238,7 @@ export function sortRecipes (recipes, sortBy) { // USING THIS ONE
     }
   })
 
-  return sortedRecipes
+  return sortedList
 }
 
 export function capitalise (s) { // USING THIS ONE
@@ -259,6 +266,7 @@ export const signUp = (email, password) => {
     })
     .catch(error => {
     console.log('unsuccessful sign up: ', error.message + ' ' + error.code)
+    return(error.code)
   })
 }
 
@@ -275,21 +283,59 @@ export const signIn = (email, password) => {
 export const signInGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
   firebase.auth().signInWithPopup(provider)
-    .then(() => {
-      console.log('successfully signed in with Google!')
+  .then((result) => {
+    const user = result.user
+    console.log('successfully signed in with Facebook!')
+    firebase.firestore().collection('week').doc(user.uid).get()
+    .then(doc => {
+      if (doc.exists) {
+        console.log('week table already exists')
+      } else {
+        console.log('week table doesn\'t exist, creating one')
+        firebase.firestore().collection('week').doc(user.uid)
+        .set({
+          monday: '',
+          tuesday: '',
+          wednesday: '',
+          thursday: '',
+          friday: '',
+          saturday: '',
+          sunday: '',
+          userId: user.uid
+        })
+      }
     })
-    .catch(error => {
-      console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
-    })
+  })
+  .catch(error => {
+    console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
+  })
 }
 
 export const signInFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider()
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
+      const user = result.user
       console.log('successfully signed in with Facebook!')
-      // const token = result.credential.accessToken
-      // const user = result.user
+      firebase.firestore().collection('week').doc(user.uid).get()
+      .then(doc => {
+        if (doc.exists) {
+          console.log('week table already exists')
+        } else {
+          console.log('week table doesn\'t exist, creating one')
+          firebase.firestore().collection('week').doc(user.uid)
+          .set({
+            monday: '',
+            tuesday: '',
+            wednesday: '',
+            thursday: '',
+            friday: '',
+            saturday: '',
+            sunday: '',
+            userId: user.uid
+          })
+        }
+      })
     })
     .catch(error => {
       console.log('unsuccessful sign in: ', error.message + ' ' + error.code)

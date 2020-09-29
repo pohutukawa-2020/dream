@@ -32,7 +32,7 @@ function Header (props) {
               <img src="../rp.png" alt="Logo"/>
           </div>
         <div className="hero-body">
-          <div className="headertitle">
+          <div className="nav-title">
             <h1 className="subtitle is-4 has-centered-text">
               {headerTitle}
             </h1>
