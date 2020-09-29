@@ -26,8 +26,8 @@ export default function SignUp (props) {
         <input type='password' value={password} placeholder="must be 6+ characters" onChange={e => setPassword(e.target.value)}></input><br></br>
         <button onClick={signUpClickHandler}>Sign Up</button>
       </form><br></br>
-      <button onClick={() => signInGoogle()}>Sign up with Google</button><br></br>
-      <button onClick={() => signInFacebook()}>Sign up with Facebook</button><br></br>
+      {/* <button onClick={() => signInGoogle()}>Sign up with Google</button><br></br>
+      <button onClick={() => signInFacebook()}>Sign up with Facebook</button><br></br> */}
       Already have an account? <br></br>
       <Link to='/home'><button>Sign in</button></Link>
     </div>

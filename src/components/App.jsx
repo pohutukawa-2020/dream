@@ -12,6 +12,7 @@ import EditRecipe from './EditRecipe'
 
 import Home from './Home'
 import SignUp from './SignUp'
+import SignOut from './SignOut'
 
 function App () {
   return (
@@ -32,6 +33,7 @@ function App () {
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
+          <Route path='/' component={SignOut} />
           <Route exact path='/'><Redirect to='/home'/></Route>
           <div className='authenticationRoutes'>
             <Route path='/home' component={Home} />
