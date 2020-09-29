@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import renderer from 'react-test-renderer'
 import { HashRouter } from 'react-router-dom'
 
-import RecipesList from './RecipesList'
+import Recipes from './Recipes'
 import { RecipeContext } from './RecipeContext'
 
 export const FakeRecipeProvider = ({ children }) => {
@@ -21,17 +21,17 @@ export const FakeRecipeProvider = ({ children }) => {
           {children}
         </RecipeContext.Provider>
       )
-
 }
 
 it ('renders component correctly', () => {
     const dream = renderer
     .create(
-        <HashRouter>
-            <FakeRecipeProvider>
-                <RecipesList/>
-            </FakeRecipeProvider>
-        </HashRouter>)
+    <HashRouter>
+        <FakeRecipeProvider>
+            <Recipes/>
+        </FakeRecipeProvider>
+    </HashRouter>
+    )
     .toJSON()
-expect(dream).toMatchSnapshot()
+    expect(dream).toMatchSnapshot()
 })
