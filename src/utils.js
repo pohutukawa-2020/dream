@@ -153,11 +153,11 @@ export function removeRecipeIngredients (recipeId) { // USING THIS ONE
       console.log('Error deleting ingredients: ', error)
     })
 }
-export const deleteSingleIngredient = (Ingredient) => { // USING THIS ONE
+export const deleteSingleIngredient = (id) => { // USING THIS ONE
   firebase
     .firestore()
-    .collection('miscShoppingList')
-    .doc(Ingredient)
+    .collection('shoppingList')
+    .doc(id)
     .delete()
     .then(() => {
       console.log('ingredient successfully deleted!')

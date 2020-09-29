@@ -31,7 +31,6 @@ function ShoppingList () {
 
   return (
     <div className="ShoppingList">
-      <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>
       <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
       <label>Sort By:</label>{' '}
         <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
@@ -47,7 +46,7 @@ function ShoppingList () {
       <ul>
         {sortedShoppingList.map(shoppingListItem =>
           <li key={shoppingListItem.id}>
-            <ShoppingListItem shoppingListItem={shoppingListItem}/>
+            <ShoppingListItem id={shoppingListItem.id} shoppingListItem={shoppingListItem}/>
           </li>
         )}
       </ul>
