@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import { WeekContext } from './WeekContext'
 import { RecipeContext } from './RecipeContext'
 import RecipeCard from './RecipeCard'
+import WeekCard from './WeekCard'
+import Week from './Week'
 
 function WeekList() {
   const [week] = useContext(WeekContext)
@@ -16,26 +18,60 @@ function WeekList() {
   const sundayRecipe = recipes.find(x => x.id === week.sunday)
 
   return (
-    <div className="WeekList">
+    <>
+    <section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-4">
+        Weekly Planner
+      </h1>
+    </div>
+  </div>
+</section>
+    <div>
       <div>
-        <h2 className="subtitle is-5 has-text-centered">Your list of days and meals below:</h2>
-        <br></br>
-        <h3 className="title is-3 has-text-centered">Monday</h3>
-        {mondayRecipe ? <RecipeCard recipe={mondayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Monday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Tuesday</h3>
-        {tuesdayRecipe ? <RecipeCard recipe={tuesdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Wednesday</h3>
-        {wednesdayRecipe ? <RecipeCard recipe={wednesdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Thursday</h3>
-        {thursdayRecipe ? <RecipeCard recipe={thursdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Friday</h3>
-        {fridayRecipe ? <RecipeCard recipe={fridayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Saturday</h3>
-        {saturdayRecipe ? <RecipeCard recipe={saturdayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
-        <h3 className="title is-3 has-text-centered">Sunday</h3>
-        {sundayRecipe ? <RecipeCard recipe={sundayRecipe} /> : <Link to='/recipes'><button>Add Recipe For Tuesday</button></Link>}
+        <hr />
+        <div className="weeklist">
+          <div>
+        {mondayRecipe ? <h1 className="subtitle is-5">Monday<hr /></h1> : null}
+        {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Monday+<hr /></h3>
+        </Link>}
+        </div>
+
+        {tuesdayRecipe ? <h1 className="subtitle is-5">Tuesday<hr /></h1> : null}
+        {tuesdayRecipe ? <WeekCard recipe={tuesdayRecipe} /> : <Link to='/recipes'>
+        <div className=""><h3 className="subtitle is-5">Tuesday+<hr /></h3></div>
+        </Link>}
+    
+        {wednesdayRecipe ? <h1 className="subtitle is-5">Wednesday<hr /></h1> : null}
+        {wednesdayRecipe ? <WeekCard recipe={wednesdayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Wednesday+<hr /></h3>
+        </Link>}
+        
+        {thursdayRecipe ? <h1 className="subtitle is-5">Thursday<hr /></h1> : null}
+        {thursdayRecipe ? <WeekCard recipe={thursdayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Thursday+<hr /></h3>
+        </Link>}
+        
+        {fridayRecipe ? <h1 className="subtitle is-5">Friday<hr /></h1> : null}
+        {fridayRecipe ? <WeekCard recipe={fridayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Friday+<hr /></h3>
+        </Link>}
+        
+        {saturdayRecipe ? <h1 className="subtitle is-5">Saturday<hr /></h1>: null}
+        {saturdayRecipe ? <WeekCard recipe={saturdayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Saturday+<hr /></h3>
+        </Link>}
+        
+        {sundayRecipe ? <h1 className="subtitle is-5">Sunday<hr /></h1> : null}
+        {sundayRecipe ? <WeekCard recipe={sundayRecipe} /> : <Link to='/recipes'>
+        <h3 className="subtitle is-5">Sunday+</h3>
+        </Link>}
+        </div>
       </div>
     </div>
+    </>
   )
 }
 

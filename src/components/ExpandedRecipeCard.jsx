@@ -18,7 +18,7 @@ function ExpandedRecipeCard (props) {
     firebase
       .firestore()
       .collection('week')
-      .doc('XIZ75grLVIiFREmkcTlp')
+      .doc('A')
       .update(newWeekDay)
       
     props.history.push('/week')

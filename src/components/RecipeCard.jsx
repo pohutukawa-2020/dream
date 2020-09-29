@@ -8,7 +8,7 @@ function RecipeCard ({ recipe }) {
       <div className="card">
         <Link to={{ pathname: `/recipe/${recipe.id}`, recipe: recipe}}> {/* --- DYNAMIC RECIPE ID PATH--- */}
             <div className="card-image">
-              <figure className="image is-5by1">
+              <figure className="image is-3by3">
                 <img src={recipe.imagePath} alt={recipe.name}/> {/* --- IMAGE PATH --- */}
               </figure>
             </div>

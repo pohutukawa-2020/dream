@@ -15,7 +15,7 @@ import MiscShoppingList from './MiscShoppingList';
 function App () {
   return (
     <> 
-    <section class="hero is-primary">
+    {/* <section class="hero is-primary">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -26,14 +26,17 @@ function App () {
       </h2>
     </div>
   </div>
-</section>
+</section> */}
       <div className="App">
+      <div className="logo">
+    <img src="/rp.png" alt="logo"></img>
+      </div>
         {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
         <div className="routes">
           {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
           <div className='ccontent'>
-            <Route exact path='/'><Redirect to='/recipes'/></Route>
+            <Route exact path='/'><Redirect to='/week'/></Route>
             <Route exact path="/recipes" component={Recipes} />
             <Route exact path="/recipes/add" component={AddRecipe} />
             <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
