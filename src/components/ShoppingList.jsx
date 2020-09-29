@@ -33,7 +33,6 @@ function ShoppingList () {
 
   return (
     <div className="ShoppingList">
-      <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
       <label>Sort By:</label>{' '}
         <select className='recipeSortButton'  value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
           <option value='NAME_ASC'>Name (A-Z)</option>
