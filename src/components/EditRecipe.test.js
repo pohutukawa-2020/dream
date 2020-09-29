@@ -6,7 +6,7 @@ import { RecipeContext } from './RecipeContext'
 
 export const FakeRecipeProvider = ({ children }) => {
     const [recipes, setRecipes] = useState([{
-        id: "MOqgTKsRp9OwepdSupbr",
+    id: "MOqgTKsRp9OwepdSupbr",
     method: ["Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 oni…"],
     serves: "4",
     prepTime: "40 Minutes - Not too tricky",
