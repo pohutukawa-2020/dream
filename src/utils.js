@@ -162,25 +162,26 @@ export function clearShoppingList (userId) { // USING THIS ONE
     })
 }
 
-export function clearMiscShoppingList () {
+export function clearMiscShoppingList (userId) {
   firebase
-  .firestore()
-  .collection('miscShoppingList')
-  .get()
-  // .where('user', '==', userId)
-  .then(response => {
-    response.forEach(shoppingListEntry => {
-      shoppingListEntry.ref.delete()
-      console.log('Misc shopping list successfully cleared!')
+    .firestore()
+    .collection('miscShoppingList')
+    .where('userId', '==', userId)
+    .get()
+    .then(response => {
+      response.forEach(shoppingListEntry => {
+        shoppingListEntry.ref.delete()
+        console.log('Shopping list successfully cleared!')
+      })
     })
-  })
 }
 
-export function addMiscItem (newItem) { // USING THIS ONE
+export function addMiscItem (userId, newItem) { // USING THIS ONE
   firebase
     .firestore()
     .collection('miscShoppingList')
     .add({
+      userId: userId,
       newItem: newItem
     })
     .then((firestoreRef) => {
