@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/analytics'
+import 'firebase/auth'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -24,7 +25,6 @@ firebase.initializeApp({
   measurementId: 'G-LWEQSS5R3R'
 })
 firebase.analytics()
-// firebase.auth().onAuthStateChanged(console.log('auth state changed'))
 
 ReactDOM.render(
   <Router>
