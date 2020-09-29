@@ -22,7 +22,7 @@ export const MiscShoppingProvider = ({ children }) => {
         }))
         setMiscCollection(miscCollection)
       })
-
+      console.log('misc ', miscCollection)
     return () => unsubscribe() // note unsubscribe added in case funny behaviour
   }, [user])
 

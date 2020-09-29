@@ -147,6 +147,18 @@ export function removeIngredientsFromList (recipeId) { // USING THIS ONE
       console.log('Error deleting ingredients: ', error)
     })
 }
+export const deleteSingleIngredient = (Ingredient) => { // USING THIS ONE
+  firebase
+    .firestore()
+    .collection('miscShoppingList')
+    .doc(Ingredient)
+    .delete()
+    .then(() => {
+      console.log('ingredient successfully deleted!')
+    }).catch((error) => {
+      console.error('Error deleting recipe: ', error)
+    })
+}
 
 export function clearShoppingList (userId) { // USING THIS ONE
   firebase
