@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+Array [
+  <section
+    className="hero"
+  >
+    <div
+      className="hero-body"
+    >
+      <div
+        className="container"
+      >
+        <h1
+          className="title is-4"
+        >
+          Weekly Planner
+        </h1>
+      </div>
+    </div>
+  </section>,
+  <div>
+    <div>
+      <hr />
+      <div
+        className="weeklist"
+      >
+        <div>
+          <a
+            href="#/recipes"
+            onClick={[Function]}
+          >
+            <h3
+              className="subtitle is-5"
+              onClick={[Function]}
+            >
+              Monday+
+              <hr />
+            </h3>
+          </a>
+        </div>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <div
+            className=""
+          >
+            <h3
+              className="subtitle is-5"
+              onClick={[Function]}
+            >
+              Tuesday+
+              <hr />
+            </h3>
+          </div>
+        </a>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Wednesday+
+            <hr />
+          </h3>
+        </a>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Thursday+
+            <hr />
+          </h3>
+        </a>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Friday+
+            <hr />
+          </h3>
+        </a>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Saturday+
+            <hr />
+          </h3>
+        </a>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Sunday+
+          </h3>
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;

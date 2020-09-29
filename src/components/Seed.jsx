@@ -4,7 +4,7 @@ import firebase from 'firebase/app'
 
 import seedRecipes from '../data/seedData'
 
-import { UserContext } from '../components/UserContext'
+import { UserContext } from './context/UserContext'
 
 export default function Seed () {
   const {user} = useContext(UserContext)

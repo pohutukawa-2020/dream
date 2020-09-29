@@ -16,24 +16,13 @@ import SignOut from './SignOut'
 
 function App () {
   return (
-    <>
-      <section className="hero is-primary">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-        ReciPlan
-            </h1>
-            <h2 className="subtitle">
-        ReciPlan your week...
-            </h2>
-          </div>
-        </div>
-      </section>
-      <div className="App">
+    <> 
+      <div className="logo">
+        <img src="../rp.png" alt="Logo"/>
+      </div>
         <div className="routes">
-          {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
-          <Route path='/' component={SignOut} />
+          <Route path='/' component={SignOut} /> 
           <Route exact path='/'><Redirect to='/home'/></Route>
           <div className='authenticationRoutes'>
             <Route path='/home' component={Home} />
@@ -49,7 +38,6 @@ function App () {
             <Route exact path="/shopping/add" component={Shopping} />
           </div>
         </div>
-      </div>
     </>
   )
 }

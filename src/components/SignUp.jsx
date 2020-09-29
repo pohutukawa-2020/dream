@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom'
 
-import { UserContext } from './UserContext'
+import { UserContext } from './context/UserContext'
 
 import { signUp, signInGoogle, signInFacebook } from '../utils'
 

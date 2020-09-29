@@ -1,8 +1,10 @@
 import React, { useState, useContext } from 'react'
 
 import { addMiscItem } from '../utils'
-import { MiscShoppingContext } from './MiscShoppingContext'
-import { UserContext } from './UserContext'
+
+import { UserContext } from './context/UserContext'
+
+import { MiscShoppingContext } from './context/MiscShoppingContext'
 
 const MiscShoppingListItem = () => {
   const {user} = useContext(UserContext)

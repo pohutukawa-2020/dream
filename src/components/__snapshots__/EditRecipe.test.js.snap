@@ -168,3 +168,176 @@ exports[`renders component correctly 1`] = `
   <br />
 </form>
 `;
+
+exports[`renders component correctly 2`] = `
+<form
+  onSubmit={[Function]}
+>
+  <h4>
+    Edit Recipe
+  </h4>
+  <div
+    className="card"
+  >
+    <div
+      className="card-image"
+    >
+      <figure
+        className="image is-2by1"
+      >
+        <img
+          alt="add your meal"
+          src="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
+        />
+      </figure>
+    </div>
+    <span>
+      <button
+        className="button is-link is-small is-rounded"
+      >
+        <i
+          className="fas fa-arrow-circle-left"
+        />
+      </button>
+    </span>
+    <div
+      className="card-content"
+    >
+      <div
+        className="media"
+      >
+        <div
+          className="media-left"
+        >
+          <figure
+            className="image is-48x48"
+          />
+        </div>
+        <div
+          className="media-content"
+        >
+          <p
+            className="title is-5"
+          >
+            <div>
+              <label>
+                Title
+              </label>
+              <input
+                className="label is-primary"
+                onChange={[Function]}
+                type="text"
+                value="Spinach lasagne"
+              />
+               
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>
+        Image URL
+      </label>
+      <input
+        onChange={[Function]}
+        type="text"
+        value="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
+      />
+    </div>
+    <div
+      className="content"
+    >
+      <div
+        className="card-content"
+      >
+        Serves
+        <br />
+        <input
+          onChange={[Function]}
+          value="6"
+        />
+         
+      </div>
+      <div
+        className="card-content"
+      >
+        Prep Time
+        <br />
+        <input
+          onChange={[Function]}
+          type="text"
+          value="50 Minutes - Not too tricky"
+        />
+         
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      Ingredients needed: (seperate by comma)
+      <div>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={
+            Array [
+              "70 g unsalted butter",
+              "50 g plain flour",
+              "800 m…",
+            ]
+          }
+        />
+         
+        <ul>
+          <li>
+            70 g unsalted butter
+          </li>
+          <li>
+            50 g plain flour
+          </li>
+          <li>
+            800 m…
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      className="card-content"
+    >
+      <div>
+        <label>
+          Method (seperate by comma)
+        </label>
+        <textarea
+          className="textarea is-primary"
+          onChange={[Function]}
+          type="text"
+          value={
+            Array [
+              "Preheat the oven to 190°C/375°F/gas 5.",
+              "Melt 50…",
+            ]
+          }
+        />
+        <ol>
+          <li>
+            Preheat the oven to 190°C/375°F/gas 5.
+          </li>
+          <li>
+            Melt 50…
+          </li>
+        </ol>
+      </div>
+      <br />
+      <button
+        className="button card-content is-medium is-rounded is-primary"
+      >
+        Edit Recipe
+      </button>
+    </div>
+  </div>
+  <br />
+</form>
+`;

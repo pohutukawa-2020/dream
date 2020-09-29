@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { RecipeContext } from './RecipeContext'
-import { SelectedDayContext } from './SelectedDayContext'
-import { WeekContext } from './WeekContext'
-import { UserContext } from './UserContext'
+
+import { UserContext } from './context/UserContext'
+
+import { RecipeContext } from './context/RecipeContext'
+import { SelectedDayContext } from './context/SelectedDayContext'
+import { WeekContext } from './context/WeekContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
 
 function ExpandedRecipeCard (props) {
@@ -15,13 +17,29 @@ function ExpandedRecipeCard (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
   const assignedRecipe = recipes.find(x => x.id === week[weekDay])
+  const [methodVis, setMethodVis] = useState(false)
+  const [ingredientVis, setIngredientVis] = useState(false)
+
+  console.log(week[weekDay])
 
   function clickHandler (evt) {
     evt.preventDefault()
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
-      if (week[weekDay]) {
+      if (!week[weekDay]) {
+        // if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
+        //   removeIngredientsFromList(week[weekDay])
+        //   assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+        //   addIngredientsToList(user.uid, recipe, recipeId)
+        //   setSelectedDay('monday')
+        //   props.history.push('/week')
+        // }
+        assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+        addIngredientsToList(user.uid, recipe, recipeId)
+        setSelectedDay('monday')
+        props.history.push('/week')
+      } else {
         if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
           assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
@@ -29,11 +47,6 @@ function ExpandedRecipeCard (props) {
           setSelectedDay('monday')
           props.history.push('/week')
         }
-      } else {
-        assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        addIngredientsToList(user.uid, recipe, recipeId)
-        setSelectedDay('monday')
-        props.history.push('/week')
       }
     }
   }
@@ -85,18 +98,24 @@ function ExpandedRecipeCard (props) {
                 Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
-          <div className="ingredients">
-                Ingredients needed:<br/><br/>
-            {recipe ? recipe.ingredients.map(ingredient => (
+          <div>
+          <button className="ingredients" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span></button>
+            {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
               <p>{ingredient}</p>
-            )) : null}
+            )) : null}</div> : null}
           </div>
-          <div className="Method">
-            <br/>Method:<br/><br/>
-            {recipe ? recipe.method.map(step => (
+          <div>
+          <button classNAme='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span></button>
+          {methodVis ? <div>{recipe ? recipe.method.map(step => (
               <p>{step}</p>
             )) : null}
+          </div> : null }
           </div>
+            
         </div>
 
       </div>

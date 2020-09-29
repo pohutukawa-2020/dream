@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+<div
+  className="RecipesList"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      DELETE ALL RECIPES
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      SEED RECIPES
+    </button>
+  </div>
+   
+  <div
+    className="recipeSort"
+  >
+    <label>
+      Sort By:
+    </label>
+     
+    <select
+      onChange={[Function]}
+      value="NAME_ASC"
+    >
+      <option
+        value="NAME_ASC"
+      >
+        Name (A-Z)
+      </option>
+      <option
+        value="NAME_DESC"
+      >
+        Name (Z-A)
+      </option>
+    </select>
+  </div>
+  <ul>
+    <li>
+      <div
+        className="card"
+      >
+        <a
+          href="#/recipe/MOqgTKsRp9OwepdSupbr"
+          onClick={[Function]}
+        >
+           
+          <div
+            className="card-image"
+          >
+            <figure
+              className="image is-5by1"
+            >
+              <img
+                alt="Roasted black bean burgers"
+                src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+              />
+               
+            </figure>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media mb-0"
+            >
+              <div
+                className="media-content"
+              >
+                <div
+                  className="title is-5 mb-0"
+                >
+                  Roasted black bean burgers
+                </div>
+                 
+                <div
+                  className="field is-grouped"
+                >
+                  <div
+                    className="control"
+                  >
+                    <button
+                      className="button is-link is-small is-rounded"
+                    >
+                      <i
+                        className="far fa-calendar-plus"
+                      />
+                      <a
+                        href="#/recipe/MOqgTKsRp9OwepdSupbr"
+                        onClick={[Function]}
+                      />
+                    </button>
+                  </div>
+                  <div
+                    className="control"
+                  >
+                    <a
+                      href="#/recipe/edit/MOqgTKsRp9OwepdSupbr"
+                      onClick={[Function]}
+                    >
+                      <button
+                        className="button is-small is-rounded is-primary"
+                      >
+                        <i
+                          className="far fa-edit"
+                        />
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="content"
+            >
+              <div
+                className="mb-0"
+              >
+                Serves: 
+                4
+              </div>
+               
+              <div>
+                Prep time: 
+                40 Minutes - Not too tricky
+              </div>
+               
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        className="seperation"
+      />
+    </li>
+  </ul>
+</div>
+`;

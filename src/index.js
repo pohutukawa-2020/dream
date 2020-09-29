@@ -7,12 +7,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import App from './components/App'
-import { RecipeProvider } from './components/RecipeContext'
-import { WeekProvider } from 'components/WeekContext'
-import { ShoppingListProvider } from 'components/ShoppingListContext'
-import { MiscShoppingProvider } from 'components/MiscShoppingContext'
-import { SelectedDayProvider } from 'components/SelectedDayContext'
-import { UserProvider } from 'components/UserContext'
+import { UserProvider } from './components/context/UserContext'
+
+import { RecipeProvider } from './components/context/RecipeContext'
+import { WeekProvider } from './components/context/WeekContext'
+import { ShoppingListProvider } from './components/context/ShoppingListContext'
+import { MiscShoppingProvider } from './components/context/MiscShoppingContext'
+import { SelectedDayProvider } from './components/context/SelectedDayContext'
 
 firebase.initializeApp({
   apiKey: 'AIzaSyBOmaFW54_Uc_NHxJ-LMTETeQ_N6I8qtps',

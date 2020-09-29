@@ -9,7 +9,7 @@ export const Nav = (props) => {
     case '/week':
       navLinks = (
 
-        <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
+        <div className="tabs is-centered is-fullwidth is-large has-background-white">
           <ul>
             <li>
               <Link to="/recipes">
@@ -31,7 +31,7 @@ export const Nav = (props) => {
               <Link to='/shopping' >
                 <div>
                   <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
-                  <div><p className='navp'>Shopping List</p></div>
+                  <div><p className='navp'>Shopping</p></div>
                 </div>
               </Link>
             </li>
@@ -43,7 +43,7 @@ export const Nav = (props) => {
     case '/recipes':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
+          <div className="tabs is-centered is-fullwidth is-large has-background-white">
             <ul>
               <li className="is-active ">
 
@@ -66,7 +66,7 @@ export const Nav = (props) => {
                 <Link to="/shopping">
                   <div>
                     <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
-                    <div><p className='navp'>Shopping List</p></div>
+                    <div><p className='navp'>Shopping</p></div>
                   </div>
                 </Link>
               </li>
@@ -78,7 +78,7 @@ export const Nav = (props) => {
     case '/shopping':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
+          <div className="tabs is-centered is-fullwidth is-large has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -112,7 +112,7 @@ export const Nav = (props) => {
     case '/':
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
+          <div className="tabs is-centered is-fullwidth is-large has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -134,7 +134,7 @@ export const Nav = (props) => {
                 <Link to='/shopping'>
                   <div>
                     <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
-                    <div><p className='navp'>Shopping List</p></div>
+                    <div><p className='navp'>Shopping</p></div>
                   </div>
                 </Link>
               </li>
@@ -146,7 +146,7 @@ export const Nav = (props) => {
     default:
       navLinks = (
         <>
-          <div className="tabs is-centered is-boxed is-fullwidth is-large is-toggle has-background-white">
+          <div className="tabs is-centered is-fullwidth is-large has-background-white">
             <ul>
               <li>
                 <Link to="/recipes">
@@ -168,7 +168,7 @@ export const Nav = (props) => {
                 <Link to='/shopping'>
                   <div>
                     <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
-                    <div><p className='navp'>Shopping List</p></div>
+                    <div><p className='navp'>Shopping</p></div>
                   </div>
                 </Link>
               </li>
