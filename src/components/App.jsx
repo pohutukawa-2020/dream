@@ -10,10 +10,12 @@ import ExpandedRecipeCard from './ExpandedRecipeCard'
 import AddRecipe from './AddRecipe'
 import EditRecipe from './EditRecipe'
 import { UserContext } from './context/UserContext'
+import BulmaNav from './BulmaNav'
 
 import Home from './Home'
 import SignUp from './SignUp'
 import SignOut from './SignOut'
+import Header from './Header'
 
 function App () {
   const {user} = useContext(UserContext)
@@ -42,12 +44,10 @@ function App () {
       </div>
     </> ||
     <> 
-      <div className="logo">
-        <img src="../rp.png" alt="Logo"/>
-      </div>
         <div className="contentRoutes">
           <Route path="/" component={Nav} />
           <Route path='/' component={SignOut} /> 
+          <Route path='/' component={Header} />
           <Route exact path='/'><Redirect to='/recipes'/></Route>
           <Route exact path='/home'><Redirect to='recipes'/></Route>
           <Route exact path="/recipes" component={Recipes} />

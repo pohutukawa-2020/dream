@@ -30,18 +30,7 @@ function WeekList () {
 
   return (
     <>
-    <section className="hero">
-    <div className="logo">
-        <img src="../rp.png" alt="Logo"/>
-    </div>
-  <div className="hero-body">
-    <div className="container">
-      <h1 className="subtitle is-4">
-        Weekly Planner
-      </h1>
-    </div>
-  </div>
-</section>
+
     <div>
       <div>
         <hr />

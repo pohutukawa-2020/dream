@@ -15,9 +15,7 @@ export default function SignOut (props) {
 
   return(
     <div>
-      <button><Link to='/home'>Home</Link></button>
-      <button onClick={() => clickHandler()}>Sign Out</button>
-      Signed in: {user ? user.email : 'not signed in'}
+      {/* <button onClick={() => clickHandler()}>Sign Out</button> */}
     </div>
   )
 }
