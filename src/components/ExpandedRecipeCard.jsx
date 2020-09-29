@@ -60,7 +60,6 @@ function ExpandedRecipeCard (props) {
 
   return (
     <>
-      {user ? user.uid : null}
       <div className="card1">
         <div className="card-image">
           <figure className="image1 is-5by1">
