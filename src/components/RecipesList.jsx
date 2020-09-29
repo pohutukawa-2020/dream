@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react'
 
+import firebase from 'firebase/app'
+
 import { UserContext } from './context/UserContext'
 import { RecipeContext } from './context/RecipeContext'
 import RecipeCard from './RecipeCard'
@@ -19,6 +21,8 @@ function RecipesList() {
     setSearchTerm(e.target.value)
     console.log(sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase())))
   }
+
+
  
   return (
     <>

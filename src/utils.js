@@ -266,6 +266,7 @@ export const signUp = (email, password) => {
     })
     .catch(error => {
     console.log('unsuccessful sign up: ', error.message + ' ' + error.code)
+    return(error.code)
   })
 }
 
@@ -294,9 +295,27 @@ export const signInFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider()
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
+      const user = result.user
       console.log('successfully signed in with Facebook!')
-      // const token = result.credential.accessToken
-      // const user = result.user
+      firebase.firestore().collection('week').doc(user.uid).get()
+      .then(doc => {
+        if (doc.exists) {
+          console.log('week table already exists')
+        } else {
+          console.log('week table doesn\'t exist, creating one')
+          firebase.firestore().collection('week').doc(user.uid)
+          .set({
+            monday: '',
+            tuesday: '',
+            wednesday: '',
+            thursday: '',
+            friday: '',
+            saturday: '',
+            sunday: '',
+            userId: user.uid
+          })
+        }
+      })
     })
     .catch(error => {
       console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
