@@ -42,7 +42,7 @@ const seedRecipes = [
       'In a baking dish, layer the lasagne sheets, white sauce, spinach mixture and a grating of Parmesan. Finish with a layer of pasta topped with sauce and more Parmesan.',
       'Bake for 30 minutes, or till golden.'
     ],
-    imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066'
+    imagePath: 'https://hips.hearstapps.com/del.h-cdn.co/assets/17/38/1506010503-spinach-lasagna-delish.jpg'
   }
   // {
   //   name: 'Roasted Root Vegetables',
