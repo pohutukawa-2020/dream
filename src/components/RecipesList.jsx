@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 
-import { RecipeContext } from './RecipeContext'
+import { RecipeContext } from './context/RecipeContext'
 import RecipeCard from './RecipeCard'
 import Seed from './Seed'
 

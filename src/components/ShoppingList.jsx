@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import MiscShoppingListItem from './MiscShoppingListItem'
 import { clearShoppingList } from '../utils'
 
-import { ShoppingListContext } from '../components/ShoppingListContext'
+import { ShoppingListContext } from './context/ShoppingListContext'
 
 function ShoppingList () {
   const [shoppingList] = useContext(ShoppingListContext)

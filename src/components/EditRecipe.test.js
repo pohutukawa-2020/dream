@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import renderer from 'react-test-renderer'
 
 import EditRecipe from './EditRecipe'
-import { RecipeContext } from './RecipeContext'
+import { RecipeContext } from './context/RecipeContext'
 
 export const FakeRecipeProvider = ({ children }) => {
     const [recipes, setRecipes] = useState([{
