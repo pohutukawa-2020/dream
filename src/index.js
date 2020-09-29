@@ -1,11 +1,14 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/analytics'
+import 'firebase/auth'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router } from 'react-router-dom'
 import App from './components/App'
+import { UserProvider } from './components/context/UserContext'
+
 import { RecipeProvider } from './components/context/RecipeContext'
 import { WeekProvider } from './components/context/WeekContext'
 import { ShoppingListProvider } from './components/context/ShoppingListContext'
@@ -26,17 +29,19 @@ firebase.analytics()
 
 ReactDOM.render(
   <Router>
-    <RecipeProvider>
-      <WeekProvider>
-        <ShoppingListProvider>
-          <MiscShoppingProvider>
-            <SelectedDayProvider>
-              <App />
-            </SelectedDayProvider>
-          </MiscShoppingProvider>
-        </ShoppingListProvider>
-      </WeekProvider>
-    </RecipeProvider>
+    <UserProvider>
+      <RecipeProvider>
+        <WeekProvider>
+          <ShoppingListProvider>
+            <MiscShoppingProvider>
+              <SelectedDayProvider>
+                <App />
+              </SelectedDayProvider>
+            </MiscShoppingProvider>
+          </ShoppingListProvider>
+        </WeekProvider>
+      </RecipeProvider>
+    </UserProvider>
   </Router>,
   document.getElementById('root')
 )

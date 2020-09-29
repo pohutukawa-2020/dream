@@ -1,16 +1,20 @@
 import React, { useState, useContext } from 'react'
 
 import { addMiscItem } from '../utils'
+
+import { UserContext } from './context/UserContext'
+
 import { MiscShoppingContext } from './context/MiscShoppingContext'
 
 const MiscShoppingListItem = () => {
+  const {user} = useContext(UserContext)
   const [miscItem, setMiscItem] = useState('')
   const [miscCollection] = useContext(MiscShoppingContext)
 
   function onSubmitHandler (evt) {
     evt.preventDefault()
 
-    addMiscItem(miscItem)
+    addMiscItem(user.uid, miscItem)
     setMiscItem('')
   }
   return (
