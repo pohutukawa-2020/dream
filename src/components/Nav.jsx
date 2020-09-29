@@ -97,9 +97,9 @@ export const Nav = (props) => {
                 </Link>
               </li>
               <li className="is-active">
-                <Link to='/shopping/add'>
+                <Link to='/shopping'>
                   <div>
-                    <div className="icon is-centered is-large"><i className="fas fa-cart-plus"></i></div>
+                    <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
                     <div><p className='navp'>Add Items</p></div>
                   </div>
                 </Link>
@@ -108,40 +108,7 @@ export const Nav = (props) => {
           </div>
         </>
       )
-      break
-    case '/':
-      navLinks = (
-        <>
-          <div className="tabs is-centered is-fullwidth is-large has-background-white">
-            <ul>
-              <li>
-                <Link to="/recipes">
-                  <div>
-                    <div className="icon is-centered is-large"><i className="fas fa-book"></i></div>
-                    <div><p className='navp'>  Recipes</p></div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link to='/week'>
-                  <div>
-                    <div className="icon is-centered is-large"><i className="fas fa-calendar-alt"></i></div>
-                    <div><p className='navp'>Week Plan</p></div>
-                  </div>
-                </Link>
-              </li>
-              <li>
-                <Link to='/shopping'>
-                  <div>
-                    <div className="icon is-centered is-large"><i className="fas fa-shopping-cart"></i></div>
-                    <div><p className='navp'>Shopping</p></div>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </>
-      )
+
       break
     default:
       navLinks = (

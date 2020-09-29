@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 
 import { addMiscItem } from '../utils'
 import { MiscShoppingContext } from './context/MiscShoppingContext'
+import MiscItem from './MiscItem'
 
 const MiscShoppingListItem = () => {
   const [miscItem, setMiscItem] = useState('')
@@ -13,6 +14,7 @@ const MiscShoppingListItem = () => {
     addMiscItem(miscItem)
     setMiscItem('')
   }
+  console.log('miscitem= ',miscItem)
   return (
     <>
       <form onSubmit={onSubmitHandler}>
@@ -22,7 +24,7 @@ const MiscShoppingListItem = () => {
         <ul>
           {miscCollection.map(item =>
             <li key={item.id}>
-              <h5>{item.newItem}</h5>
+             <MiscItem newItem={item.newItem}/>
             </li>
           )}
         </ul>

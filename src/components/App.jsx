@@ -26,7 +26,6 @@ function App () {
             <Route exact path="/recipe/edit/:id" component={EditRecipe} />
             <Route exact path="/week" component={Week} />
             <Route exact path="/shopping" component={Shopping} />
-            <Route exact path="/shopping/add" component={Shopping} />
           </div>
         </div>
     </>
