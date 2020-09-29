@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
-import MiscShoppingListItem from './MiscShoppingListItem'
-import { clearShoppingList, clearMiscShoppingList, addMiscItem, sortList } from '../utils'
-import ShoppingListItem from './ShoppingListItem'
-import { UserContext } from './context/UserContext'
 
+import { UserContext } from './context/UserContext'
 import { ShoppingListContext } from './context/ShoppingListContext'
+import ShoppingListItem from './ShoppingListItem'
+import { clearShoppingList, clearMiscShoppingList, addMiscItem, sortList } from '../utils'
+
 
 function ShoppingList () {
   const {user} = useContext(UserContext)
@@ -33,7 +33,6 @@ function ShoppingList () {
     <div className="ShoppingList">
       <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>
       <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
-      {/* <MiscShoppingListItem /> */}
       <label>Sort By:</label>{' '}
         <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
           <option value='NAME_ASC'>Name (A-Z)</option>
