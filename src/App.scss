@@ -54,6 +54,7 @@ p {
   height: 200px; /* height of container */
   overflow: hidden;
   object-position: 30px 50px;
+  border-radius: 25px;
 }
 
 .field { 
@@ -61,7 +62,10 @@ p {
   margin-top: 1%;
 }
 
-.image {
+.image1 {
+  height: 300px; /* height of container */
+  overflow: hidden;
+  object-position: 30px 50px;
   border-radius: 25px;
 }
 
