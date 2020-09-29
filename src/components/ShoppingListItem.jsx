@@ -8,7 +8,7 @@ const cross = () => {
 }
   return (
     <>
-      <h5 onClick={() => cross()} style={strike.style}>{shoppingListItem.quantity}{' '}{shoppingListItem.item}</h5>
+      <h5 onClick={() => cross()} style={strike.style}>{shoppingListItem.quantity}{' '}{shoppingListItem.name}</h5>
     </>
   )
 }

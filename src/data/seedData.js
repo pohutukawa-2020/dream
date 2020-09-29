@@ -4,14 +4,14 @@ const seedRecipes = [
     serves: 4,
     prepTime: 40,
     ingredients: [
-      {quantity: 1.5, item: 'red onions'},
-      {quantity: '100g', item: 'rye bread'},
-      {quantity: '1 x 400g', item: 'tin of black beans'},
-      {quantity: `40g`, item: 'mature Cheddar cheese'},
-      {quantity: 4, item: 'soft rolls'},
-      {quantity: '100g', item: 'ripe cherry tomatoes'},
-      {quantity: 1, item: 'ripe mango'},
-      {quantity: 1, item: 'ripe avocado'},
+      {quantity: 1.5, name: 'red onions'},
+      {quantity: '100g', name: 'rye bread'},
+      {quantity: '1 400g can', name: 'black beans'},
+      {quantity: `40g`, name: 'cheddar cheese'},
+      {quantity: 4, name: 'soft rolls'},
+      {quantity: '100g', name: 'cherry tomatoes'},
+      {quantity: 1, name: 'mango'},
+      {quantity: 1, name: 'avocado'},
     ],
     method: [
       'Preheat the oven to 200ºC/400ºF/gas 6. Peel 1 onion, place in a food processor with the mushrooms, rye bread and 1 teaspoon of ground coriander, and whiz until fine. Drain and pulse in the black beans, season lightly with sea salt and black pepper, then divide into 4 and shape into patties, roughly 2.5cm thick. Rub all over with oil and dust with ground coriander, then place on an oiled baking tray and roast for 25 minutes, or until dark and crispy, topping with the Cheddar and warming the rolls for the last few minutes.',
@@ -26,13 +26,13 @@ const seedRecipes = [
     serves: 6,
     prepTime: 50,
     ingredients: [
-      {quantity: '70g', item: 'unsalted butter'},
-      {quantity: '50g', item: 'plain flour'},
-      {quantity: '800ml', item: 'milk'},
-      {quantity: '800g', item: 'spinach'},
-      {quantity: '200g', item: 'ricotta cheese'},
-      {quantity: '300g', item: 'fresh lasagne sheets'},
-      {quantity: '100g', item: 'parmesan cheese'}
+      {quantity: '70g', name: 'butter'},
+      {quantity: '50g', name: 'plain flour'},
+      {quantity: '800ml', name: 'milk'},
+      {quantity: '800g', name: 'spinach'},
+      {quantity: '200g', name: 'ricotta cheese'},
+      {quantity: '300g', name: 'lasagne sheets'},
+      {quantity: '100g', name: 'parmesan cheese'}
     ],
     method: [
       'Preheat the oven to 190°C/375°F/gas 5.',

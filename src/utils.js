@@ -119,13 +119,14 @@ export function clearWeekDayAssignments (userId) { // USING THIS ONE
 export function addRecipeIngredients(userId, recipe, recipeId) { // USING THIS ONE
   const newIngredients = recipe.ingredients
   newIngredients.map(newIngredient => {
+    console.log(newIngredient)
     firebase
       .firestore()
       .collection('shoppingList')
       .add({
         userId: userId,
         recipeId: recipeId,
-        item: newIngredient.item,
+        name: newIngredient.name,
         quantity: newIngredient.quantity
       })
       .then(id => {
@@ -199,7 +200,7 @@ export function addMiscItem (userId, newItemQ, newItem) { // USING THIS ONE
     .collection('shoppingList')
     .add({
       userId: userId,
-      item: newItem,
+      name: newItem,
       quantity: newItemQ
     })
     .then((firestoreRef) => {
@@ -210,9 +211,9 @@ export function addMiscItem (userId, newItemQ, newItem) { // USING THIS ONE
     })
 }
 
-export function sortRecipes (recipes, sortBy) { // USING THIS ONE
+export function sortList (list, sortBy) { // USING THIS ONE
   // eslint-disable-next-line
-  const sortedRecipes = recipes.sort((a, b) => {
+  const sortedList = list.sort((a, b) => {
     const nameA = a.name.toUpperCase()
     const nameB = b.name.toUpperCase()
     switch (sortBy) {
@@ -237,7 +238,7 @@ export function sortRecipes (recipes, sortBy) { // USING THIS ONE
     }
   })
 
-  return sortedRecipes
+  return sortedList
 }
 
 export function capitalise (s) { // USING THIS ONE
