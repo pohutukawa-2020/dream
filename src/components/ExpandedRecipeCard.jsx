@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { RecipeContext } from './RecipeContext'
-import { SelectedDayContext } from './SelectedDayContext'
-import { WeekContext } from './WeekContext'
+import { RecipeContext } from './context/RecipeContext'
+import { SelectedDayContext } from './context/SelectedDayContext'
+import { WeekContext } from './context/WeekContext'
 import { deleteRecipe, addIngredientsToList, removeIngredientsFromList, assignRecipeToWeekDay, capitalise } from '../utils'
 
 function ExpandedRecipeCard (props) {

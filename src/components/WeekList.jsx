@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { WeekContext } from './WeekContext'
-import { RecipeContext } from './RecipeContext'
-import { SelectedDayContext } from './SelectedDayContext'
+import { WeekContext } from './context/WeekContext'
+import { RecipeContext } from './context/RecipeContext'
+import { SelectedDayContext } from './context/SelectedDayContext'
 import RecipeCard from './RecipeCard'
 import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 

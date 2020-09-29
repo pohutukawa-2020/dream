@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 
 import { addMiscItem } from '../utils'
-import { MiscShoppingContext } from './MiscShoppingContext'
+import { MiscShoppingContext } from './context/MiscShoppingContext'
 
 const MiscShoppingListItem = () => {
   const [miscItem, setMiscItem] = useState('')

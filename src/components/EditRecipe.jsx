@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import firebase from 'firebase/app'
-import { RecipeContext } from './RecipeContext'
+import { RecipeContext } from './context/RecipeContext'
 
 function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
