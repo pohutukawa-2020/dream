@@ -1,15 +1,20 @@
 import React, { useContext, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import { UserContext } from './context/UserContext'
 
 import { signIn, signInGoogle, signInFacebook, signOut } from '../utils'
 
 
-export default function Home() {
+export default function Home (props) {
   const {user} = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  const clickHandler = () => {
+    signIn(email, password)
+    props.history.push('/')
+  }
   
   return (
     <div>

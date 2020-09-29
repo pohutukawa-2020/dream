@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import MiscShoppingListItem from './MiscShoppingListItem'
 import { clearShoppingList, clearMiscShoppingList } from '../utils'
-
+import ShoppingListItem from './ShoppingListItem'
 import { UserContext } from './context/UserContext'
 
 import { ShoppingListContext } from './context/ShoppingListContext'
@@ -15,6 +15,8 @@ function ShoppingList () {
     clearMiscShoppingList(user.uid)
   }
 
+
+
   return (
     <div className="ShoppingList">
       <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>
@@ -24,7 +26,7 @@ function ShoppingList () {
         {shoppingList.map(shoppingListItem =>
           <li key={shoppingListItem.id}>
             {shoppingListItem.ingredients.map((ingredient, index) => (
-              <h5 key={index}> {ingredient}</h5>
+            <ShoppingListItem key={index} ingredient={ingredient}/>
             ))}
           </li>
         )}

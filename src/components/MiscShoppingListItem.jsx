@@ -5,6 +5,7 @@ import { addMiscItem } from '../utils'
 import { UserContext } from './context/UserContext'
 
 import { MiscShoppingContext } from './context/MiscShoppingContext'
+import MiscItem from './MiscItem'
 
 const MiscShoppingListItem = () => {
   const {user} = useContext(UserContext)
@@ -17,6 +18,7 @@ const MiscShoppingListItem = () => {
     addMiscItem(user.uid, miscItem)
     setMiscItem('')
   }
+  console.log('miscitem: ', miscItem)
   return (
     <>
       <form onSubmit={onSubmitHandler}>
@@ -26,7 +28,7 @@ const MiscShoppingListItem = () => {
         <ul>
           {miscCollection.map(item =>
             <li key={item.id}>
-              <h5>{item.newItem}</h5>
+             <MiscItem newItem={item.newItem} id={item.id}/>
             </li>
           )}
         </ul>

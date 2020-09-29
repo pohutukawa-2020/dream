@@ -15,7 +15,7 @@ export const RecipeProvider = ({ children }) => {
     const unsubscribe = firebase // note unsubscribe added in case funny behaviour
       .firestore()
       .collection('recipes')
-      .where('user', '==', user ? user.uid : null)
+      .where('userId', '==', user ? user.uid : null)
       .onSnapshot(snapshot => {
         const newRecipes = snapshot.docs.map(doc => ({
           id: doc.id,

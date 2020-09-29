@@ -92,11 +92,11 @@ export const deleteCardRecipe = (recipe) => { // USING THIS ONE
     })
 }
 
-export function clearWeekDayAssignments (user) { // USING THIS ONE
+export function clearWeekDayAssignments (userId) { // USING THIS ONE
   firebase
     .firestore()
     .collection('week')
-    .doc(user)
+    .doc(userId)
     .update({
       monday: '',
       tuesday: '',
@@ -145,6 +145,18 @@ export function removeIngredientsFromList (recipeId) { // USING THIS ONE
     })
     .catch(function (error) {
       console.log('Error deleting ingredients: ', error)
+    })
+}
+export const deleteSingleIngredient = (Ingredient) => { // USING THIS ONE
+  firebase
+    .firestore()
+    .collection('miscShoppingList')
+    .doc(Ingredient)
+    .delete()
+    .then(() => {
+      console.log('ingredient successfully deleted!')
+    }).catch((error) => {
+      console.error('Error deleting recipe: ', error)
     })
 }
 
@@ -242,7 +254,7 @@ export const signUp = (email, password) => {
         friday: '',
         saturday: '',
         sunday: '',
-        user: response.user.uid
+        userId: response.user.uid
       })
     })
     .catch(error => {
