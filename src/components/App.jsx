@@ -17,9 +17,7 @@ import SignOut from './SignOut'
 function App () {
   return (
     <> 
-      <div className="logo">
-        <img src="../rp.png" alt="Logo"/>
-      </div>
+  
         <div className="routes">
           <Route path="/" component={Nav} />
           <Route path='/' component={SignOut} /> 

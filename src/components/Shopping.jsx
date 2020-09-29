@@ -7,6 +7,9 @@ function Shopping () {
   return (
     <>
         <section className="hero">
+          <div className="logo">
+              <img src="../rp.png" alt="Logo"/>
+          </div>
           <div className="hero-body">
             <div className="container">
                <h1 className="title is-4">

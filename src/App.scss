@@ -1,6 +1,6 @@
-$primary: black;
-$title-color: black;
-$subtitle-color: black;
+$primary: #2B2A31;
+$title-color: #2B2A31;
+$subtitle-color: #2B2A31;
 $tabs-link-padding: 0.3em 0.3em;
 $tabs-boxed-link-radius: 0px;
 $tabs-toggle-link-radius: 0px;
@@ -15,7 +15,7 @@ $tabs-active-color: #f8f8f8;
   width: 95%;
   margin: auto;
   border-radius: 2em;
-  padding-top: 1em;
+  padding-top: 0.6em;
 }
 
 div.columns { 
@@ -47,7 +47,7 @@ p {
 }
 
 .image {
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
 .card-image {
@@ -60,18 +60,29 @@ p {
 }
 
 .control {
-  color: black;
-  padding-left: 7rem;
-  padding-bottom: 10rem;
+  color: white;
 }
 
 .content {
   padding-bottom: 1rem;
   padding-left: 0.5rem;
+  
 }
 
 .media-content {
   padding-left: 0.5rem;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
 
 // Nav Bar //
@@ -163,9 +174,9 @@ html, body {
   padding-top: 6rem;
 }
 
-.hrspacing {
-  margin-top: 1.4em;
-}
+// .hrspacing {
+//   margin-bottom: 1.4em;
+// }
 
 .list {
   padding-left: 1em;
@@ -175,6 +186,71 @@ html, body {
   padding: 10px;
 }
 .box {
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
+// Search Bar //
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+} 
+
+// form //
+
+.login {
+  padding-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20rem;
+}
+
+.loginb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+.input, .textarea .select select {
+  border: 0;
+  background-color: transparent;
+}
+
+.control.has-icons-left .input, .control.has-icons-left .select select {
+  padding-left: 0em;
+}
+
+.input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
+  
+}
+
+html, :focus {
+  outline: 0;
+  }
+
+.register {
+  padding: 1em;
+}
+
+.logologin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+// expandcard // 
+
+.image.is-48x48 {
+    height: 48px;
+    width: 0px;
+}

@@ -31,6 +31,9 @@ function WeekList () {
   return (
     <>
     <section className="hero">
+    <div className="logo">
+        <img src="../rp.png" alt="Logo"/>
+    </div>
   <div className="hero-body">
     <div className="container">
       <h1 className="subtitle is-4">
@@ -45,7 +48,7 @@ function WeekList () {
         <div className="weeklist">
         <button onClick={() => clickHandler()}>Clear Week Assignments</button> {/* --- NIMZ STYLE PLUZ --- */}
           <div>
-        {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<hr /></h1></div> : null}
+        {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<div className="hrspcing"><hr /></div></h1></div> : null}
         {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('monday')}>Monday+<hr /></h3></div>
         </Link>}

@@ -7,20 +7,22 @@ function RecipeCard ({ recipe }) {
       <div className="card">
         <Link to={{ pathname: `/recipe/${recipe.id}`, recipe: recipe }}> {/* --- DYNAMIC RECIPE ID PATH--- */}
           <div className="card-image">
+            <div className="container">
             <figure className="image is-1by10">
-              <img src={recipe.imagePath} alt={recipe.name}/> {/* --- IMAGE PATH --- */}
+              <img src={recipe.imagePath} alt={recipe.name}/>
+              <div className="top-right">
+                 <div className="control">
+                    <i className="fas fa-plus"></i><Link to={`/recipe/${recipe.id}`}>
+                      </Link>
+                  </div>
+              </div> {/* --- IMAGE PATH --- */}
             </figure>
+            </div>
           </div>
           <div className="card-content">
             <div className="media mb-0">
               <div className="media-content">
                 <div className="subtitle is-5 mb-0">{recipe.name}</div> {/* --- NAME OF RECIPE --- */}
-                <div className="field is-grouped">
-                  <div className="control">
-                    <i className="fas fa-plus"></i><Link to={`/recipe/${recipe.id}`}>
-                      </Link>
-                  </div>
-                </div>
               </div>
             </div>
 

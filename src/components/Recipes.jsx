@@ -6,8 +6,11 @@ function Recipes () {
   return (
     <>
         <section class="hero">
-  <div class="hero-body">
-    <div class="container">
+        <div className="logo">
+              <img src="../rp.png" alt="Logo"/>
+          </div>
+      <div class="hero-body">
+        <div class="container">
       <h1 class="subtitle is-4">
         Your Recipes
       </h1>
