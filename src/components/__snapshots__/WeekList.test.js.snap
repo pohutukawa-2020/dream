@@ -1,34 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders component correctly 1`] = `
-Array [
-  <section
-    className="hero"
-  >
-    <div
-      className="hero-body"
-    >
-      <div
-        className="container"
-      >
-        <h1
-          className="title is-4"
-        >
-          Weekly Planner
-        </h1>
-      </div>
-    </div>
-  </section>,
+<div>
   <div>
-    <div>
-      <hr />
-      <div
-        className="weeklist"
+    <hr />
+    <div
+      className="weeklist"
+    >
+      <button
+        onClick={[Function]}
       >
-        <div>
-          <a
-            href="#/recipes"
-            onClick={[Function]}
+        Clear Week Assignments
+      </button>
+       
+      <div>
+        <a
+          href="#/recipes"
+          onClick={[Function]}
+        >
+          <div
+            className="list"
           >
             <h3
               className="subtitle is-5"
@@ -37,27 +28,31 @@ Array [
               Monday+
               <hr />
             </h3>
-          </a>
-        </div>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
-        >
-          <div
-            className=""
-          >
-            <h3
-              className="subtitle is-5"
-              onClick={[Function]}
-            >
-              Tuesday+
-              <hr />
-            </h3>
           </div>
         </a>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
+      </div>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
+        >
+          <h3
+            className="subtitle is-5"
+            onClick={[Function]}
+          >
+            Tuesday+
+            <hr />
+          </h3>
+        </div>
+      </a>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
         >
           <h3
             className="subtitle is-5"
@@ -66,10 +61,14 @@ Array [
             Wednesday+
             <hr />
           </h3>
-        </a>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
+        </div>
+      </a>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
         >
           <h3
             className="subtitle is-5"
@@ -78,10 +77,14 @@ Array [
             Thursday+
             <hr />
           </h3>
-        </a>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
+        </div>
+      </a>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
         >
           <h3
             className="subtitle is-5"
@@ -90,10 +93,14 @@ Array [
             Friday+
             <hr />
           </h3>
-        </a>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
+        </div>
+      </a>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
         >
           <h3
             className="subtitle is-5"
@@ -102,10 +109,14 @@ Array [
             Saturday+
             <hr />
           </h3>
-        </a>
-        <a
-          href="#/recipes"
-          onClick={[Function]}
+        </div>
+      </a>
+      <a
+        href="#/recipes"
+        onClick={[Function]}
+      >
+        <div
+          className="list"
         >
           <h3
             className="subtitle is-5"
@@ -113,9 +124,9 @@ Array [
           >
             Sunday+
           </h3>
-        </a>
-      </div>
+        </div>
+      </a>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;
