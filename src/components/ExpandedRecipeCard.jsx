@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { UserContext } from './context/UserContext'
@@ -22,24 +22,16 @@ function ExpandedRecipeCard (props) {
 
   console.log(week[weekDay])
 
+  useEffect(() => {
+    //currently solving null assigned recipe bug
+  }, [week[weekDay]])
+
   function clickHandler (evt) {
     evt.preventDefault()
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
     if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
-      if (!week[weekDay]) {
-        // if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
-        //   removeIngredientsFromList(week[weekDay])
-        //   assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        //   addIngredientsToList(user.uid, recipe, recipeId)
-        //   setSelectedDay('monday')
-        //   props.history.push('/week')
-        // }
-        assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
-        addIngredientsToList(user.uid, recipe, recipeId)
-        setSelectedDay('monday')
-        props.history.push('/week')
-      } else {
+      if (week[weekDay]) {
         if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
           removeIngredientsFromList(week[weekDay])
           assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
@@ -47,6 +39,15 @@ function ExpandedRecipeCard (props) {
           setSelectedDay('monday')
           props.history.push('/week')
         }
+        // assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+        // addIngredientsToList(user.uid, recipe, recipeId)
+        // setSelectedDay('monday')
+        // props.history.push('/week')
+      } else {
+        assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
+        addIngredientsToList(user.uid, recipe, recipeId)
+        setSelectedDay('monday')
+        props.history.push('/week')
       }
     }
   }

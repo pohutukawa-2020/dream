@@ -15,6 +15,8 @@ function ShoppingList () {
     clearMiscShoppingList(user.uid)
   }
 
+
+
   return (
     <div className="ShoppingList">
       <h2 className='subtitle is-5 mb-0'>ShoppingList</h2>

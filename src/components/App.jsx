@@ -29,8 +29,9 @@ function App () {
     auth.loading && <div>is loading</div> ||
     !auth.authenticated && 
     <> 
-      <div className="routes">
+      <div className="contentRoutes">
         <Route path='/home' component={Home} />
+        <Route path='/sign-up' component={SignUp} />
         <Route exact path='/'><Redirect to='/home'/></Route>
         <Route exact path='/recipes'><Redirect to='/home'/></Route>
         <Route exact path="/recipes/add"><Redirect to='/home'/></Route>
@@ -44,12 +45,11 @@ function App () {
       <div className="logo">
         <img src="../rp.png" alt="Logo"/>
       </div>
-        <div className="routes">
+        <div className="contentRoutes">
           <Route path="/" component={Nav} />
           <Route path='/' component={SignOut} /> 
           <Route exact path='/'><Redirect to='/recipes'/></Route>
           <Route exact path='/home'><Redirect to='recipes'/></Route>
-          <Route path='/sign-up' component={SignUp} />
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/recipes/add" component={AddRecipe} />
           <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
