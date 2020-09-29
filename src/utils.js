@@ -283,12 +283,32 @@ export const signIn = (email, password) => {
 export const signInGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider()
   firebase.auth().signInWithPopup(provider)
-    .then(() => {
-      console.log('successfully signed in with Google!')
+  .then((result) => {
+    const user = result.user
+    console.log('successfully signed in with Facebook!')
+    firebase.firestore().collection('week').doc(user.uid).get()
+    .then(doc => {
+      if (doc.exists) {
+        console.log('week table already exists')
+      } else {
+        console.log('week table doesn\'t exist, creating one')
+        firebase.firestore().collection('week').doc(user.uid)
+        .set({
+          monday: '',
+          tuesday: '',
+          wednesday: '',
+          thursday: '',
+          friday: '',
+          saturday: '',
+          sunday: '',
+          userId: user.uid
+        })
+      }
     })
-    .catch(error => {
-      console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
-    })
+  })
+  .catch(error => {
+    console.log('unsuccessful sign in: ', error.message + ' ' + error.code)
+  })
 }
 
 export const signInFacebook = () => {
