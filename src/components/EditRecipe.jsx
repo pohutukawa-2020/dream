@@ -7,12 +7,12 @@ function EditRecipe (props) {
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
 
-  const [imagePath, setImagePath] = useState(recipe.imagePath)
-  const [name, setName] = useState(recipe.name)
-  const [serves, setServes] = useState(recipe.serves)
-  const [prepTime, setPrepTime] = useState(recipe.prepTime)
-  const [ingredients, setIngredients] = useState(recipe.ingredients)
-  const [method, setMethod] = useState(recipe.method)
+  const [imagePath, setImagePath] = useState(recipe ? recipe.imagePath : null)
+  const [name, setName] = useState(recipe ? recipe.name : null)
+  const [serves, setServes] = useState(recipe ? recipe.serves : null)
+  const [prepTime, setPrepTime] = useState(recipe ? recipe.prepTime : null)
+  const [ingredients, setIngredients] = useState(recipe ? recipe.ingredients : null)
+  const [method, setMethod] = useState(recipe ? recipe.method : null)
 
   function onSubmitHandler (e) {
     e.preventDefault()
@@ -89,14 +89,14 @@ function EditRecipe (props) {
                 (seperate by comma)
             <div>
               <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> {/* <MultipleIngredientTest /> */}
-              <ul>{ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
+              <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>) : null}</ul>
             </div>
           </div>
           <div className="card-content">
             <div>
               <label>{'Method (seperate by comma)'}</label>
               <textarea className="textarea is-primary" type='text' value={method} onChange={e => setMethod(e.currentTarget.value.split(','))} />
-              <ol>{method.map(step => <li key={step}>{step}</li>)}</ol>
+              <ol>{method ? method.map(step => <li key={step}>{step}</li>) : null}</ol>
             </div>
             <br></br>
             <button className="button card-content is-medium is-rounded is-primary">Edit Recipe</button>
