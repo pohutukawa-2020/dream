@@ -12,23 +12,11 @@ import EditRecipe from './EditRecipe'
 
 function App () {
   return (
-    <>
-      <section className="hero is-primary">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="title">
-        ReciPlan
-            </h1>
-            <h2 className="subtitle">
-        ReciPlan your week...
-            </h2>
-          </div>
-        </div>
-      </section>
-      <div className="App">
-        {/* <h1><Link to="/">RECIPLAN APP!</Link></h1> */}
+    <> 
+      <div className="logo">
+        <img src="../rp.png" alt="Logo"/>
+      </div>
         <div className="routes">
-          {/* <Route path="/" component={Header} /> */}
           <Route path="/" component={Nav} />
           <div className='ccontent'>
             <Route exact path='/'><Redirect to='/week'/></Route>
@@ -41,7 +29,6 @@ function App () {
             <Route exact path="/shopping/add" component={Shopping} />
           </div>
         </div>
-      </div>
     </>
   )
 }

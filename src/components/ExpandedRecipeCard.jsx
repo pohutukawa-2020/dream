@@ -16,6 +16,8 @@ function ExpandedRecipeCard (props) {
   const [methodVis, setMethodVis] = useState(false)
   const [ingredientVis, setIngredientVis] = useState(false)
 
+  console.log('selectedDay card: ', selectedDay)
+
   function clickHandler (evt) {
     evt.preventDefault()
     const newWeekDayAssignment = { [weekDay]: recipeId }
