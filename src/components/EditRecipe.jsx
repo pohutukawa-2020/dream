@@ -26,8 +26,6 @@ export default function EditRecipe (props) {
     setMethod(recipe ? recipe.method : null)
   }, [recipe])
 
-  console.log(ingredients)
-
   function onSubmitHandler (e) {
     e.preventDefault()
     const updatedRecipe = {
