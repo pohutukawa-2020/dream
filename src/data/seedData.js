@@ -42,33 +42,33 @@ const seedRecipes = [
       'In a baking dish, layer the lasagne sheets, white sauce, spinach mixture and a grating of Parmesan. Finish with a layer of pasta topped with sauce and more Parmesan.',
       'Bake for 30 minutes, or till golden.'
     ],
-    imagePath: 'https://hips.hearstapps.com/del.h-cdn.co/assets/17/38/1506010503-spinach-lasagna-delish.jpg'
+    imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066'
   }
 
-  {
-    name: 'Falafel with Quinoa Salad',
-    serves: 3,
-    prepTime: 30,
-    ingredients: [
-      {quantity: '400g', name: 'canned chickpeas'},
-      {quantity: '¼', name: 'red onion'},
-      {quantity: '1', name: 'carrot'},
-      {quantity: '1 clove', name: 'garlic'},
-      {quantity: '1', name: 'egg'},
-      {quantity: '1', name: 'lemon'},
-      {quantity: '2 tsp', name: 'ground cumin'},
-      {quantity: '1 tsp', name: 'ground corriander'},
-      {quantity: '1 pinch', name: 'ground cayenne pepper'},
-      {quantity: '1 tsp', name: 'baking powder'},
-      {quantity: '¼ cup', name: 'wholemeal breadcrumbs'}
-    ],
-    method: [
-      
-    ]
+  // {
+  //   name: 'Falafel with Quinoa Salad',
+  //   serves: 3,
+  //   prepTime: 30,
+  //   ingredients: [
+  //     {quantity: '400g', name: 'canned chickpeas'},
+  //     {quantity: '¼', name: 'red onion'},
+  //     {quantity: '1', name: 'carrot'},
+  //     {quantity: '1 clove', name: 'garlic'},
+  //     {quantity: '1', name: 'egg'},
+  //     {quantity: '1', name: 'lemon'},
+  //     {quantity: '2 tsp', name: 'ground cumin'},
+  //     {quantity: '1 tsp', name: 'ground corriander'},
+  //     {quantity: '1 pinch', name: 'ground cayenne pepper'},
+  //     {quantity: '1 tsp', name: 'baking powder'},
+  //     {quantity: '¼ cup', name: 'wholemeal breadcrumbs'}
+  //   ],
+  //   method: [
+
+  //   ]
     
 
 
-  }
+  // }
   // {
   //   name: 'Roasted Root Vegetables',
   //   serves: '12',
