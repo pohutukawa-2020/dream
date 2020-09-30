@@ -57,7 +57,7 @@ function ExpandedRecipeCard (props) {
     evt.preventDefault()
     setWeekDay(evt.target.value)
   }
-
+console.log('ingredient; ',recipe.ingredients)
   return (
     <>
       <div className="card1">
@@ -103,7 +103,7 @@ function ExpandedRecipeCard (props) {
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
-              <p>{ingredient.quantity}{' '}{ingredient.item}</p>
+              <p>{ingredient.quantity}{' '}{ingredient.name}</p>
             )) : null}</div> : null}
           </div>
           <div>
