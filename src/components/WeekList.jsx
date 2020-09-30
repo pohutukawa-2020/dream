@@ -36,7 +36,7 @@ export default function WeekList () {
         <hr />
         <div className="weeklist">
           <div className="pad">
-        <button className="button is-small is-rounded is-outline is-centered" onClick={() => clickHandler()}>Clear Week Assignments</button> {/* --- NIMZ STYLE PLUZ --- */}
+        <button className="button is-small is-rounded is-outline is-centered" onClick={() => clickHandler()}>Clear Week</button> {/* --- NIMZ STYLE PLUZ --- */}
         </div>
           <div>
         {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<div className="hrspcing"><hr /></div></h1></div> : null}
