@@ -85,8 +85,11 @@ export default function Home (props) {
     </button></div>
 
     </div>
-    <button onClick={() => facebookClickHandler()}>Log in/register with Facebook</button>
-    <button onClick={() => googleClickHandler()}>Log in/register with Google</button>
+    <img onClick={() => facebookClickHandler()} className='facebookLogin' src='/facebook.png'></img><br></br>
+    <img onClick={() => googleClickHandler()} className='googleLogin' src='/google.png'></img><br></br>
+
+    {/* <button onClick={() => facebookClickHandler()}>Log in/register with Facebook</button> */}
+    {/* <button onClick={() => googleClickHandler()}>Log in/register with Google</button> */}
 
     {error === 'auth/user-not-found' ? <div>User not found, please register!</div> : null}
     {error === 'auth/invalid-email' ? <div>Please use a real email.</div> : null}

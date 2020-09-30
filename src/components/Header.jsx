@@ -37,7 +37,7 @@ export default function Header (props) {
         <div className='noBulmaNav'>
           <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
           <div className='noBulmaNavTitle'>{headerTitle}</div>
-          <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
+          <h1 className="noBulmaNavSignOut" onClick={(e) => clickHandler(e)}>Sign Out</h1>
         </div>
     </>
   )

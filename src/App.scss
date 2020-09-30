@@ -26,7 +26,7 @@ $tabs-active-color: #f8f8f8;
 
 // Recipe Card // 
 .card { 
-  width: 350px;
+  width: 90vw;
   max-width: 95vw;
   margin: 10px;
   border-radius: 2em;
@@ -468,11 +468,26 @@ html, :focus {
   width: auto;
   height: 50px
 }
+
+.facebookLogin {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.googleLogin {
+  width: 205px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .shoppingListIngredients {
   cursor: pointer;
 }
-
-
 
 //======== media queries ========//
 
