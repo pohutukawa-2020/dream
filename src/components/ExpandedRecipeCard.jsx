@@ -61,7 +61,7 @@ function ExpandedRecipeCard (props) {
         <div className='noBulmaNavTitle'>My Recipes</div>
         <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
       </div>
-      <div className="card1">
+      <div className="card card-expanded">
         <div className="card-image">
           <figure className="image1 is-5by1">
             <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
@@ -81,10 +81,10 @@ function ExpandedRecipeCard (props) {
               </figure>
             </div>
             <div className="media-content">
-              <p className="title is-5">{recipe ? recipe.name : null}</p> {/* --- NAME OF RECIPE --- */}
+              <p className="subtitle is-5">{recipe ? recipe.name : null}</p> {/* --- NAME OF RECIPE --- */}
             </div>
           </div>
-          <label>Add Recipe To:</label>{' '}
+          <label className="addto" >Add Recipe To:</label>{' '}
           <select value={weekDay} onChange={evt => changeHandler(evt)}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
@@ -99,10 +99,10 @@ function ExpandedRecipeCard (props) {
                 Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
-          <div>
+          <div className="ingredients">
           <button className="ingredient" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span></button>
+      </span></button> 
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
               <p>{ingredient.quantity}{' '}{ingredient.item}</p>
             )) : null}</div> : null}

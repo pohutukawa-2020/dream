@@ -22,7 +22,9 @@ function RecipeCard ({ recipe }) {
           <div className="card-content">
             <div className="media mb-0">
               <div className="media-content">
+                <div className="subtitleleftpad">
                 <div className="subtitle is-5 mb-0">{recipe.name}</div> {/* --- NAME OF RECIPE --- */}
+                </div>
               </div>
             </div>
 
