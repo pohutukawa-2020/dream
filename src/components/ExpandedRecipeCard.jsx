@@ -114,7 +114,7 @@ function ExpandedRecipeCard (props) {
       </span></button> 
             <div className="ingredtext">
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
-              <p className="subtitle is-6">{ingredient.quantity}{' '}{ingredient.item}</p>
+              <p className="subtitle is-6">{ingredient.quantity}{' '}{ingredient.name}</p>
             )) : null}</div> : null}
           </div>
           </div>
@@ -122,9 +122,12 @@ function ExpandedRecipeCard (props) {
           <button className='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
-          {methodVis ? <div>{recipe ? recipe.method.map(step => (
-              <p className="subtitle is">{step}</p>
-            )) : null}
+       {methodVis ? <div>
+         <ol>{recipe ? recipe.method.map(step => (
+              <li className="subtitle is">{step}</li>
+            )) : null} 
+          </ol>
+  
           </div> : null }
           </div>
             

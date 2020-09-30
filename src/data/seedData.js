@@ -19,7 +19,7 @@ const seedRecipes = [
       'Halve the warm rolls and divide the yoghurt between the bases, followed by half the salsa, the mango, avocado and coriander leaves. Top with the burgers, remaining salsa and extra Tabasco, pop the lids on and press down lightly.',
       'Always nice with oven-roasted, skin-on chips.'
     ],
-    imagePath: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg'
+    imagePath: 'https://static01.nyt.com/images/2020/01/22/dining/jo-black-bean-burgers/merlin_167531589_227b9414-ffad-4b44-ae53-67483bd2bae5-articleLarge.jpg'
   },
   {
     name: 'Spinach lasagne',
@@ -43,29 +43,36 @@ const seedRecipes = [
       'Bake for 30 minutes, or till golden.'
     ],
     imagePath: 'https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066'
+  },
+
+  {
+    name: 'Falafel with Quinoa Salad',
+    serves: 3,
+    prepTime: 40,
+    ingredients: [
+      {quantity: '400g', name: 'canned chickpeas'},
+      {quantity: '¼', name: 'red onion'},
+      {quantity: '1', name: 'carrot'},
+      {quantity: '1 clove', name: 'garlic'},
+      {quantity: '1', name: 'egg'},
+      {quantity: '1', name: 'lemon'},
+      {quantity: '2 tsp', name: 'ground cumin'},
+      {quantity: '1 tsp', name: 'ground corriander'},
+      {quantity: '1 pinch', name: 'ground cayenne pepper'},
+      {quantity: '1 tsp', name: 'baking powder'},
+      {quantity: '¼ cup', name: 'wholemeal breadcrumbs'},
+      {quantity: '1 cup', name: 'quinoa'}
+
+    ],
+    method: [
+      'Put the quinoa on to cook and chop up some of your favourite salad ingredients.',
+      'In a large bowl, mash chickpeas with a potato masher until thick and pasty. Add all remaining homemade falafel ingredients and mix well to combine.',
+      'Using heaped tablespoons of falafel kofta mix and wet hands, shape mix into patties, about 1cm-thick.',
+      'Heat oil in a large, non-stick fry-pan on medium heat. Cook falafel, in batches, for 2–3 minutes each side, until golden brown and cooked through.',
+      'Put the cooked quinoa in a serving bowl, add the chopped salad ingredients and your falafel. Top with your favourite dressing and serve warm.'
+    ],
+    imagePath: 'https://realfood.tesco.com/media/images/RFO-1400x919-Falafel-a3ec16e4-e945-49b2-9003-fab7b3673824-0-1400x919.jpg'
   }
-
-  // {
-  //   name: 'Falafel with Quinoa Salad',
-  //   serves: 3,
-  //   prepTime: 30,
-  //   ingredients: [
-  //     {quantity: '400g', name: 'canned chickpeas'},
-  //     {quantity: '¼', name: 'red onion'},
-  //     {quantity: '1', name: 'carrot'},
-  //     {quantity: '1 clove', name: 'garlic'},
-  //     {quantity: '1', name: 'egg'},
-  //     {quantity: '1', name: 'lemon'},
-  //     {quantity: '2 tsp', name: 'ground cumin'},
-  //     {quantity: '1 tsp', name: 'ground corriander'},
-  //     {quantity: '1 pinch', name: 'ground cayenne pepper'},
-  //     {quantity: '1 tsp', name: 'baking powder'},
-  //     {quantity: '¼ cup', name: 'wholemeal breadcrumbs'}
-  //   ],
-  //   method: [
-
-  //   ]
-    
 
 
   // }
