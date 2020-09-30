@@ -24,10 +24,9 @@ export default function WeekCard ({ recipe }) {
           <div className="media-content">
             <div className="content">
               <p>
-                <strong className="subtitle">{recipe.name}</strong>
-                <br />
-                
-              </p>
+                <strong className="subtitle">{recipe.name}</strong></p>
+              <p className="recipeServes mb-0">Prep Time: {recipe.prepTime} minutes</p>
+              <p className="recipeServes">Serves: {recipe.serves}</p>
             </div>
             <nav className="level is-mobile">
             <div className="level-left">

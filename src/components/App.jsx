@@ -11,10 +11,10 @@ import AddRecipe from './AddRecipe'
 import EditRecipe from './EditRecipe'
 import { UserContext } from './context/UserContext'
 
-import Home from './Home'
 import SignUp from './SignUp'
 import SignOut from './SignOut'
 import Header from './Header'
+import LoginRegister from './LoginRegister'
 
 export default function App () {
   const {user} = useContext(UserContext)
@@ -32,8 +32,8 @@ export default function App () {
         <Route path="/" component={Nav} />
         <Route path='/' component={Header} />
         <Route path='/' component={SignOut} /> 
-        <Route exact path='/'><Redirect to='/recipes'/></Route>
-        <Route exact path='/home'><Redirect to='/recipes'/></Route>
+        <Route exact path='/'><Redirect to='/week'/></Route>
+        <Route exact path='/home'><Redirect to='/week'/></Route>
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/recipes/add" component={AddRecipe} />
         <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
@@ -46,7 +46,7 @@ export default function App () {
   } else {
     return (
       <div className="contentRoutes">
-        <Route path='/home' component={Home} />
+        <Route path='/home' component={LoginRegister} />
         <Route path='/sign-up' component={SignUp} />
         <Route exact path='/'><Redirect to='/home'/></Route>
         <Route exact path='/recipes'><Redirect to='/home'/></Route>

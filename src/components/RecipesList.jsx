@@ -22,8 +22,6 @@ export default function RecipesList() {
     console.log(sortedRecipes.filter(recipe => recipe.name.toLowerCase().includes(searchTerm.toLowerCase())))
   }
 
-
- 
   return (
     <>
       <div className="RecipesList">

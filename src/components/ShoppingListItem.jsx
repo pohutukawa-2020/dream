@@ -4,7 +4,7 @@ import { deleteSingleIngredient } from '../utils'
 export default function ShoppingListItem ({shoppingListItem, id}) {
 const [strike, setStrike]=useState({state: true, style: null})
 
-const cross =() => {
+const cross = () => {
   strike.state ? setStrike({state: false, style: {textDecoration:'line-through'}}) : setStrike({state: true, style: null })
 }
   return (

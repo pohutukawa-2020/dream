@@ -5,6 +5,9 @@ $tabs-link-padding: 0.3em 0.3em;
 $tabs-boxed-link-radius: 0px;
 $tabs-toggle-link-radius: 0px;
 $tabs-active-color: #f8f8f8;
+$tabs-link-active-border-bottom-color: black;
+$tabs-link-active-color:black;
+$tabs-link-color:gray;
 
 @import "../node_modules/bulma/bulma.sass";
 
@@ -27,7 +30,7 @@ $tabs-active-color: #f8f8f8;
 // Recipe Card // 
 .card { 
   width: 90vw;
-  max-width: 90vw;
+  max-width: 95vw;
   margin: 10px;
   border-radius: 2em;
   padding-top: 0.6em;
@@ -85,6 +88,7 @@ p {
 .content {
   padding-bottom: 1rem;
   padding-left: 0.5rem;
+  overflow-x: hidden;
   
 }
 
@@ -564,11 +568,63 @@ padding-right: 1rem;
   width: auto;
   height: 50px
 }
+
+.facebookLogin {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.words {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.reciPlan {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+}
+
+.tasty {
+  position: relative;
+  bottom: 18rem;
+  z-index: 1;
+  -webkit-box-align:center;
+  -webkit-box-pack:center;
+  display:-webkit-box;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.googleLogin {
+  width: 205px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .shoppingListIngredients {
   cursor: pointer;
 }
 
+.recipeServes {
+  font-size: .75rem;
+  color: black;
+}
 
+.media .content:not(:last-child) {
+  margin-bottom: -1rem;
+}
 
 //======== media queries ========//
 
@@ -576,6 +632,7 @@ padding-right: 1rem;
 //     and (device-width : 375px) 
 //     and (device-height : 812px) 
 //     and (-webkit-device-pixel-ratio : 3) { 
+//     }
 //     }
 
 @media only screen 

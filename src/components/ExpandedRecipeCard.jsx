@@ -20,11 +20,9 @@ export default function ExpandedRecipeCard (props) {
   const [methodVis, setMethodVis] = useState(false)
   const [ingredientVis, setIngredientVis] = useState(false)
 
-  console.log(week[weekDay])
-
-  // useEffect(() => {
-  //   //currently solving null assigned recipe bug
-  // }, [week[weekDay]])
+  useEffect(() => {
+    //currently solving null assigned recipe bug
+  }, [week[weekDay]])
 
   function clickHandler (evt) {
     evt.preventDefault()
