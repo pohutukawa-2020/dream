@@ -54,6 +54,14 @@ function ExpandedRecipeCard (props) {
     setWeekDay(evt.target.value)
   }
 
+  const styles = {
+    backgroundImage: `url(${recipe.imagePath})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '300px'
+  }
+
   return (
     <>
       <div className='noBulmaNav'>
@@ -64,7 +72,8 @@ function ExpandedRecipeCard (props) {
       <div className="card card-expanded">
         <div className="card-image">
           <figure className="image1 is-5by1">
-            <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/>
+            <div style={styles}></div>
+            {/* <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/> */}
           </figure>
         </div>
         <button>
@@ -114,7 +123,7 @@ function ExpandedRecipeCard (props) {
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
           {methodVis ? <div>{recipe ? recipe.method.map(step => (
-              <p className="subtitle is-6">{step}</p>
+              <p className="subtitle is">{step}</p>
             )) : null}
           </div> : null }
           </div>
