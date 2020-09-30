@@ -104,6 +104,24 @@ p {
   right: 20px;
 }
 
+.edit-bottom-right {
+  position: relative;
+  left: 270px;
+  bottom: -35px;
+  color: black;
+}
+
+.bin-bottom-right {
+  position: relative;
+  left: 305px;
+  bottom: -12px;
+  color: black;
+}
+
+.fa-edit {
+  color: black;
+}
+
 // expanded view //
 
 box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
@@ -134,6 +152,10 @@ button, input, select, textarea {
   padding-left: 1.5rem;
 }
 
+.carddata {
+  margin-top: -4rem;
+}
+
 // Nav Bar //
 .tabs {
   position: fixed;
@@ -152,7 +174,27 @@ button, input, select, textarea {
   margin-right: 0.2em;
 }
 
+.button .icon:first-child:last-child {
+  margin-left: 0;
+}
 
+.select {
+  border-radius: 20px;
+  height: 20px;
+  background-color: white;
+  border-color: white;
+  margin-top: -0.2rem;
+}
+
+.dropdown {
+  padding-bottom: 10px;
+}
+
+.methpad {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: justify;
+}
 
 // Branding //
 
@@ -210,6 +252,7 @@ hr {
 html, body {
   background-color: #f8f8f8;
   margin-bottom: 12%;
+  overflow-x: hidden;
 }
 
 .header {
@@ -428,6 +471,7 @@ html, :focus {
 .shoppingListIngredients {
   cursor: pointer;
 }
+<<<<<<< HEAD
 .words {
   display:flex;
   justify-content: center;
@@ -455,3 +499,15 @@ html, :focus {
   justify-content: center;
 }
 
+=======
+
+
+
+//======== media queries ========//
+
+// @media only screen 
+//     and (device-width : 375px) 
+//     and (device-height : 812px) 
+//     and (-webkit-device-pixel-ratio : 3) { 
+//     }
+>>>>>>> 89dc8d02b06b33821a7cd827080e318983da4919

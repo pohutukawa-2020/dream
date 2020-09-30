@@ -76,13 +76,14 @@ export default function ExpandedRecipeCard (props) {
             {/* <img src={recipe ? recipe.imagePath : null} alt={recipe ? recipe.name : null}/> */}
           </figure>
         </div>
-        <button>
-          <Link to={`/recipe/edit/${recipeId}`}>Edit Recipe</Link>
-        </button>
-        <button onClick={() => deleteRecipe(recipeId, props)}>
-          Delete Recipe
-        </button>
-        <button onClick={() => removeRecipeIngredients(recipeId)}>Remove Ingredients From Shopping List</button>
+        <div className="carddata">
+        <div className="edit-bottom-right">
+          <Link to={`/recipe/edit/${recipeId}`}><i class="far fa-edit" /></Link>
+          </div>
+        <div className="bin-bottom-right" onClick={() => deleteRecipe(recipeId, props)}>
+        <i class="far fa-trash-alt"/>
+        </div>
+        {/* <button onClick={() => removeRecipeIngredients(recipeId)}>Remove Ingredients From Shopping List</button> */}
         <div className="card-content">
           <div className="media">
             <div className="media-left">
@@ -94,7 +95,8 @@ export default function ExpandedRecipeCard (props) {
             </div>
           </div>
           <label className="addto" >Add Recipe To:</label>{' '}
-          <select value={weekDay} onChange={evt => changeHandler(evt)}>
+          <div className="dropdown">
+          <select className="select" value={weekDay} onChange={evt => changeHandler(evt)}>
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>
@@ -103,13 +105,14 @@ export default function ExpandedRecipeCard (props) {
             <option value='saturday'>Saturday</option>
             <option value='sunday'>Sunday</option>
           </select>
-          <button onClick={evt => clickHandler(evt)}>Confirm</button>
+          </div>
+          <button className="button is-small is-rounded" onClick={evt => clickHandler(evt)}>Confirm</button>
           <div className="content">
                 Serves: {recipe ? recipe.serves : null} <br/> {/* --- SERVES --- */}
                 Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
           <div className="ingredients">
-          <button className="ingredient" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
+          <button className="button is-small is-rounded ingredient" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button> 
             <div className="ingredtext">
@@ -119,18 +122,19 @@ export default function ExpandedRecipeCard (props) {
           </div>
           </div>
           <div>
-          <button className='method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
+          <button className='button is-small is-rounded method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </span></button>
-       {methodVis ? <div>
-         <ol>{recipe ? recipe.method.map(step => (
-              <li className="subtitle is">{step}</li>
-            )) : null} 
-          </ol>
-  
+      <div className="methpad">
+        <ol>
+          {methodVis ? <div>{recipe ? recipe.method.map(step => (
+              <li className="subtitle is-6">{step}<br></br><br></br></li>
+            )) : null}
           </div> : null }
+          </ol>
           </div>
-            
+          </div>
+          </div>
         </div>
 
       </div>
