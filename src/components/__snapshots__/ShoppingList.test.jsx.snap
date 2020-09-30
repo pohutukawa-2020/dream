@@ -4,54 +4,96 @@ exports[`renders component correctly 1`] = `
 <div
   className="ShoppingList"
 >
-  <h2
-    className="subtitle is-5 mb-0"
+  <div>
+     
+  </div>
+  <div
+    className="sort-sort"
   >
-    ShoppingList
-  </h2>
-  <button
-    onClick={[Function]}
-  >
-    Clear Shopping List
-  </button>
-  <form
-    onSubmit={[Function]}
-  >
-    <label>
-      Add item to Shopping List
-    </label>
-    <br />
-    <input
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-    <button>
-      Add
+    <button
+      className="button is-small is-rounded is-outline clear-shopping"
+      onClick={[Function]}
+    >
+      Clear all
     </button>
-    <ul />
-  </form>
-  <ul>
-    <li>
-      <h5
-        onClick={[Function]}
-        style={null}
+    <select
+      className="recipeSortButton"
+      onChange={[Function]}
+      value="NAME_ASC"
+    >
+      <option
+        value="NAME_ASC"
       >
-        1½ red onions
-      </h5>
-      <h5
-        onClick={[Function]}
-        style={null}
+        Name (A-Z)
+      </option>
+      <option
+        value="NAME_DESC"
       >
-        100 g rye bread
-      </h5>
-      <h5
+        Name (Z-A)
+      </option>
+    </select>
+  </div>
+  <div
+    className="search-pad"
+  >
+    <form
+      className="shopping-list"
+    >
+      <input
+        className="noBulmaBorderless newItemQ"
+        onChange={[Function]}
+        placeholder="Quantity"
+        type="number"
+        value=""
+      />
+       
+      <input
+        className="noBulmaBorderless newItem"
+        onChange={[Function]}
+        placeholder="Item, ie bananas"
+        type="text"
+        value=""
+      />
+       
+      <h3
         onClick={[Function]}
-        style={null}
+        style={
+          Object {
+            "display": "inline",
+          }
+        }
       >
-        ground corian…
-      </h5>
-    </li>
-  </ul>
+        <h3
+          className="plusButton"
+        >
+          +
+        </h3>
+        Add
+      </h3>
+    </form>
+  </div>
+  <div
+    className="shopping-list"
+  >
+    <ul>
+      <li>
+        <h5
+          className="shoppingListIngredients"
+          onClick={[Function]}
+          style={null}
+        >
+           
+          <span
+            className="destroyerOfIngredients"
+            onClick={[Function]}
+          >
+            <i
+              class="fas fa-times"
+            />
+          </span>
+        </h5>
+      </li>
+    </ul>
+  </div>
 </div>
 `;

@@ -7,13 +7,20 @@ exports[`renders component correctly 1`] = `
     <div
       className="weeklist"
     >
-      <button
-        onClick={[Function]}
+      <div
+        className="clear-week"
       >
-        Clear Week Assignments
-      </button>
-       
-      <div>
+        <button
+          className="button is-small is-rounded is-outline is-centered"
+          onClick={[Function]}
+        >
+          Clear Week
+        </button>
+         
+      </div>
+      <div
+        className="monday-clear"
+      >
         <a
           href="#/recipes"
           onClick={[Function]}
@@ -25,7 +32,7 @@ exports[`renders component correctly 1`] = `
               className="subtitle is-5"
               onClick={[Function]}
             >
-              Monday+
+              Monday+ 
               <hr />
             </h3>
           </div>
@@ -123,6 +130,7 @@ exports[`renders component correctly 1`] = `
             onClick={[Function]}
           >
             Sunday+
+            <hr />
           </h3>
         </div>
       </a>

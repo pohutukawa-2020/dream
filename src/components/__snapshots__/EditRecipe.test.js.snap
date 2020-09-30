@@ -25,126 +25,148 @@ Array [
   <form
     onSubmit={[Function]}
   >
-    <h4>
-      Edit Recipe
-    </h4>
-    <div
-      className="card"
-    >
+    <div>
       <div
-        className="card-image"
-      >
-        <figure
-          className="image is-2by1"
-        >
-          <img
-            alt="add your meal"
-            src={null}
-          />
-        </figure>
-      </div>
-      <span>
-        <button
-          className="button is-link is-small is-rounded"
-        >
-          <i
-            className="fas fa-arrow-circle-left"
-          />
-        </button>
-      </span>
-      <div
-        className="card-content"
+        className="card card-expanded-edit"
       >
         <div
-          className="media"
+          className="card-image"
         >
-          <div
-            className="media-left"
+          <figure
+            className="image is-2by1"
           >
-            <figure
-              className="image is-48x48"
+            <img
+              alt="add your meal"
+              src={null}
             />
+          </figure>
+        </div>
+        <div
+          className="return-edit"
+        >
+          <span>
+            <button
+              className="button is-small is-rounded is-primary"
+            >
+              <i
+                className="fas fa-arrow-circle-left"
+              />
+            </button>
+          </span>
+        </div>
+        <div
+          className="card-content"
+        >
+          <div
+            className="media"
+          >
+            <div
+              className="media-left"
+            >
+              <figure
+                className="image is-48x48"
+              />
+            </div>
+            <div
+              className="media-content"
+            >
+              <p
+                className="subtitle is-5"
+              >
+                <div
+                  className="edit-title"
+                >
+                  <label>
+                    Title
+                  </label>
+                  <input
+                    className="label is-primary"
+                    onChange={[Function]}
+                    type="text"
+                    value={null}
+                  />
+                   
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="edit-image"
+        >
+          <label>
+            Image URL
+          </label>
+          <br />
+          <input
+            onChange={[Function]}
+            type="text"
+            value={null}
+          />
+        </div>
+        <div
+          className="content"
+        >
+          <div
+            className="card-content"
+          >
+            Serves
+            <br />
+            <input
+              onChange={[Function]}
+              value={null}
+            />
+             
           </div>
           <div
-            className="media-content"
+            className="card-content"
           >
-            <p
-              className="title is-5"
-            >
-              <div>
-                <label>
-                  Title
-                </label>
-                <input
-                  className="label is-primary"
-                  onChange={[Function]}
-                  type="text"
-                  value={null}
-                />
-                 
-              </div>
-            </p>
+            Prep Time (minutes)
+            <br />
+            <input
+              onChange={[Function]}
+              type="text"
+              value={null}
+            />
+             
           </div>
         </div>
-      </div>
-      <div>
-        <label>
-          Image URL
-        </label>
-        <input
-          onChange={[Function]}
-          type="text"
-          value={null}
-        />
-      </div>
-      <div
-        className="content"
-      >
         <div
-          className="card-content"
+          className=""
         >
-          Serves
+          <div
+            className="textmeth"
+          >
+            <label>
+              Method (seperate by comma)
+            </label>
+            <div
+              className="editcard"
+            >
+              <textarea
+                className="textarea is-primary"
+                onChange={[Function]}
+                type="text"
+                value={null}
+              />
+            </div>
+            <div
+              className="methpad-edit"
+            >
+              <ol />
+            </div>
+          </div>
           <br />
-          <input
-            onChange={[Function]}
-            value={null}
-          />
-           
+          <div
+            className="edit-button"
+          >
+            <button
+              className="button card-content is-small is-rounded is-primary edit-button"
+            >
+              Edit Recipe
+            </button>
+          </div>
         </div>
-        <div
-          className="card-content"
-        >
-          Prep Time
-          <br />
-          <input
-            onChange={[Function]}
-            type="text"
-            value={null}
-          />
-           
-        </div>
-      </div>
-      <div
-        className="card-content"
-      >
-        <div>
-          <label>
-            Method (seperate by comma)
-          </label>
-          <textarea
-            className="textarea is-primary"
-            onChange={[Function]}
-            type="text"
-            value={null}
-          />
-          <ol />
-        </div>
-        <br />
-        <button
-          className="button card-content is-medium is-rounded is-primary"
-        >
-          Edit Recipe
-        </button>
       </div>
     </div>
     <br />
@@ -177,138 +199,164 @@ Array [
   <form
     onSubmit={[Function]}
   >
-    <h4>
-      Edit Recipe
-    </h4>
-    <div
-      className="card"
-    >
+    <div>
       <div
-        className="card-image"
-      >
-        <figure
-          className="image is-2by1"
-        >
-          <img
-            alt="add your meal"
-            src="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
-          />
-        </figure>
-      </div>
-      <span>
-        <button
-          className="button is-link is-small is-rounded"
-        >
-          <i
-            className="fas fa-arrow-circle-left"
-          />
-        </button>
-      </span>
-      <div
-        className="card-content"
+        className="card card-expanded-edit"
       >
         <div
-          className="media"
+          className="card-image"
         >
-          <div
-            className="media-left"
+          <figure
+            className="image is-2by1"
           >
-            <figure
-              className="image is-48x48"
+            <img
+              alt="add your meal"
+              src="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
             />
+          </figure>
+        </div>
+        <div
+          className="return-edit"
+        >
+          <span>
+            <button
+              className="button is-small is-rounded is-primary"
+            >
+              <i
+                className="fas fa-arrow-circle-left"
+              />
+            </button>
+          </span>
+        </div>
+        <div
+          className="card-content"
+        >
+          <div
+            className="media"
+          >
+            <div
+              className="media-left"
+            >
+              <figure
+                className="image is-48x48"
+              />
+            </div>
+            <div
+              className="media-content"
+            >
+              <p
+                className="subtitle is-5"
+              >
+                <div
+                  className="edit-title"
+                >
+                  <label>
+                    Title
+                  </label>
+                  <input
+                    className="label is-primary"
+                    onChange={[Function]}
+                    type="text"
+                    value="Spinach lasagne"
+                  />
+                   
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="edit-image"
+        >
+          <label>
+            Image URL
+          </label>
+          <br />
+          <input
+            onChange={[Function]}
+            type="text"
+            value="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
+          />
+        </div>
+        <div
+          className="content"
+        >
+          <div
+            className="card-content"
+          >
+            Serves
+            <br />
+            <input
+              onChange={[Function]}
+              value="6"
+            />
+             
           </div>
           <div
-            className="media-content"
+            className="card-content"
           >
-            <p
-              className="title is-5"
-            >
-              <div>
-                <label>
-                  Title
-                </label>
-                <input
-                  className="label is-primary"
-                  onChange={[Function]}
-                  type="text"
-                  value="Spinach lasagne"
-                />
-                 
-              </div>
-            </p>
+            Prep Time (minutes)
+            <br />
+            <input
+              onChange={[Function]}
+              type="text"
+              value="50 Minutes - Not too tricky"
+            />
+             
           </div>
         </div>
-      </div>
-      <div>
-        <label>
-          Image URL
-        </label>
-        <input
-          onChange={[Function]}
-          type="text"
-          value="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
-        />
-      </div>
-      <div
-        className="content"
-      >
         <div
-          className="card-content"
+          className=""
         >
-          Serves
+          <div
+            className="textmeth"
+          >
+            <label>
+              Method (seperate by comma)
+            </label>
+            <div
+              className="editcard"
+            >
+              <textarea
+                className="textarea is-primary"
+                onChange={[Function]}
+                type="text"
+                value={
+                  Array [
+                    "Preheat the oven to 190°C/375°F/gas 5.",
+                    "Melt 50…",
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="methpad-edit"
+            >
+              <ol>
+                <li>
+                  Preheat the oven to 190°C/375°F/gas 5.
+                  <br />
+                  <br />
+                </li>
+                <li>
+                  Melt 50…
+                  <br />
+                  <br />
+                </li>
+              </ol>
+            </div>
+          </div>
           <br />
-          <input
-            onChange={[Function]}
-            value="6"
-          />
-           
+          <div
+            className="edit-button"
+          >
+            <button
+              className="button card-content is-small is-rounded is-primary edit-button"
+            >
+              Edit Recipe
+            </button>
+          </div>
         </div>
-        <div
-          className="card-content"
-        >
-          Prep Time
-          <br />
-          <input
-            onChange={[Function]}
-            type="text"
-            value="50 Minutes - Not too tricky"
-          />
-           
-        </div>
-      </div>
-      <div
-        className="card-content"
-      >
-        <div>
-          <label>
-            Method (seperate by comma)
-          </label>
-          <textarea
-            className="textarea is-primary"
-            onChange={[Function]}
-            type="text"
-            value={
-              Array [
-                "Preheat the oven to 190°C/375°F/gas 5.",
-                "Melt 50…",
-              ]
-            }
-          />
-          <ol>
-            <li>
-              Preheat the oven to 190°C/375°F/gas 5.
-            </li>
-            <li>
-              Melt 50…
-            </li>
-          </ol>
-        </div>
-        <br />
-        <button
-          className="button card-content is-medium is-rounded is-primary"
-        >
-          Edit Recipe
-        </button>
       </div>
     </div>
     <br />

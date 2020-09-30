@@ -5,10 +5,10 @@ exports[`renders component correctly 1`] = `
   className="RecipesList"
 >
   <div
-    className="recipeSort"
+    className="cardColumns"
   >
     <div
-      className="list"
+      className="recipeSort"
     >
       <input
         className="noBulmaBorderless recipeSearch"
@@ -16,142 +16,159 @@ exports[`renders component correctly 1`] = `
         placeholder="search for a recipe..."
         type="text"
       />
-      <label>
-        Sort:
-      </label>
-       
-      <select
-        className="recipeSortButton"
-        onChange={[Function]}
-        value="NAME_ASC"
+      <div
+        className="sort-seperation"
       >
-        <option
+        <select
+          className="recipeSortButton"
+          onChange={[Function]}
           value="NAME_ASC"
         >
-          Name (A-Z)
-        </option>
-        <option
-          value="NAME_DESC"
-        >
-          Name (Z-A)
-        </option>
-        <option
-          value="SERVES_ASC"
-        >
-          Serves (Ascending)
-        </option>
-        <option
-          value="SERVES_DESC"
-        >
-          Serves (Descending)
-        </option>
-      </select>
-    </div>
-  </div>
-  <div
-    className="seperation"
-  />
-  <ul>
-    <div
-      className="cardColumns"
-    >
-      <li>
-        <div
-          className="card"
-        >
-          <a
-            href="#/recipe/MOqgTKsRp9OwepdSupbr"
-            onClick={[Function]}
+          <option
+            value="NAME_ASC"
           >
-             
-            <div
-              className="card-image"
+            Name (A-Z)
+          </option>
+          <option
+            value="NAME_DESC"
+          >
+            Name (Z-A)
+          </option>
+          <option
+            value="SERVES_ASC"
+          >
+            Serves (Ascending)
+          </option>
+          <option
+            value="SERVES_DESC"
+          >
+            Serves (Descending)
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="seperation"
+    />
+    <ul>
+      <div
+        className="cardColumns"
+      >
+        <li>
+          <div
+            className="card"
+          >
+            <a
+              href="#/recipe/MOqgTKsRp9OwepdSupbr"
+              onClick={[Function]}
             >
+               
               <div
-                className="container"
+                className="card-image"
               >
-                <figure
-                  className="image is-1by10"
+                <div
+                  className="container"
                 >
-                  <img
-                    alt="Roasted black bean burgers"
-                    src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
-                  />
-                  <div
-                    className="top-right"
+                  <figure
+                    className="image is-1by10"
                   >
                     <div
-                      className="control"
+                      style={
+                        Object {
+                          "backgroundImage": "url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg)",
+                          "backgroundPosition": "center",
+                          "backgroundRepeat": "no-repeat",
+                          "backgroundSize": "cover",
+                          "height": "300px",
+                        }
+                      }
+                    />
+                    <div
+                      className="top-right"
                     >
-                      <i
-                        className="fas fa-plus"
-                      />
-                      <a
-                        href="#/recipe/MOqgTKsRp9OwepdSupbr"
-                        onClick={[Function]}
-                      />
+                      <div
+                        className="control"
+                      >
+                        <i
+                          className="fas fa-plus"
+                        />
+                        <a
+                          href="#/recipe/MOqgTKsRp9OwepdSupbr"
+                          onClick={[Function]}
+                        />
+                      </div>
                     </div>
-                  </div>
-                   
-                </figure>
+                     
+                  </figure>
+                </div>
               </div>
-            </div>
-            <div
-              className="card-content"
-            >
               <div
-                className="media mb-0"
+                className="card-content"
               >
                 <div
-                  className="media-content"
+                  className="media mb-0"
                 >
                   <div
-                    className="subtitle is-5 mb-0"
+                    className="media-content"
                   >
-                    Roasted black bean burgers
+                    <div
+                      className="subtitleleftpad"
+                    >
+                      <div
+                        className="subtitle is-5 mb-0"
+                      >
+                        Roasted black bean burgers
+                      </div>
+                       
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="content"
+                >
+                  <div
+                    className="subtitle is-6 mb-0"
+                  >
+                    Serves: 
+                    4
+                  </div>
+                   
+                  <div
+                    className="subtitle is-6"
+                  >
+                    Prep time: 
+                    40 Minutes - Not too tricky
+                     minutes
                   </div>
                    
                 </div>
               </div>
-              <div
-                className="content"
-              >
-                <div
-                  className="subtitle is-6 mb-0"
-                >
-                  Serves: 
-                  4
-                </div>
-                 
-                <div
-                  className="subtitle is-6"
-                >
-                  Prep time: 
-                  40 Minutes - Not too tricky
-                </div>
-                 
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-          className="seperation"
-        />
-      </li>
+            </a>
+          </div>
+          <div
+            className="seperation"
+          />
+        </li>
+      </div>
+    </ul>
+    <br />
+    <div
+      className="pad"
+    >
+      <button
+        className="button is-small is-rounded is-outline is-centered"
+        onClick={[Function]}
+      >
+        Delete All
+      </button>
+      <button
+        className="button is-small is-rounded is-outline is-centered"
+        onClick={[Function]}
+      >
+        Suggest Recipes
+      </button>
     </div>
-  </ul>
-  <div>
-    <button
-      onClick={[Function]}
-    >
-      DELETE ALL RECIPES
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      SEED RECIPES
-    </button>
+     
   </div>
-   
 </div>
 `;

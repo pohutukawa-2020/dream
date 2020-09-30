@@ -4,9 +4,8 @@ import renderer from 'react-test-renderer'
 import ShoppingList from './ShoppingList'
 
 import { ShoppingListContext } from './context/ShoppingListContext'
-import { MiscShoppingContext } from './context/MiscShoppingContext'
 
-import MiscShoppingListItem from './MiscShoppingListItem'
+import ShoppingListItem from './ShoppingListItem'
 
 export const FakeShoppingListProvider = ({ children }) => {
     const [shoppingList, setShoppingList] = useState([{
@@ -22,29 +21,13 @@ export const FakeShoppingListProvider = ({ children }) => {
       )
 }
 
-export const FakeMiscShoppingProvider = ({ children }) => {
-    const [miscCollection, setMiscCollection] = useState([])
-    const [miscItem, setMiscItem] = useState([])
-
-    return (
-        <MiscShoppingContext.Provider value={[miscCollection, setMiscCollection]}>
-          {children}
-        </MiscShoppingContext.Provider>
-      )
-}
-
-
-
 it ('renders component correctly', () => {
     const dream = renderer
     .create(
         <FakeShoppingListProvider>
-            <FakeMiscShoppingProvider>
                 <ShoppingList>
-                    <MiscShoppingListItem/>
+                    <ShoppingListItem/>
                 </ShoppingList>
-            </FakeMiscShoppingProvider>
-           
         </FakeShoppingListProvider>
     )
     .toJSON()
