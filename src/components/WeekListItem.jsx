@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WeekListItem ({ weekDay }) {
+export default function WeekListItem ({ weekDay }) {
   return (
     <div className="WeekListItem">
       <h4>WeekListItems</h4>
@@ -11,5 +11,3 @@ function WeekListItem ({ weekDay }) {
     </div>
   )
 }
-
-export default WeekListItem

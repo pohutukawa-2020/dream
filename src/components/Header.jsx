@@ -2,7 +2,7 @@ import React from 'react'
 
 import { signOut } from 'utils'
 
-function Header (props) {
+export default function Header (props) {
   const currentPage = props.location.pathname
   let headerTitle = null
 
@@ -13,37 +13,32 @@ function Header (props) {
 
   switch (currentPage) {
     case '/recipes':
-      headerTitle = 'Your Recipes'
+      headerTitle = 'My Recipes'
       break
+    case '/recipes/add':
+      headerTitle = 'Add Recipe'
+      break 
+    // case '/recipe/edit/:id':
+    //   headerTitle = 'Edit Recipe'
+    //   break   
     case '/week':
       headerTitle = 'Week Planner'
       break
     case '/shopping':
       headerTitle = 'Your Shopping List'
       break
+
     default:
-      headerTitle = null
+      headerTitle = 'Reciplan'
   }
 
   return (
     <>
-      <section className="hero">
-          <div className="logo">
-              <img src="../rp.png" alt="Logo"/>
-          </div>
-        <div className="hero-body">
-          <div className="nav-title">
-            <h1 className="subtitle is-4 has-centered-text">
-              {headerTitle}
-            </h1>
-            <div className="signout">
-            <h1 className="subtitle is-6" onClick={() => clickHandler()}>Sign Out</h1>
-            </div>
-          </div>
+        <div className='noBulmaNav'>
+          <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+          <div className='noBulmaNavTitle'>{headerTitle}</div>
+          <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
         </div>
-      </section>
     </>
   )
 }
-
-export default Header

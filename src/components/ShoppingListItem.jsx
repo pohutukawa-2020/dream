@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { deleteSingleIngredient } from '../utils'
-function ShoppingListItem ({shoppingListItem, id}) {
+
+export default function ShoppingListItem ({shoppingListItem, id}) {
 const [strike, setStrike]=useState({state: true, style: null})
 
 const cross =() => {
@@ -12,5 +13,3 @@ const cross =() => {
     </>
   )
 }
-
-export default ShoppingListItem

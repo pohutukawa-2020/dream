@@ -4,9 +4,7 @@ import { UserContext } from './context/UserContext'
 
 import { addRecipe } from '../utils'
 
-// import MultipleIngredientTest from './MultipleIngredientTest'
-
-const AddRecipe = (props) => {
+export default function AddRecipe (props) {
   const {user} = useContext(UserContext)
   const [name, setName] = useState('')
   const [imagePath, setImagePath] = useState('')
@@ -14,7 +12,6 @@ const AddRecipe = (props) => {
   const [prepTime, setPrepTime] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
-  // const [newIngredient, setNewIngredient] = useState('')
 
   function onSubmitHandler (e) {
     e.preventDefault()
@@ -107,5 +104,3 @@ const AddRecipe = (props) => {
     </>
   )
 }
-
-export default AddRecipe

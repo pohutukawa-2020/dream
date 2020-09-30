@@ -2,11 +2,9 @@ import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
 
 import { RecipeContext } from './context/RecipeContext'
-import HeaderCopy from './HeaderCopy'
 import { updateRecipe, signOut } from '../utils'
-import Header from './Header'
 
-function EditRecipe (props) {
+export default function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
   const recipeId = props.match.params.id
   const recipe = recipes.find(x => x.id === recipeId)
@@ -60,7 +58,7 @@ function EditRecipe (props) {
   }
 
   return (
-    recipe && <>
+    <>
       <div className='noBulmaNav'>
         <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
         <div className='noBulmaNavTitle'>Edit Recipe</div>
@@ -128,8 +126,7 @@ function EditRecipe (props) {
         </div>
         <br></br>
       </form>
-    </> || <div>is loading</div>
+    </>
   )
 }
 
-export default EditRecipe

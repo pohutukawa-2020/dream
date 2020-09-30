@@ -2,7 +2,7 @@ import React from "react"
 
 import { Link } from 'react-router-dom'
 
-function WeekCard ({ recipe }) {
+export default function WeekCard ({ recipe }) {
   const styles = {
     backgroundImage: `url(${recipe.imagePath})`,
     backgroundSize: 'cover',
@@ -37,10 +37,6 @@ function WeekCard ({ recipe }) {
         </article>
         </Link>
       </div>
-
     </>
   )
 }
-
-export default WeekCard
-

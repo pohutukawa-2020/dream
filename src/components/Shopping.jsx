@@ -3,7 +3,7 @@ import React from 'react'
 import ShoppingList from './ShoppingList'
 
 
-function Shopping () {
+export default function Shopping () {
   return (
     <>
     <div className="Shopping weeklist">
@@ -12,5 +12,3 @@ function Shopping () {
     </>
   )
 }
-
-export default Shopping
