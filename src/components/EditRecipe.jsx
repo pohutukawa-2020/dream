@@ -75,7 +75,7 @@ export default function EditRecipe (props) {
             </figure>
           </div>
           <div className="return-edit">
-          <span><button className="button is-link is-small is-rounded">
+          <span><button className="button is-small is-rounded is-primary">
             <i className="fas fa-arrow-circle-left"></i>
           </button></span>
           </div>
@@ -125,13 +125,13 @@ export default function EditRecipe (props) {
               <textarea className="textarea is-primary" type='text' value={method} onChange={e => setMethod(e.currentTarget.value.split(','))} />
               </div>
               <div className="methpad-edit">
-              <ol>{method ? method.map(step => <li key={step}>{step}</li>) : null}
+              <ol>{method ? method.map(step => <li key={step}>{step}<br /><br /></li>) : null}
               </ol>
               </div>
             </div>
             <br></br>
             <div className="edit-button">
-            <button className="button card-content is-small is-rounded is-primary">Edit Recipe</button>
+            <button className="button card-content is-small is-rounded is-primary edit-button">Edit Recipe</button>
             </div>
             </div>
           </div>

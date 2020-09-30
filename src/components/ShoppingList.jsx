@@ -59,7 +59,7 @@ export default function ShoppingList () {
         
       </ul>
       <div className="clear-shop-pad">
-      <button className="button is-small is-rounded is-primary" onClick={() => clearClickHandler()}>Clear Shopping List</button>
+      <button className="button is-small is-rounded is-outline" onClick={() => clearClickHandler()}>Clear Shopping List</button>
       </div>
       </div>
     </div>
