@@ -2,7 +2,7 @@ import React from 'react'
 
 import RecipeList from './RecipesList'
 
-function Recipes () {
+export default function Recipes () {
   return (
     <>
     <div className="Recipes weeklist">
@@ -11,5 +11,3 @@ function Recipes () {
     </>
   )
 }
-
-export default Recipes

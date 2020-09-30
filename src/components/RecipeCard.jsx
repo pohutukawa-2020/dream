@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function RecipeCard ({ recipe }) {
+export default function RecipeCard ({ recipe }) {
   const styles = {
     backgroundImage: `url(${recipe.imagePath})`,
     backgroundSize: 'cover',
@@ -48,5 +48,3 @@ function RecipeCard ({ recipe }) {
     </>
   )
 }
-
-export default RecipeCard

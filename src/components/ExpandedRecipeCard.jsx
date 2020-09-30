@@ -7,9 +7,8 @@ import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
 import { WeekContext } from './context/WeekContext'
 import { deleteRecipe, addRecipeIngredients, removeRecipeIngredients, assignRecipeToWeekDay, capitalise } from '../utils'
-import HeaderCopy from './HeaderCopy'
 
-function ExpandedRecipeCard (props) {
+export default function ExpandedRecipeCard (props) {
   const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [week] = useContext(WeekContext)
@@ -23,9 +22,9 @@ function ExpandedRecipeCard (props) {
 
   console.log(week[weekDay])
 
-  useEffect(() => {
-    //currently solving null assigned recipe bug
-  }, [week[weekDay]])
+  // useEffect(() => {
+  //   //currently solving null assigned recipe bug
+  // }, [week[weekDay]])
 
   function clickHandler (evt) {
     evt.preventDefault()
@@ -137,5 +136,3 @@ function ExpandedRecipeCard (props) {
     </>
   )
 }
-
-export default ExpandedRecipeCard

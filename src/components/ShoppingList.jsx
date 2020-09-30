@@ -6,7 +6,7 @@ import ShoppingListItem from './ShoppingListItem'
 import { clearShoppingList, clearMiscShoppingList, addMiscItem, sortList } from '../utils'
 
 
-function ShoppingList () {
+export default function ShoppingList () {
   const {user} = useContext(UserContext)
   const [shoppingList] = useContext(ShoppingListContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
@@ -54,5 +54,3 @@ function ShoppingList () {
     </div>
   )
 }
-
-export default ShoppingList
