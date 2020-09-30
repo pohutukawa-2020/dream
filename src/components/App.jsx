@@ -11,7 +11,6 @@ import AddRecipe from './AddRecipe'
 import EditRecipe from './EditRecipe'
 import { UserContext } from './context/UserContext'
 
-import Home from './Home'
 import SignUp from './SignUp'
 import SignOut from './SignOut'
 import Header from './Header'
@@ -33,8 +32,8 @@ export default function App () {
         <Route path="/" component={Nav} />
         <Route path='/' component={Header} />
         <Route path='/' component={SignOut} /> 
-        <Route exact path='/'><Redirect to='/recipes'/></Route>
-        <Route exact path='/home'><Redirect to='/recipes'/></Route>
+        <Route exact path='/'><Redirect to='/week'/></Route>
+        <Route exact path='/home'><Redirect to='/week'/></Route>
         <Route exact path="/recipes" component={Recipes} />
         <Route exact path="/recipes/add" component={AddRecipe} />
         <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
