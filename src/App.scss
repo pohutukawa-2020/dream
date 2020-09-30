@@ -494,8 +494,10 @@ html, :focus {
 .tasty {
   position: relative;
   bottom: 18rem;
-  left: 6rem;
   z-index: 1;
+  -webkit-box-align:center;
+  -webkit-box-pack:center;
+  display:-webkit-box;
 }
 
 .socials {
