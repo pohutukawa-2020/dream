@@ -428,3 +428,30 @@ html, :focus {
 .shoppingListIngredients {
   cursor: pointer;
 }
+.words {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.reciPlan {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+}
+
+.tasty {
+  position: relative;
+  bottom: 18rem;
+  left: 6rem;
+  z-index: 1;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
