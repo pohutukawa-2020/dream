@@ -59,9 +59,6 @@ export default function Home (props) {
 
   return (
     <div>
-      <div className="logologin">
-        <img src="../rp.png" alt="Logo"/>
-    </div>
   <div class="login">
     <div className="form">
       <p class="control has-icons-left has-icons-right">

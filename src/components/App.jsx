@@ -15,6 +15,7 @@ import Home from './Home'
 import SignUp from './SignUp'
 import SignOut from './SignOut'
 import Header from './Header'
+import LoginRegister from './LoginRegister'
 
 export default function App () {
   const {user} = useContext(UserContext)
@@ -46,7 +47,7 @@ export default function App () {
   } else {
     return (
       <div className="contentRoutes">
-        <Route path='/home' component={Home} />
+        <Route path='/home' component={LoginRegister} />
         <Route path='/sign-up' component={SignUp} />
         <Route exact path='/'><Redirect to='/home'/></Route>
         <Route exact path='/recipes'><Redirect to='/home'/></Route>

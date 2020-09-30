@@ -476,6 +476,35 @@ html, :focus {
   margin-left: auto;
   margin-right: auto;
 }
+<<<<<<< HEAD
+.words {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.reciPlan {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1rem;
+}
+
+.tasty {
+  position: relative;
+  bottom: 18rem;
+  left: 6rem;
+  z-index: 1;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+=======
 
 .googleLogin {
   width: 205px;
@@ -496,3 +525,4 @@ html, :focus {
 //     and (device-height : 812px) 
 //     and (-webkit-device-pixel-ratio : 3) { 
 //     }
+>>>>>>> 89dc8d02b06b33821a7cd827080e318983da4919
