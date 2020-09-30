@@ -27,8 +27,6 @@ export default function ShoppingList () {
     setNewItemQ('')
     }
   }
-  
-  console.log('shopping list', shoppingList)
 
 
   return (
