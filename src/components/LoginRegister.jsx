@@ -17,7 +17,7 @@ show.state ? setShow({state: false, home: {visibility: 'visible'}, button: {visi
     </div>
     <h1 className='reciPlan'>ReciPlan</h1>
     <div className='words'>
-    "Your recipes, Your week"
+    Your recipes, your week.
     </div>
     <br/>
     <div className='welcomeButton'style={show.home}>
