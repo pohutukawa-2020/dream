@@ -42,8 +42,8 @@ export default function Seed () {
 
   return (
     <div className="pad">
-      <button className="button is-small is-rounded is-outline is-centered" onClick={deleteClickHandler}>DELETE ALL RECIPES</button>
-      <button className="button is-small is-rounded is-outline is-centered" onClick={seedClickHandler}>SEED RECIPES</button>
+      <button className="button is-small is-rounded is-outline is-centered" onClick={deleteClickHandler}>Delete All</button>
+      <button className="button is-small is-rounded is-outline is-centered" onClick={seedClickHandler}>Suggest Recipes</button>
     </div>
   )
 }

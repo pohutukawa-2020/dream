@@ -73,7 +73,7 @@ export default function WeekList () {
         
         {sundayRecipe ? <div className="list"><h1 className="subtitle is-5">Sunday<hr /></h1></div> : null}
         {sundayRecipe ? <WeekCard recipe={sundayRecipe} /> : <Link to='/recipes'>
-        <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('sunday')}>Sunday+</h3></div>
+        <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('sunday')}>Sunday+<hr /></h3></div>
         </Link>}
     
         </div>

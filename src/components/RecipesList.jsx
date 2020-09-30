@@ -48,7 +48,7 @@ export default function RecipesList() {
             )}
                   </div>
           </ul>
-  
+          <br></br>
         <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       </div>
       </div>

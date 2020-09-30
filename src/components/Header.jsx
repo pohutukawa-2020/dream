@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { signOut } from 'utils'
 
@@ -35,7 +36,7 @@ export default function Header (props) {
   return (
     <>
         <div className='noBulmaNav'>
-          <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+          <Link to='/home'><img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/></Link>
           <div className='noBulmaNavTitle'>{headerTitle}</div>
           <h1 className="noBulmaNavSignOut" onClick={(e) => clickHandler(e)}>Sign Out</h1>
         </div>
