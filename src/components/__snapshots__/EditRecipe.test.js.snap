@@ -1,319 +1,317 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders component correctly 1`] = `
-<form
-  onSubmit={[Function]}
->
-  <h4>
-    Edit Recipe
-  </h4>
+Array [
   <div
-    className="card"
+    className="noBulmaNav"
   >
+    <img
+      alt="Logo"
+      className="noBulmaNavLogo"
+      src="../rp.png"
+    />
     <div
-      className="card-image"
+      className="noBulmaNavTitle"
     >
-      <figure
-        className="image is-2by1"
-      >
-        <img
-          alt="add your meal"
-          src={null}
-        />
-      </figure>
+      Edit Recipe
     </div>
-    <span>
-      <button
-        className="button is-link is-small is-rounded"
-      >
-        <i
-          className="fas fa-arrow-circle-left"
-        />
-      </button>
-    </span>
+    <h1
+      className="noBulmaNavSignOut"
+      onClick={[Function]}
+    >
+      Sign Out
+    </h1>
+  </div>,
+  <form
+    onSubmit={[Function]}
+  >
+    <h4>
+      Edit Recipe
+    </h4>
     <div
-      className="card-content"
+      className="card"
     >
       <div
-        className="media"
+        className="card-image"
       >
-        <div
-          className="media-left"
+        <figure
+          className="image is-2by1"
         >
-          <figure
-            className="image is-48x48"
+          <img
+            alt="add your meal"
+            src={null}
           />
-        </div>
-        <div
-          className="media-content"
+        </figure>
+      </div>
+      <span>
+        <button
+          className="button is-link is-small is-rounded"
         >
-          <p
-            className="title is-5"
+          <i
+            className="fas fa-arrow-circle-left"
+          />
+        </button>
+      </span>
+      <div
+        className="card-content"
+      >
+        <div
+          className="media"
+        >
+          <div
+            className="media-left"
           >
-            <div>
-              <label>
-                Title
-              </label>
-              <input
-                className="label is-primary"
-                onChange={[Function]}
-                type="text"
-                value={null}
-              />
-               
-            </div>
-          </p>
+            <figure
+              className="image is-48x48"
+            />
+          </div>
+          <div
+            className="media-content"
+          >
+            <p
+              className="title is-5"
+            >
+              <div>
+                <label>
+                  Title
+                </label>
+                <input
+                  className="label is-primary"
+                  onChange={[Function]}
+                  type="text"
+                  value={null}
+                />
+                 
+              </div>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <label>
-        Image URL
-      </label>
-      <input
-        onChange={[Function]}
-        type="text"
-        value={null}
-      />
-    </div>
-    <div
-      className="content"
-    >
-      <div
-        className="card-content"
-      >
-        Serves
-        <br />
-        <input
-          onChange={[Function]}
-          value={null}
-        />
-         
-      </div>
-      <div
-        className="card-content"
-      >
-        Prep Time
-        <br />
-        <input
-          onChange={[Function]}
-          type="text"
-          value={null}
-        />
-         
-      </div>
-    </div>
-    <div
-      className="card-content"
-    >
-      Ingredients needed: (seperate by comma)
-      <div>
-        <textarea
-          className="textarea is-primary"
-          onChange={[Function]}
-          type="text"
-          value={null}
-        />
-         
-        <ul />
-      </div>
-    </div>
-    <div
-      className="card-content"
-    >
       <div>
         <label>
-          Method (seperate by comma)
+          Image URL
         </label>
-        <textarea
-          className="textarea is-primary"
+        <input
           onChange={[Function]}
           type="text"
           value={null}
         />
-        <ol />
       </div>
-      <br />
-      <button
-        className="button card-content is-medium is-rounded is-primary"
+      <div
+        className="content"
       >
-        Edit Recipe
-      </button>
+        <div
+          className="card-content"
+        >
+          Serves
+          <br />
+          <input
+            onChange={[Function]}
+            value={null}
+          />
+           
+        </div>
+        <div
+          className="card-content"
+        >
+          Prep Time
+          <br />
+          <input
+            onChange={[Function]}
+            type="text"
+            value={null}
+          />
+           
+        </div>
+      </div>
+      <div
+        className="card-content"
+      >
+        <div>
+          <label>
+            Method (seperate by comma)
+          </label>
+          <textarea
+            className="textarea is-primary"
+            onChange={[Function]}
+            type="text"
+            value={null}
+          />
+          <ol />
+        </div>
+        <br />
+        <button
+          className="button card-content is-medium is-rounded is-primary"
+        >
+          Edit Recipe
+        </button>
+      </div>
     </div>
-  </div>
-  <br />
-</form>
+    <br />
+  </form>,
+]
 `;
 
 exports[`renders component correctly 2`] = `
-<form
-  onSubmit={[Function]}
->
-  <h4>
-    Edit Recipe
-  </h4>
+Array [
   <div
-    className="card"
+    className="noBulmaNav"
   >
+    <img
+      alt="Logo"
+      className="noBulmaNavLogo"
+      src="../rp.png"
+    />
     <div
-      className="card-image"
+      className="noBulmaNavTitle"
     >
-      <figure
-        className="image is-2by1"
-      >
-        <img
-          alt="add your meal"
-          src="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
-        />
-      </figure>
+      Edit Recipe
     </div>
-    <span>
-      <button
-        className="button is-link is-small is-rounded"
-      >
-        <i
-          className="fas fa-arrow-circle-left"
-        />
-      </button>
-    </span>
+    <h1
+      className="noBulmaNavSignOut"
+      onClick={[Function]}
+    >
+      Sign Out
+    </h1>
+  </div>,
+  <form
+    onSubmit={[Function]}
+  >
+    <h4>
+      Edit Recipe
+    </h4>
     <div
-      className="card-content"
+      className="card"
     >
       <div
-        className="media"
+        className="card-image"
       >
-        <div
-          className="media-left"
+        <figure
+          className="image is-2by1"
         >
-          <figure
-            className="image is-48x48"
+          <img
+            alt="add your meal"
+            src="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
           />
-        </div>
-        <div
-          className="media-content"
+        </figure>
+      </div>
+      <span>
+        <button
+          className="button is-link is-small is-rounded"
         >
-          <p
-            className="title is-5"
+          <i
+            className="fas fa-arrow-circle-left"
+          />
+        </button>
+      </span>
+      <div
+        className="card-content"
+      >
+        <div
+          className="media"
+        >
+          <div
+            className="media-left"
           >
-            <div>
-              <label>
-                Title
-              </label>
-              <input
-                className="label is-primary"
-                onChange={[Function]}
-                type="text"
-                value="Spinach lasagne"
-              />
-               
-            </div>
-          </p>
+            <figure
+              className="image is-48x48"
+            />
+          </div>
+          <div
+            className="media-content"
+          >
+            <p
+              className="title is-5"
+            >
+              <div>
+                <label>
+                  Title
+                </label>
+                <input
+                  className="label is-primary"
+                  onChange={[Function]}
+                  type="text"
+                  value="Spinach lasagne"
+                />
+                 
+              </div>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <label>
-        Image URL
-      </label>
-      <input
-        onChange={[Function]}
-        type="text"
-        value="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
-      />
-    </div>
-    <div
-      className="content"
-    >
-      <div
-        className="card-content"
-      >
-        Serves
-        <br />
-        <input
-          onChange={[Function]}
-          value="6"
-        />
-         
-      </div>
-      <div
-        className="card-content"
-      >
-        Prep Time
-        <br />
-        <input
-          onChange={[Function]}
-          type="text"
-          value="50 Minutes - Not too tricky"
-        />
-         
-      </div>
-    </div>
-    <div
-      className="card-content"
-    >
-      Ingredients needed: (seperate by comma)
-      <div>
-        <textarea
-          className="textarea is-primary"
-          onChange={[Function]}
-          type="text"
-          value={
-            Array [
-              "70 g unsalted butter",
-              "50 g plain flour",
-              "800 m…",
-            ]
-          }
-        />
-         
-        <ul>
-          <li>
-            70 g unsalted butter
-          </li>
-          <li>
-            50 g plain flour
-          </li>
-          <li>
-            800 m…
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div
-      className="card-content"
-    >
       <div>
         <label>
-          Method (seperate by comma)
+          Image URL
         </label>
-        <textarea
-          className="textarea is-primary"
+        <input
           onChange={[Function]}
           type="text"
-          value={
-            Array [
-              "Preheat the oven to 190°C/375°F/gas 5.",
-              "Melt 50…",
-            ]
-          }
+          value="https://img.jamieoliver.com/jamieoliver/recipe-database/2ipm2HQHql2Azq2dLfiA4k.jpg?tr=w-800,h-1066"
         />
-        <ol>
-          <li>
-            Preheat the oven to 190°C/375°F/gas 5.
-          </li>
-          <li>
-            Melt 50…
-          </li>
-        </ol>
       </div>
-      <br />
-      <button
-        className="button card-content is-medium is-rounded is-primary"
+      <div
+        className="content"
       >
-        Edit Recipe
-      </button>
+        <div
+          className="card-content"
+        >
+          Serves
+          <br />
+          <input
+            onChange={[Function]}
+            value="6"
+          />
+           
+        </div>
+        <div
+          className="card-content"
+        >
+          Prep Time
+          <br />
+          <input
+            onChange={[Function]}
+            type="text"
+            value="50 Minutes - Not too tricky"
+          />
+           
+        </div>
+      </div>
+      <div
+        className="card-content"
+      >
+        <div>
+          <label>
+            Method (seperate by comma)
+          </label>
+          <textarea
+            className="textarea is-primary"
+            onChange={[Function]}
+            type="text"
+            value={
+              Array [
+                "Preheat the oven to 190°C/375°F/gas 5.",
+                "Melt 50…",
+              ]
+            }
+          />
+          <ol>
+            <li>
+              Preheat the oven to 190°C/375°F/gas 5.
+            </li>
+            <li>
+              Melt 50…
+            </li>
+          </ol>
+        </div>
+        <br />
+        <button
+          className="button card-content is-medium is-rounded is-primary"
+        >
+          Edit Recipe
+        </button>
+      </div>
     </div>
-  </div>
-  <br />
-</form>
+    <br />
+  </form>,
+]
 `;
