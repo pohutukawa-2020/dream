@@ -23,7 +23,7 @@ export default function App () {
   useEffect(() => {
     if (user) {
       setAuth(true)
-    } 
+    } else setAuth(false)
   }, [user])
 
   if (auth) {
