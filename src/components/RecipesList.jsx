@@ -30,13 +30,14 @@ export default function RecipesList() {
         <div className='recipeSort'>
           <div className="list">
           <input className='noBulmaBorderless recipeSearch' type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
-          <label>Sort:</label>
+          <div className="sort-seperation">
           <select className='recipeSortButton' value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>
             <option value='SERVES_ASC'>Serves (Ascending)</option>
             <option value='SERVES_DESC'>Serves (Descending)</option>
           </select>
+          </div>
           </div>
         </div>
         <div className='seperation'></div>

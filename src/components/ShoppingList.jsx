@@ -31,26 +31,37 @@ export default function ShoppingList () {
 
   return (
     <div className="ShoppingList">
-      <label>Sort By:</label>{' '}
+      <div>
+      {' '}
+      </div>
+      <div className="sort-sort">
         <select className='recipeSortButton'  value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
           <option value='NAME_ASC'>Name (A-Z)</option>
           <option value='NAME_DESC'>Name (Z-A)</option>
         </select>
-      <form>
+        </div>
+        <div className="search-pad">
+      <form className="shopping-list">
         {/* <label>Add item to Shopping List</label><br></br> */}
         <input className='noBulmaBorderless newItemQ' type="number" placeholder='Quantity' value={newItemQ} onChange={e => setNewItemQ(e.currentTarget.value)} />{' '}
         <input className='noBulmaBorderless newItem' type="text" placeholder='Item, ie bananas' value={newItem} onChange={e => setNewItem(e.currentTarget.value)} />{' '}
-        <h3 onClick={e => submitHandler(e)} style={{display: 'inline'}}><h3 className='plusButton' >+</h3>Add item</h3>
+        <h3 onClick={e => submitHandler(e)} style={{display: 'inline'}}><h3 className='plusButton' >+</h3>Add</h3>
         {/* <button className='noBulmaButton'>Add</button> */}
       </form>
+      </div>
+      <div className="shopping-list">
       <ul>
         {sortedShoppingList.map(shoppingListItem =>
           <li key={shoppingListItem.id}>
             <ShoppingListItem id={shoppingListItem.id} shoppingListItem={shoppingListItem}/>
           </li>
         )}
+        
       </ul>
-      <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
+      <div className="clear-shop-pad">
+      <button className="button is-small is-rounded is-primary" onClick={() => clearClickHandler()}>Clear Shopping List</button>
+      </div>
+      </div>
     </div>
   )
 }

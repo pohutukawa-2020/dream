@@ -138,6 +138,12 @@ box:not(:last-child), .content:not(:last-child), .notification:not(:last-child),
   margin: 5.5rem 10px 0;
 }
 
+.card-expanded-edit {
+  margin: 5.5rem 10px 0;
+  margin-left: 1.2rem;
+}
+
+
 .addto {
   padding-left: 0.5rem;
 }
@@ -179,21 +185,35 @@ button, input, select, textarea {
 }
 
 .select {
-  border-radius: 20px;
+  color: #909090;
+  radius: 20px;
   height: 20px;
   background-color: white;
-  border-color: white;
+  border: 0px;
+  outline: 0px;
   margin-top: -0.2rem;
+  margin-right: 2rem;
 }
 
 .dropdown {
-  padding-bottom: 10px;
+  padding-left: 0.5rem;
 }
 
 .methpad {
   padding-left: 1.5rem;
   padding-right: 0.5rem;
   text-align: justify;
+}
+
+.methpad-edit {
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
+  text-align: justify;
+  padding-top: 2rem;
+}
+
+.confirm {
+
 }
 
 // Branding //
@@ -264,6 +284,10 @@ html, body {
   padding-top: 6rem;
 }
 
+.pad {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
 // .hrspacing {
 //   margin-bottom: 1.4em;
 // }
@@ -421,6 +445,11 @@ html, :focus {
   color: #f8f8f8;
 }
 
+.sort-seperation {
+padding-left: 15rem;
+padding-top: -10px;
+}
+
 .plusButton {
   display: inline;
   font-size: 1.6rem;
@@ -431,6 +460,73 @@ html, :focus {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.methbutton {
+  padding-top: 0.2rem;
+  padding-bottom: 1rem;
+}
+
+.buttonM {
+  border-color: white;
+}
+
+.buttonI {
+  border-color: white;
+}
+/////Shopping//////
+
+.shopping-list {
+  padding-left: 1rem;
+}
+
+.sort-sort {
+  padding-left: 1rem;
+}
+
+.search-pad {
+  padding-bottom: 1rem;
+}
+
+.clear-shop-pad {
+  padding-top: 1rem;
+}
+
+//////edit////@at-root
+.editcard {
+// padding-right: 2rem;
+}
+
+button, input, select, textarea {
+  margin: 0;
+  margin-bottom: 0rem;
+  margin-left: 0rem;
+  /* margin-left: 1rem; */
+}
+
+.textmeth {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+.edit-button {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-left: 1.5rem;
+}
+
+.edit-image {
+  padding-left: 1rem;
+}
+
+.edit-title {
+  padding-right: 10rem;
+}
+
+.return-edit {
+  padding-left: 18rem;
+  padding-top: 1rem; 
+}
+
 
 //======== NO BULMA NAV ========//
 
@@ -481,3 +577,8 @@ html, :focus {
 //     and (device-height : 812px) 
 //     and (-webkit-device-pixel-ratio : 3) { 
 //     }
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { /* STYLES GO HERE */}

@@ -65,17 +65,20 @@ export default function EditRecipe (props) {
         <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
       </div>
       <form onSubmit={onSubmitHandler}>
-        <h4>Edit Recipe</h4>
+        {/* <h4>Edit Recipe</h4> */}
 
-        <div className="card">
+        <div>
+        <div className="card card-expanded-edit">
           <div className="card-image">
             <figure className="image is-2by1">
               <img src={imagePath} alt="add your meal" />
             </figure>
           </div>
+          <div className="return-edit">
           <span><button className="button is-link is-small is-rounded">
             <i className="fas fa-arrow-circle-left"></i>
           </button></span>
+          </div>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
@@ -83,8 +86,8 @@ export default function EditRecipe (props) {
                 </figure>
               </div>
               <div className="media-content">
-                <p className="title is-5">
-                  <div>
+                <p className="subtitle is-5">
+                  <div className="edit-title">
                     <label>Title</label>
                     <input className="label is-primary" type='text' value={name} onChange={e => setName(e.currentTarget.value)} /> {/* --- NAME OF RECIPE --- */}
                   </div>
@@ -92,8 +95,8 @@ export default function EditRecipe (props) {
               </div>
             </div>
           </div>
-          <div>
-            <label>Image URL</label>
+          <div className="edit-image">
+            <label>Image URL</label><br></br>
             <input type='text' value={imagePath} onChange={e => setImagePath(e.currentTarget.value)} />
           </div>
           <div className="content">
@@ -114,14 +117,23 @@ export default function EditRecipe (props) {
               <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>) : null}</ul>
             </div>
           </div> */}
-          <div className="card-content">
-            <div>
+          
+          <div className="">
+            <div className="textmeth">
               <label>{'Method (seperate by comma)'}</label>
+              <div className="editcard">
               <textarea className="textarea is-primary" type='text' value={method} onChange={e => setMethod(e.currentTarget.value.split(','))} />
-              <ol>{method ? method.map(step => <li key={step}>{step}</li>) : null}</ol>
+              </div>
+              <div className="methpad-edit">
+              <ol>{method ? method.map(step => <li key={step}>{step}</li>) : null}
+              </ol>
+              </div>
             </div>
             <br></br>
-            <button className="button card-content is-medium is-rounded is-primary">Edit Recipe</button>
+            <div className="edit-button">
+            <button className="button card-content is-small is-rounded is-primary">Edit Recipe</button>
+            </div>
+            </div>
           </div>
         </div>
         <br></br>

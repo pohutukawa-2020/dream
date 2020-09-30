@@ -39,16 +39,13 @@ export default function AddRecipe (props) {
 
   return (
     <>
+    <div className="cardColumns card-expanded">
       <form onSubmit={onSubmitHandler}>
-        <h4>Add Recipe</h4>
 
         <div className="card">
           <div className="card-image">
             <figure className="image is-2by1">
               <img src="https://icon-library.com/images/photo-placeholder-icon/photo-placeholder-icon-6.jpg" alt="add your meal" />
-              <button className="button is-link is-small is-rounded">
-                <i className="fas fa-plus"></i>
-              </button>
             </figure>
           </div>
           <div className="card-content">
@@ -67,8 +64,8 @@ export default function AddRecipe (props) {
               </div>
             </div>
           </div>
-          <div>
-            <label>Image URL</label>
+          <div className="edit-image">
+            <label>Image URL</label><br></br>
             <input type='text' value={imagePath} onChange={e => setImagePath(e.currentTarget.value)} />
           </div>
           <div className="content">
@@ -96,11 +93,12 @@ export default function AddRecipe (props) {
               <ol>{method.map(step => <li key={step}>{step}</li>)}</ol>
             </div>
             <br></br>
-            <button className="button card-content is-medium is-rounded is-primary">Add Recipe</button>
+            <button className="button card-content is-small is-rounded is-primary">Add Recipe</button>
           </div>
         </div>
         <br></br>
       </form>
+      </div>
     </>
   )
 }

@@ -112,19 +112,19 @@ export default function ExpandedRecipeCard (props) {
                 Prep time: {recipe ? recipe.prepTime : null} {/* --- PREP TIME --- */}
           </div>
           <div className="ingredients">
-          <button className="button is-small is-rounded ingredient" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}>Ingredients <span class="icon is-small">
+          <button className="buttonI" onClick={() => {ingredientVis ? setIngredientVis(false) : setIngredientVis(true)}}> <h1 className="subtitle is-6">Ingredients <span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span></button> 
+      </span></h1></button> <hr />
             <div className="ingredtext">
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
               <p className="subtitle is-6">{ingredient.quantity}{' '}{ingredient.name}</p>
             )) : null}</div> : null}
           </div>
           </div>
-          <div>
-          <button className='button is-small is-rounded method' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}>Method <span class="icon is-small">
+          <div className="methbutton">
+          <button className='buttonM' onClick={() => {methodVis ? setMethodVis(false) : setMethodVis(true)}}><h1 className="subtitle is-6">Method<span class="icon is-small">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span></button>
+      </span></h1></button><hr />
       <div className="methpad">
         <ol>
           {methodVis ? <div>{recipe ? recipe.method.map(step => (
