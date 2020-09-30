@@ -104,6 +104,24 @@ p {
   right: 20px;
 }
 
+.edit-bottom-right {
+  position: relative;
+  left: 270px;
+  bottom: -35px;
+  color: black;
+}
+
+.bin-bottom-right {
+  position: relative;
+  left: 305px;
+  bottom: -12px;
+  color: black;
+}
+
+.fa-edit {
+  color: black;
+}
+
 // expanded view //
 
 box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
@@ -134,6 +152,10 @@ button, input, select, textarea {
   padding-left: 1.5rem;
 }
 
+.carddata {
+  margin-top: -4rem;
+}
+
 // Nav Bar //
 .tabs {
   position: fixed;
@@ -152,7 +174,27 @@ button, input, select, textarea {
   margin-right: 0.2em;
 }
 
+.button .icon:first-child:last-child {
+  margin-left: 0;
+}
 
+.select {
+  border-radius: 20px;
+  height: 20px;
+  background-color: white;
+  border-color: white;
+  margin-top: -0.2rem;
+}
+
+.dropdown {
+  padding-bottom: 10px;
+}
+
+.methpad {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: justify;
+}
 
 // Branding //
 
