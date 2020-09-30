@@ -2,9 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
 
 import { RecipeContext } from './context/RecipeContext'
-import HeaderCopy from './HeaderCopy'
 import { updateRecipe, signOut } from '../utils'
-import Header from './Header'
 
 function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
