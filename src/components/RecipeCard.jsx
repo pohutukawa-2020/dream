@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function RecipeCard ({ recipe }) {
+  const styles = {
+    backgroundImage: `url(${recipe.imagePath})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '300px'
+  }
   return (
     <>
       <div className="card">
@@ -9,7 +16,8 @@ function RecipeCard ({ recipe }) {
           <div className="card-image">
             <div className="container">
             <figure className="image is-1by10">
-              <img src={recipe.imagePath} alt={recipe.name}/>
+              {/* <img src={recipe.imagePath} alt={recipe.name}/> */}
+              <div style={styles}></div>
               <div className="top-right">
                 <div className="control">
                     <i className="fas fa-plus"></i><Link to={`/recipe/${recipe.id}`}>
@@ -22,7 +30,9 @@ function RecipeCard ({ recipe }) {
           <div className="card-content">
             <div className="media mb-0">
               <div className="media-content">
+                <div className="subtitleleftpad">
                 <div className="subtitle is-5 mb-0">{recipe.name}</div> {/* --- NAME OF RECIPE --- */}
+                </div>
               </div>
             </div>
 

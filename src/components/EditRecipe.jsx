@@ -2,7 +2,9 @@ import React, { useState, useContext, useEffect } from 'react'
 import firebase from 'firebase/app'
 
 import { RecipeContext } from './context/RecipeContext'
-import { updateRecipe } from '../utils'
+import HeaderCopy from './HeaderCopy'
+import { updateRecipe, signOut } from '../utils'
+import Header from './Header'
 
 function EditRecipe (props) {
   const [recipes] = useContext(RecipeContext)
@@ -52,9 +54,18 @@ function EditRecipe (props) {
     props.history.push(`/recipe/${recipeId}`)
   }
 
+  const clickHandler = () => {
+    signOut()
+    props.history.push('/')
+  }
 
   return (
     recipe && <>
+      <div className='noBulmaNav'>
+        <img className="noBulmaNavLogo" src="../rp.png" alt="Logo"/>
+        <div className='noBulmaNavTitle'>Edit Recipe</div>
+        <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
+      </div>
       <form onSubmit={onSubmitHandler}>
         <h4>Edit Recipe</h4>
 

@@ -7,19 +7,6 @@ exports[`renders component correctly 1`] = `
   <div
     className="RecipesList"
   >
-    <div>
-      <button
-        onClick={[Function]}
-      >
-        DELETE ALL RECIPES
-      </button>
-      <button
-        onClick={[Function]}
-      >
-        SEED RECIPES
-      </button>
-    </div>
-     
     <div
       className="recipeSort"
     >
@@ -27,15 +14,17 @@ exports[`renders component correctly 1`] = `
         className="list"
       >
         <input
+          className="noBulmaBorderless recipeSearch"
           onChange={[Function]}
           placeholder="search for a recipe..."
           type="text"
         />
         <label>
-          Sort By:
+          Sort:
         </label>
          
         <select
+          className="recipeSortButton"
           onChange={[Function]}
           value="NAME_ASC"
         >
@@ -62,91 +51,111 @@ exports[`renders component correctly 1`] = `
         </select>
       </div>
     </div>
+    <div
+      className="seperation"
+    />
     <ul>
-      <li>
-        <div
-          className="card"
-        >
-          <a
-            href="#/recipe/MOqgTKsRp9OwepdSupbr"
-            onClick={[Function]}
+      <div
+        className="cardColumns"
+      >
+        <li>
+          <div
+            className="card"
           >
-             
-            <div
-              className="card-image"
+            <a
+              href="#/recipe/MOqgTKsRp9OwepdSupbr"
+              onClick={[Function]}
             >
+               
               <div
-                className="container"
+                className="card-image"
               >
-                <figure
-                  className="image is-1by10"
+                <div
+                  className="container"
                 >
-                  <img
-                    alt="Roasted black bean burgers"
-                    src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
-                  />
+                  <figure
+                    className="image is-1by10"
+                  >
+                    <img
+                      alt="Roasted black bean burgers"
+                      src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F5858755.jpg"
+                    />
+                    <div
+                      className="top-right"
+                    >
+                      <div
+                        className="control"
+                      >
+                        <i
+                          className="fas fa-plus"
+                        />
+                        <a
+                          href="#/recipe/MOqgTKsRp9OwepdSupbr"
+                          onClick={[Function]}
+                        />
+                      </div>
+                    </div>
+                     
+                  </figure>
+                </div>
+              </div>
+              <div
+                className="card-content"
+              >
+                <div
+                  className="media mb-0"
+                >
                   <div
-                    className="top-right"
+                    className="media-content"
                   >
                     <div
-                      className="control"
+                      className="subtitle is-5 mb-0"
                     >
-                      <i
-                        className="fas fa-plus"
-                      />
-                      <a
-                        href="#/recipe/MOqgTKsRp9OwepdSupbr"
-                        onClick={[Function]}
-                      />
+                      Roasted black bean burgers
                     </div>
+                     
                   </div>
-                   
-                </figure>
-              </div>
-            </div>
-            <div
-              className="card-content"
-            >
-              <div
-                className="media mb-0"
-              >
+                </div>
                 <div
-                  className="media-content"
+                  className="content"
                 >
                   <div
-                    className="subtitle is-5 mb-0"
+                    className="subtitle is-6 mb-0"
                   >
-                    Roasted black bean burgers
+                    Serves: 
+                    4
+                  </div>
+                   
+                  <div
+                    className="subtitle is-6"
+                  >
+                    Prep time: 
+                    40 Minutes - Not too tricky
                   </div>
                    
                 </div>
               </div>
-              <div
-                className="content"
-              >
-                <div
-                  className="subtitle is-6 mb-0"
-                >
-                  Serves: 
-                  4
-                </div>
-                 
-                <div
-                  className="subtitle is-6"
-                >
-                  Prep time: 
-                  40 Minutes - Not too tricky
-                </div>
-                 
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-          className="seperation"
-        />
-      </li>
+            </a>
+          </div>
+          <div
+            className="seperation"
+          />
+        </li>
+      </div>
     </ul>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        DELETE ALL RECIPES
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        SEED RECIPES
+      </button>
+    </div>
+     
   </div>
 </div>
 `;

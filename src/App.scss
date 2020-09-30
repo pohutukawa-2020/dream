@@ -10,15 +10,25 @@ $tabs-active-color: #f8f8f8;
 
 // Styles go below this line...
 
+// @media only screen and (min-width: 768px) {
+//   .contentRoutes {
+//     margin-left: 10%;
+//     margin-right: 10%;
+//   }
+// }
+
 #root {
   display: flex;
   flex-direction: column;
+  // padding-left: 10px;
+  // padding-right: 10px;
 }
 
 // Recipe Card // 
 .card { 
-  width: 95%;
-  margin: auto;
+  width: 350px;
+  max-width: 95vw;
+  margin: 10px;
   border-radius: 2em;
   padding-top: 0.6em;
 }
@@ -37,13 +47,14 @@ p {
 }
 
 .seperation {
-  margin-top: 1rem;
+  // margin-top: 2rem;
 }
 
 .image {
   height: 200px; /* height of container */
   overflow: hidden;
   object-position: 30px 50px;
+  border-radius: 25px;
 }
 
 .field { 
@@ -51,8 +62,11 @@ p {
   margin-top: 1%;
 }
 
-.image {
-  border-radius: 25px;
+.image1 {
+  height: 300px; /* height of container */
+  overflow: hidden;
+  border-radius: 30px;
+  margin-bottom: 2rem;
 }
 
 .card-image {
@@ -61,7 +75,7 @@ p {
   // height: 10px;
   width: 95%;
   // position: inline;
-  border-radius: 2rem;
+  border-radius: 2rem, 2rem, 0, 0;
 }
 
 .control {
@@ -88,6 +102,36 @@ p {
   position: absolute;
   top: 10px;
   right: 20px;
+}
+
+// expanded view //
+
+box:not(:last-child), .content:not(:last-child), .notification:not(:last-child), .progress:not(:last-child), .table:not(:last-child), .table-container:not(:last-child), .title:not(:last-child), .subtitle:not(:last-child), .block:not(:last-child), .highlight:not(:last-child), .breadcrumb:not(:last-child), .level:not(:last-child), .message:not(:last-child), .pagination:not(:last-child), .tabs:not(:last-child) {
+  margin-bottom: 0rem;
+}
+
+.card .media:not(:last-child) {
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  margin-left: -1rem;
+}
+
+.card-expanded {
+  margin: 5.5rem 10px 0;
+}
+
+.addto {
+  padding-left: 0.5rem;
+}
+
+button, input, select, textarea {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.ingredtext {
+  padding-left: 1.5rem;
 }
 
 // Nav Bar //
@@ -193,6 +237,15 @@ html, body {
   margin-bottom: 1rem;
 }
 
+.subtitleleftpad {
+  padding-left: 1rem;
+}
+
+// .subtitle.is-5 {
+//   font-size: 1.25rem;
+//   padding-left: 1rem;
+// }
+
 // Search Bar //
 
 form.example button {
@@ -284,6 +337,60 @@ html, :focus {
   margin-bottom: -2rem;
 }
 
+.noBulmaButton {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color:  #2B2A31;
+  color: #f8f8f8;
+}
+
+.noBulmaBorderless {
+  background-color: transparent;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+}
+
+.noBulmaBorderless.newItemQ {
+  width: 15%;
+}
+
+.noBulmaBorderless.newItem {
+  width: 55%;
+}
+
+.recipeSearch {
+  width: 55%;
+}
+
+.recipeSortButton {
+  // width: 27%;
+  padding: 0.1rem;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.8rem;
+  color: inherit;
+  width: 95px;
+  background-color:  #2B2A31;
+  color: #f8f8f8;
+}
+
+.plusButton {
+  display: inline;
+  font-size: 1.6rem;
+}
+
+.cardColumns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+//======== NO BULMA NAV ========//
+
 .noBulmaNav {
   z-index: 1;
   // top: 0;
@@ -307,9 +414,17 @@ html, :focus {
 
 .noBulmaNavSignOut {
   font-size: 0.8rem;
+  padding-top: 8px
+}
+
+.noBulmaNavSignOut:hover {
+  cursor: pointer;
 }
 
 .noBulmaNavLogo {
   width: auto;
   height: 50px
+}
+.shoppingListIngredients {
+  cursor: pointer;
 }
