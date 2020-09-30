@@ -26,8 +26,8 @@ $tabs-active-color: #f8f8f8;
 
 // Recipe Card // 
 .card { 
-  width: 350px;
-  max-width: 95vw;
+  width: 90vw;
+  max-width: 90vw;
   margin: 10px;
   border-radius: 2em;
   padding-top: 0.6em;
@@ -191,8 +191,8 @@ button, input, select, textarea {
 }
 
 .methpad {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
   text-align: justify;
 }
 
