@@ -32,22 +32,25 @@ function App () {
   } else {
     if (auth.authenticated) {
       return (
-        <div className="contentRoutes">
+        <>
+          <div className="contentRoutes">
           <Route path="/" component={Nav} />
-          <Route path='/' component={SignOut} /> 
-          <Route exact path='/'><Redirect to='/recipes'/></Route>
-          <Route exact path='/home'><Redirect to='recipes'/></Route>
-          <Route path='/recipes' component={HeaderCopy} />
-          <Route exact path="/recipes" component={Recipes} />
-          <Route exact path="/recipes/add" component={AddRecipe} />
-          <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
-          <Route exact path="/recipe/edit/:id" component={EditRecipe} />
-          <Route path='/week' component={HeaderCopy} />
-          <Route exact path="/week" component={Week} />
-          <Route path='/shopping' component={HeaderCopy} />
-          <Route exact path="/shopping" component={Shopping} />
-          <Route exact path="/shopping/add" component={Shopping} />
-        </div>
+          <Route path='/' component={HeaderCopy} />
+            <Route path='/' component={SignOut} /> 
+            <Route exact path='/'><Redirect to='/recipes'/></Route>
+            <Route exact path='/home'><Redirect to='recipes'/></Route>
+            {/* <Route path='/recipes' component={HeaderCopy} /> */}
+            <Route exact path="/recipes" component={Recipes} />
+            <Route exact path="/recipes/add" component={AddRecipe} />
+            <Route exact path="/recipe/:id" component={ExpandedRecipeCard} />
+            <Route exact path="/recipe/edit/:id" component={EditRecipe} />
+            {/* <Route path='/week' component={HeaderCopy} /> */}
+            <Route exact path="/week" component={Week} />
+            {/* <Route path='/shopping' component={HeaderCopy} /> */}
+            <Route exact path="/shopping" component={Shopping} />
+            <Route exact path="/shopping/add" component={Shopping} />
+          </div>
+        </>
       )
     } else {
       return (

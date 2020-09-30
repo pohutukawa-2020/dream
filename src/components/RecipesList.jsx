@@ -27,12 +27,11 @@ function RecipesList() {
   return (
     <>
       <div className="RecipesList">
-        <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
         <div className='recipeSort'>
           <div className="list">
-          <input type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
+          <input className='noBulmaBorderless recipeSearch' type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
           <label>Sort:</label>{' '}
-          <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
+          <select className='recipeSortButton' value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
             <option value='NAME_ASC'>Name (A-Z)</option>
             <option value='NAME_DESC'>Name (Z-A)</option>
             <option value='SERVES_ASC'>Serves (Ascending)</option>
@@ -40,13 +39,19 @@ function RecipesList() {
           </select>
           </div>
         </div>
-        <ul>
-          {filteredRecipes.map(recipe =>
-            <li key={recipe.id}>
-              <RecipeCard recipe={recipe} />
-            </li>
-          )}
-        </ul>
+        <div className='seperation'></div>
+
+          <ul>
+          <div className='cardColumns'>
+            {filteredRecipes.map(recipe =>
+              <li key={recipe.id}>
+                <RecipeCard recipe={recipe} />
+              </li>
+            )}
+                    </div>
+          </ul>
+
+        <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       </div>
     </>
   )

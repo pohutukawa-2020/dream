@@ -13,16 +13,23 @@ function Header (props) {
 
   switch (currentPage) {
     case '/recipes':
-      headerTitle = 'Your Recipes'
+      headerTitle = 'My Recipes'
       break
+    case '/recipes/add':
+      headerTitle = 'Add Recipe'
+      break 
+    // case '/recipe/edit/:id':
+    //   headerTitle = 'Edit Recipe'
+    //   break   
     case '/week':
       headerTitle = 'Week Planner'
       break
     case '/shopping':
       headerTitle = 'Your Shopping List'
       break
+
     default:
-      headerTitle = null
+      headerTitle = 'Reciplan'
   }
 
   return (

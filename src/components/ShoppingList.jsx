@@ -21,9 +21,11 @@ function ShoppingList () {
   
   const submitHandler = (e) => {
     e.preventDefault()
+    if (newItem) {
     addMiscItem(user.uid, newItemQ, newItem)
     setNewItem('')
     setNewItemQ('')
+    }
   }
   
   console.log('shopping list', shoppingList)
@@ -31,17 +33,17 @@ function ShoppingList () {
 
   return (
     <div className="ShoppingList">
-      <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
       <label>Sort By:</label>{' '}
-        <select value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
+        <select className='recipeSortButton'  value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
           <option value='NAME_ASC'>Name (A-Z)</option>
           <option value='NAME_DESC'>Name (Z-A)</option>
         </select>
-      <form onSubmit={(e) => submitHandler(e)}>
-        <label>Add item to Shopping List</label><br></br>
-        <input type="number" placeholder='Quantity, ie 4' value={newItemQ} onChange={e => setNewItemQ(e.currentTarget.value)} />
-        <input type="text" placeholder='Item, ie bananas' value={newItem} onChange={e => setNewItem(e.currentTarget.value)} />
-        <button>Add</button>
+      <form>
+        {/* <label>Add item to Shopping List</label><br></br> */}
+        <input className='noBulmaBorderless newItemQ' type="number" placeholder='Quantity' value={newItemQ} onChange={e => setNewItemQ(e.currentTarget.value)} />{' '}
+        <input className='noBulmaBorderless newItem' type="text" placeholder='Item, ie bananas' value={newItem} onChange={e => setNewItem(e.currentTarget.value)} />{' '}
+        <h3 onClick={e => submitHandler(e)} style={{display: 'inline'}}><h3 className='plusButton' >+</h3>Add item</h3>
+        {/* <button className='noBulmaButton'>Add</button> */}
       </form>
       <ul>
         {sortedShoppingList.map(shoppingListItem =>
@@ -50,6 +52,7 @@ function ShoppingList () {
           </li>
         )}
       </ul>
+      <button onClick={() => clearClickHandler()}>Clear Shopping List</button>
     </div>
   )
 }
