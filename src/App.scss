@@ -29,8 +29,8 @@ $tabs-link-color:gray;
 
 // Recipe Card // 
 .card { 
-  width: 90vw;
-  max-width: 95vw;
+  width: 350px;
+  max-width: 90vw;
   margin: 10px;
   border-radius: 2em;
   padding-top: 0.6em;
@@ -274,6 +274,7 @@ hr {
   margin: 2rem
 }
 html, body {
+
   background-color: #f8f8f8;
   margin-bottom: 20%;
   overflow-x: hidden;
@@ -433,7 +434,17 @@ html, :focus {
 }
 
 .recipeSearch {
-  width: 50%;
+  width: 60vw;
+  margin-right: 4rem;
+  flex-grow: 2;
+}
+
+.recipeSort {
+  max-width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .recipeSortButton {
@@ -449,9 +460,21 @@ html, :focus {
   color: #f8f8f8;
 }
 
+.recipesList{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clear-week {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5vw;
+  margin-bottom: -20px;
+}
+
 .sort-seperation {
-padding-left: 15rem;
-padding-top: -10px;
+
 }
 
 .plusButton {
@@ -531,6 +554,11 @@ padding-right: 1rem;
   padding-top: 1rem; 
 }
 
+// .monday-clear {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
 
 //======== NO BULMA NAV ========//
 
@@ -542,8 +570,8 @@ padding-right: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 7%;
+  padding-right: 7%;
   padding-top: 10px;
   // padding-bottom: 10px;
   height: 80px;
@@ -568,6 +596,12 @@ padding-right: 1rem;
   width: auto;
   height: 50px
 }
+
+// .welcomeContainer {
+//   max-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .facebookLogin {
   width: 200px;

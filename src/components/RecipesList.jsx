@@ -25,8 +25,8 @@ export default function RecipesList() {
   return (
     <>
       <div className="RecipesList">
+        <div className='cardColumns'>
         <div className='recipeSort'>
-          <div className="list">
           <input className='noBulmaBorderless recipeSearch' type='text' placeholder='search for a recipe...' onChange={e => changeHandler(e)}></input>
           <div className="sort-seperation">
           <select className='recipeSortButton' value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
@@ -35,7 +35,6 @@ export default function RecipesList() {
             <option value='SERVES_ASC'>Serves (Ascending)</option>
             <option value='SERVES_DESC'>Serves (Descending)</option>
           </select>
-          </div>
           </div>
         </div>
         <div className='seperation'></div>
@@ -47,11 +46,13 @@ export default function RecipesList() {
                 <RecipeCard recipe={recipe} />
               </li>
             )}
-                    </div>
+                  </div>
           </ul>
-
+  
         <Seed /> {/* --- TO BE DELETED FROM PRODUCTION --- */}
       </div>
+      </div>
+      {/* </div> */}
     </>
   )
 }

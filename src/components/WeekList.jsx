@@ -35,13 +35,13 @@ export default function WeekList () {
       <div>
         <hr />
         <div className="weeklist">
-          <div className="pad">
-        <button className="button is-small is-rounded is-outline is-centered" onClick={() => clickHandler()}>Clear Week</button> {/* --- NIMZ STYLE PLUZ --- */}
-        </div>
-          <div>
+            <div className='clear-week'>
+          <button className="button is-small is-rounded is-outline is-centered" onClick={() => clickHandler()}>Clear Week</button> {/* --- NIMZ STYLE PLUZ --- */}
+          </div>
+          <div className='monday-clear'>
         {mondayRecipe ? <div className="list"><h1 className="subtitle is-5">Monday<div className="hrspcing"><hr /></div></h1></div> : null}
         {mondayRecipe ? <WeekCard recipe={mondayRecipe} /> : <Link to='/recipes'>
-        <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('monday')}>Monday+<hr /></h3></div>
+        <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('monday')}>Monday+ <hr /></h3></div>
         </Link>}
         </div>
 
@@ -75,6 +75,7 @@ export default function WeekList () {
         {sundayRecipe ? <WeekCard recipe={sundayRecipe} /> : <Link to='/recipes'>
         <div className="list"><h3 className="subtitle is-5"onClick={() => setSelectedDay('sunday')}>Sunday+</h3></div>
         </Link>}
+    
         </div>
       </div>
     </div>

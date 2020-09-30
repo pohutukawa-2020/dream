@@ -15,6 +15,7 @@ export default function EditRecipe (props) {
   const [prepTime, setPrepTime] = useState(null)
   const [ingredients, setIngredients] = useState(null)
   const [method, setMethod] = useState(null)
+  // const listedIngredients = ingredients ? ingredients.map(ingredient => {ingredient.quantity}{' '}{ingredient.name}</>) : null
 
   useEffect(() => {
     setImagePath(recipe ? recipe.imagePath : null)
@@ -24,6 +25,8 @@ export default function EditRecipe (props) {
     setIngredients(recipe ? recipe.ingredients : null)
     setMethod(recipe ? recipe.method : null)
   }, [recipe])
+
+  console.log(ingredients)
 
   function onSubmitHandler (e) {
     e.preventDefault()
@@ -109,14 +112,14 @@ export default function EditRecipe (props) {
               <input type='text' value={prepTime} onChange={e => setPrepTime(e.currentTarget.value)} /> {/* --- PREP TIME --- */}
             </div>
           </div>
-          {/* <div className="card-content">
+          <div className="card-content">
                 Ingredients needed:
                 (seperate by comma)
             <div>
-              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
-              <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>) : null}</ul>
+              <textarea className="textarea is-primary" type='text' value={ingredients ? ingredients.map(ingredient => <p key={ingredient.name}>{ingredient.quantity}{' '}{ingredient.name}</p>) : null} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
+              <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.quantity}{' '}{ingredient.name}</li>) : null}</ul>
             </div>
-          </div> */}
+          </div>
           
           <div className="">
             <div className="textmeth">
