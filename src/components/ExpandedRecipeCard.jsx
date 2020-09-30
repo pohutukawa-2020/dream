@@ -28,9 +28,9 @@ export default function ExpandedRecipeCard (props) {
     evt.preventDefault()
     const newWeekDayAssignment = { [weekDay]: recipeId }
 
-    if (window.confirm(`Would you like to assign ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
+    if (window.confirm(`Add ${recipe.name} to ${capitalise(weekDay)} and its ingredients to your shopping list?`)) {
       if (week[weekDay]) {
-        if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already assigned to this ${capitalise(weekDay)}, would you like to reassign with ${recipe.name} and shopping list ingredients?`)) {
+        if (window.confirm(`${assignedRecipe ? assignedRecipe.name : null} is already on ${capitalise(weekDay)}. Swap to ${recipe.name}?`)) {
           removeRecipeIngredients(week[weekDay])
           assignRecipeToWeekDay(user.uid, newWeekDayAssignment)
           addRecipeIngredients(user.uid, recipe, recipeId)
@@ -134,7 +134,6 @@ export default function ExpandedRecipeCard (props) {
           </div>
           </div>
         </div>
-
       </div>
       </div>
     </>

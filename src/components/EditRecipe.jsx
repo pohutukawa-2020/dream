@@ -108,18 +108,18 @@ export default function EditRecipe (props) {
               <input value={serves} onChange={e => setServes(e.currentTarget.value)} /> {/* --- SERVES --- */}
             </div>
             <div className="card-content">
-              Prep Time<br></br>
+              Prep Time (minutes)<br></br>
               <input type='text' value={prepTime} onChange={e => setPrepTime(e.currentTarget.value)} /> {/* --- PREP TIME --- */}
             </div>
           </div>
-          <div className="card-content">
+          {/* <div className="card-content">
                 Ingredients needed:
                 (seperate by comma)
             <div>
               <textarea className="textarea is-primary" type='text' value={ingredients ? ingredients.map(ingredient => <p key={ingredient.name}>{ingredient.quantity}{' '}{ingredient.name}</p>) : null} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
               <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.quantity}{' '}{ingredient.name}</li>) : null}</ul>
             </div>
-          </div>
+          </div> */}
           
           <div className="">
             <div className="textmeth">

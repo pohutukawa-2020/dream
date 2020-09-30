@@ -426,7 +426,7 @@ html, :focus {
 }
 
 .noBulmaBorderless.newItemQ {
-  width: 15%;
+  width: 17%;
 }
 
 .noBulmaBorderless.newItem {
@@ -455,6 +455,8 @@ html, :focus {
   font: inherit;
   font-size: 0.8rem;
   color: inherit;
+  padding-top: -1rem;
+  height: 27px;
   width: 95px;
   background-color:  #2B2A31;
   color: #f8f8f8;
@@ -507,7 +509,11 @@ html, :focus {
 }
 
 .sort-sort {
-  padding-left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 90vw;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .search-pad {

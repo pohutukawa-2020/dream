@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, Redirect } from 'react-router-dom'
+import React, { useContext, useState } from "react"
+
 import firebase from 'firebase'
 import 'firebase/auth'
 
-import { UserContext } from './context/UserContext'
+// import { UserContext } from './context/UserContext'
 
-import { signUp, signIn, signInGoogle, signInFacebook, signOut } from '../utils'
+import { signInGoogle, signInFacebook } from '../utils'
 
 export default function Home (props) {
-  const {user} = useContext(UserContext)
+  // const {user} = useContext(UserContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -86,7 +86,7 @@ export default function Home (props) {
     </div>
     </div>
 
-    <img onClick={() => facebookClickHandler()} className='facebookLogin' src='/facebook.png'></img><br></br>
+    {/* <img onClick={() => facebookClickHandler()} className='facebookLogin' src='/facebook.png'></img><br></br> */}
     <img onClick={() => googleClickHandler()} className='googleLogin' src='/google.png'></img><br></br>
 
     {/* <button onClick={() => facebookClickHandler()}>Log in/register with Facebook</button> */}

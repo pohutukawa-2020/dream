@@ -35,6 +35,8 @@ export default function ShoppingList () {
       {' '}
       </div>
       <div className="sort-sort">
+      <button className="button is-small is-rounded is-outline clear-shopping" onClick={() => clearClickHandler()}>Clear all</button>
+
         <select className='recipeSortButton'  value={sortBy} onChange={evt => setSortBy(evt.target.value)}>
           <option value='NAME_ASC'>Name (A-Z)</option>
           <option value='NAME_DESC'>Name (Z-A)</option>
@@ -58,9 +60,9 @@ export default function ShoppingList () {
         )}
         
       </ul>
-      <div className="clear-shop-pad">
-      <button className="button is-small is-rounded is-outline" onClick={() => clearClickHandler()}>Clear Shopping List</button>
-      </div>
+      {/* <div className="clear-shop-pad">
+      <button className="button is-small is-rounded is-outline clear-shopping" onClick={() => clearClickHandler()}>Clear Shopping List</button>
+      </div> */}
       </div>
     </div>
   )
