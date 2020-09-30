@@ -7,9 +7,8 @@ import { RecipeContext } from './context/RecipeContext'
 import { SelectedDayContext } from './context/SelectedDayContext'
 import { WeekContext } from './context/WeekContext'
 import { deleteRecipe, addRecipeIngredients, removeRecipeIngredients, assignRecipeToWeekDay, capitalise } from '../utils'
-import HeaderCopy from './HeaderCopy'
 
-function ExpandedRecipeCard (props) {
+export default function ExpandedRecipeCard (props) {
   const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [week] = useContext(WeekContext)
@@ -123,5 +122,3 @@ function ExpandedRecipeCard (props) {
     </>
   )
 }
-
-export default ExpandedRecipeCard
