@@ -252,6 +252,7 @@ hr {
 html, body {
   background-color: #f8f8f8;
   margin-bottom: 12%;
+  overflow-x: hidden;
 }
 
 .header {
@@ -470,3 +471,13 @@ html, :focus {
 .shoppingListIngredients {
   cursor: pointer;
 }
+
+
+
+//======== media queries ========//
+
+// @media only screen 
+//     and (device-width : 375px) 
+//     and (device-height : 812px) 
+//     and (-webkit-device-pixel-ratio : 3) { 
+//     }
