@@ -9,7 +9,7 @@ import Seed from './Seed'
 
 import { sortList } from '../utils.js'
 
-function RecipesList() {
+export default function RecipesList() {
   const {user} = useContext(UserContext)
   const [recipes] = useContext(RecipeContext)
   const [sortBy, setSortBy] = useState('NAME_ASC')
@@ -56,5 +56,3 @@ function RecipesList() {
     </>
   )
 }
-
-export default RecipesList

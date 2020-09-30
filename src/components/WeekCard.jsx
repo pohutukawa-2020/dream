@@ -2,7 +2,7 @@ import React from "react"
 
 import { Link } from 'react-router-dom'
 
-function WeekCard ({ recipe }) {
+export default function WeekCard ({ recipe }) {
     return (
       <>
       <div className="box">
@@ -29,10 +29,6 @@ function WeekCard ({ recipe }) {
         </article>
         </Link>
       </div>
-
     </>
   )
 }
-
-export default WeekCard
-

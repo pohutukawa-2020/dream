@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function RecipeCard ({ recipe }) {
+export default function RecipeCard ({ recipe }) {
   return (
     <>
       <div className="card">
@@ -38,5 +38,3 @@ function RecipeCard ({ recipe }) {
     </>
   )
 }
-
-export default RecipeCard

@@ -10,7 +10,7 @@ import { SelectedDayContext } from './context/SelectedDayContext'
 import WeekCard from './WeekCard'
 import { clearShoppingList, clearWeekDayAssignments } from '../utils'
 
-function WeekList () {
+export default function WeekList () {
   const {user} = useContext(UserContext)
   const [week] = useContext(WeekContext)
   const [recipes] = useContext(RecipeContext)
@@ -79,5 +79,3 @@ function WeekList () {
     </>
   )
 }
-
-export default WeekList

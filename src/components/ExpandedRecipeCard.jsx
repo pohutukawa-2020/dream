@@ -22,9 +22,9 @@ export default function ExpandedRecipeCard (props) {
 
   console.log(week[weekDay])
 
-  useEffect(() => {
-    //currently solving null assigned recipe bug
-  }, [week[weekDay]])
+  // useEffect(() => {
+  //   //currently solving null assigned recipe bug
+  // }, [week[weekDay]])
 
   function clickHandler (evt) {
     evt.preventDefault()
