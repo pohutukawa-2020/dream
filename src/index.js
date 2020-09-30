@@ -34,9 +34,9 @@ ReactDOM.render(
         <WeekProvider>
           <ShoppingListProvider>
             <SelectedDayProvider>
-              <LoaderBlocker>
+              {/* <LoaderBlocker> */}
                 <App />
-              </LoaderBlocker>
+              {/* </LoaderBlocker> */}
             </SelectedDayProvider>
           </ShoppingListProvider>
         </WeekProvider>
