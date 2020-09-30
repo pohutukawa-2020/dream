@@ -38,7 +38,7 @@ export default function RecipeCard ({ recipe }) {
 
             <div className="content">
               <div className="subtitle is-6 mb-0">Serves: {recipe.serves}</div> {/* --- SERVES --- */}
-              <div className="subtitle is-6">Prep time: {recipe.prepTime}</div> {/* --- PREP TIME --- */}
+              <div className="subtitle is-6">Prep time: {recipe.prepTime} minutes</div> {/* --- PREP TIME --- */}
             </div>
           </div>
         </Link>
