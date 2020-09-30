@@ -68,7 +68,7 @@ export default function ExpandedRecipeCard (props) {
         <div className='noBulmaNavTitle'>My Recipes</div>
         <h1 className="noBulmaNavSignOut" onClick={() => clickHandler()}>Sign Out</h1>
       </div>
-      <div className="cardColumns">
+      <div className='cardColumns'>
       <div className="card card-expanded">
         <div className="card-image">
           <figure className="image1 is-5by1">
