@@ -58,6 +58,27 @@ export default function EditRecipe (props) {
     props.history.push('/')
   }
 
+  // EDIT INGREDIENTS 
+
+  const handleInputChange = (evt, idx) => {
+    const { name, value } = evt.target
+    const list = [...ingredients]
+    list[idx][name] = value
+    setIngredients(list)
+  }
+
+    // handle click event of the Remove button
+    const handleRemoveClick = idx => {
+      const list = [...ingredients]
+      list.splice(idx, 1)
+      setIngredients(list)
+    }
+  
+    // handle click event of the Add button
+    const handleAddClick = () => {
+      setIngredients([...ingredients, { quantity: null, quantityType: 't', name: '' }])
+    }
+
   return (
     <>
       <div className='noBulmaNav'>
@@ -118,6 +139,53 @@ export default function EditRecipe (props) {
               <ul>{ingredients ? ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.quantity}{' '}{ingredient.name}</li>) : null}</ul>
             </div>
           </div> */}
+          <div className='card-content'>
+            Ingredients needed:
+            <div>
+              {ingredients ? ingredients.map((ingredient, idx) => (
+                <div>
+                  <div className="newIngredientField">
+                    <input 
+                      className="newIngredientQuantityField"
+                      name='quantity'
+                      type='number'
+                      size="4"
+                      maxlength='4'
+                      placeholder='Quantity'
+                      value={ingredient.quantity}
+                      onChange={evt => handleInputChange(evt, idx)}
+                    />
+                    <select className="newIngredientQuantityTypeField" name='quantityType' value={ingredient.quantityType} onChange={evt => handleInputChange(evt, idx)}>
+                      <option value='t'>t</option>
+                      <option value='T'>T</option>
+                      <option value='mL'>mL</option>
+                      <option value='L'>L</option>
+                      <option value='g'>g</option>
+                      <option value='kg'>kg</option>
+                      <option value='can'>can</option>
+                      <option value='can'>cup</option>
+                      <option value=''></option>
+                    </select>
+                    <input
+                      className="newIngredientNameField"
+                      name="name"
+                      placeholder="Enter Ingredient"
+                      value={ingredient.name}
+                      onChange={evt => handleInputChange(evt, idx)}
+                    />
+                    <div className='newIngredientX'>
+                      {ingredients.length !== 1 && <h1 onClick={() => handleRemoveClick(idx)}>X</h1>}
+                    </div>
+                  </div>
+                  <div className='newIngredientPlus'>
+                    {ingredients.length - 1 === idx && <button onClick={handleAddClick}>Add another ingredient</button>}
+                  </div>
+                </div>
+              ) 
+              
+              ): null}
+            </div>
+          </div>
           
           <div className="">
             <div className="textmeth">
