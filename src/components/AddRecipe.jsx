@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react'
 
 import { UserContext } from './context/UserContext'
+import { NewIngredientsContext } from './context/NewIngredientsContext'
 import MultipleIngredientAdd from './MultipleIngredientAdd'
 
 import { addRecipe } from '../utils'
 
 export default function AddRecipe (props) {
   const {user} = useContext(UserContext)
+  const [newIngredients, setNewIngredients] = useContext(NewIngredientsContext)
   const [name, setName] = useState('')
   const [imagePath, setImagePath] = useState('')
   const [serves, setServes] = useState('')
@@ -22,7 +24,7 @@ export default function AddRecipe (props) {
       imagePath,
       serves,
       prepTime,
-      ingredients,
+      ingredients: newIngredients,
       method,
       userId: user.uid
     }
