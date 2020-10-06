@@ -633,6 +633,24 @@ padding-right: 1rem;
   margin-top: 1rem;
 }
 
+.newIngredientField {
+  // max-width: 100px;
+  display: flex;
+  // margin-left: 1rem;
+}
+
+.newIngredientQuantityField {
+  width: 10ch;
+}
+
+.newIngredientPlus {
+  padding-left: 0.5rem;
+}
+
+.newIngredientX {
+  padding-left: 0.5rem;
+}
+
 .tasty {
   position: relative;
   bottom: 18rem;
