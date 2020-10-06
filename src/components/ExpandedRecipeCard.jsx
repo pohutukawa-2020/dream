@@ -115,7 +115,7 @@ export default function ExpandedRecipeCard (props) {
       </span></h1></button> <hr />
             <div className="ingredtext">
             {ingredientVis ? <div>{recipe ? recipe.ingredients.map(ingredient => (
-              <p className="subtitle is-6">{ingredient.quantity}{' '}{ingredient.name}</p>
+              <p className="subtitle is-6">{ingredient.quantity}{' '}{ingredient.quantityType}{' '}{ingredient.name}</p>
             )) : null}</div> : null}
           </div>
           </div>
