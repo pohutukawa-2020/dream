@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 
 import { UserContext } from './context/UserContext'
+import MultipleIngredientAdd from './MultipleIngredientAdd'
 
 import { addRecipe } from '../utils'
 
@@ -80,11 +81,12 @@ export default function AddRecipe (props) {
           </div>
           <div className="card-content">
                 Ingredients needed:
-                (seperate by comma)
+                {/* (seperate by comma)
             <div>
-              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> {/* <MultipleIngredientTest /> */}
+              <textarea className="textarea is-primary" type='text' value={ingredients} onChange={e => setIngredients(e.currentTarget.value.split(','))} /> 
               <ul>{ingredients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}</ul>
-            </div>
+            </div> */}
+            <MultipleIngredientAdd />
           </div>
           <div className="card-content">
             <div>
